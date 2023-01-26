@@ -35,7 +35,9 @@ terraform apply --var-file=./apigee-poc.tfvars
 <!-- BEGIN_TF_DOCS -->
 ## Providers
 
-No providers.
+| Name |
+|------|
+| terraform |
 
 ## Modules
 
