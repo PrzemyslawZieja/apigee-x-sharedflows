@@ -18,7 +18,7 @@ terraform apply --var-file=./apigee-poc.tfvars
 ```
 
 ## Recreating apigee x infrastructure
-It's possible to recreate apigee project infrastructure using ```terraform destroy``` (not recommended though, this process has been tested to check the possibility to recreate all resources after a major failure)
+It's possible to recreate apigee project infrastructure using ```terraform destroy``` (not recommended though, this process has been tested to check the possibility to recreate all resources after a major failure).
 To recreate the infrastructure:
 ```bash
 # Destroy terraform resources
@@ -33,7 +33,7 @@ terraform import -var-file=./apigee-poc.tfvars 'module.apigee-x-core.module.kms-
 
 After that, it's required to UNSCHEDULE the destruction of the keys latest version inside each of the keyrings and RE-ENABLE these versions in the <a name="kms_gcp_console"></a>[Key Management Service](https://console.cloud.google.com/security/kms/keyrings?project=apigee-x-poc-374912) in the Google Cloud Platform Console.
 
-# Apply the changes to recreate the infrastructure
+## Apply the changes to recreate the infrastructure
 terraform apply -var-file=./apigee-poc.tfvars
 ```
 The process takes about 30-40 minutes to complete.
