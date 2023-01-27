@@ -33,6 +33,7 @@ terraform import -var-file=./apigee-poc.tfvars 'module.apigee-x-core.module.kms-
 
 After that, it's required to UNSCHEDULE the destruction of the keys latest version inside each of the keyrings and RE-ENABLE these versions in the <a name="kms_gcp_console"></a>[Key Management Service](https://console.cloud.google.com/security/kms/keyrings?project=apigee-x-poc-374912) in the Google Cloud Platform Console.
 
+```bash
 ## Apply the changes to recreate the infrastructure
 terraform apply -var-file=./apigee-poc.tfvars
 ```
