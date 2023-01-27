@@ -17,6 +17,27 @@ terraform plan --var-file=./apigee-poc.tfvars
 terraform apply --var-file=./apigee-poc.tfvars
 ```
 
+## Recreating apigee x infrastructure
+It's possible to recreate apigee project infrastructure using ```terraform destroy``` (not recommended though, this process has been tested to check the possibility to recreate all resources after a major failure)
+To recreate the infrastructure:
+```bash
+# Destroy terraform resources
+terraform destroy
+
+# Below resources survive the destruction, it's necessary to import them back to the state to allow for uninterrupted recreate process
+terraform import -var-file=./apigee-poc.tfvars 'module.apigee-x-core.module.kms-org-db.google_kms_key_ring.default[0]' 'projects/apigee-x-poc-374912/locations/europe-west1/keyRings/apigee-x-org'
+terraform import -var-file=./apigee-poc.tfvars 'module.apigee-x-core.module.kms-inst-disk["euw1-instance"].google_kms_key_ring.default[0]' 'projects/apigee-x-poc-374912/locations/europe-west1/keyRings/apigee-euw1-instance'
+terraform import -var-file=./apigee-poc.tfvars 'module.apigee-x-core.module.kms-inst-disk["euw1-instance"].google_kms_crypto_key.default["inst-disk"]' projects/apigee-x-poc-374912/locations/europe-west1/keyRings/apigee-euw1-instance/cryptoKeys/inst-disk
+terraform import -var-file=./apigee-poc.tfvars 'module.apigee-x-core.module.kms-org-db.google_kms_crypto_key.default["org-db"]' projects/apigee-x-poc-374912/locations/europe-west1/keyRings/apigee-x-org/cryptoKeys/org-db
+```
+
+After that, it's required to UNSCHEDULE the destruction of the keys latest version inside each of the keyrings and RE-ENABLE these versions in the <a name="kms_gcp_console"></a>[Key Management Service](https://console.cloud.google.com/security/kms/keyrings?project=apigee-x-poc-374912) in the Google Cloud Platform Console.
+
+# Apply the changes to recreate the infrastructure
+terraform apply -var-file=./apigee-poc.tfvars
+```
+The process takes about 30-40 minutes to complete.
+
 ## Files and directories
 
 | File/directory | Description |
