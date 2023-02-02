@@ -16,7 +16,7 @@
 
 billing_account = "019F6F-001716-B60DE7"
 project_id      = "apigee-x-poc-374912"
-ax_region = "europe-west1"
+ax_region       = "europe-west1"
 
 apigee_environments = ["dev-poc", "prod-poc"]
 
