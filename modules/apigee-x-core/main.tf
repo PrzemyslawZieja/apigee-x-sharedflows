@@ -21,7 +21,9 @@ resource "google_project_service_identity" "apigee_sa" {
 }
 
 module "kms-org-db" {
-  source     = "github.com/terraform-google-modules/cloud-foundation-fabric//modules/kms?ref=v16.0.0"
+  # Left for referrence
+  # source     = "github.com/terraform-google-modules/cloud-foundation-fabric//modules/kms?ref=v16.0.0"
+  source = "../cloud-foundation-fabric/kms"
   project_id = var.project_id
   key_iam = {
     org-db = {
@@ -38,7 +40,9 @@ module "kms-org-db" {
 }
 
 module "apigee" {
-  source                  = "github.com/terraform-google-modules/cloud-foundation-fabric//modules/apigee-organization?ref=v16.0.0"
+  # Left for referrence
+  # source                  = "github.com/terraform-google-modules/cloud-foundation-fabric//modules/apigee-organization?ref=v16.0.0"
+  source = "../cloud-foundation-fabric/apigee-organization"
   project_id              = var.project_id
   analytics_region        = var.ax_region
   runtime_type            = "CLOUD"
@@ -55,7 +59,9 @@ module "apigee" {
 
 module "kms-inst-disk" {
   for_each   = var.apigee_instances
-  source     = "github.com/terraform-google-modules/cloud-foundation-fabric//modules/kms?ref=v16.0.0"
+  # Left for referrence
+  # source     = "github.com/terraform-google-modules/cloud-foundation-fabric//modules/kms?ref=v16.0.0"
+  source = "../cloud-foundation-fabric/kms"
   project_id = var.project_id
   key_iam = {
     inst-disk = {
@@ -73,7 +79,9 @@ module "kms-inst-disk" {
 
 module "apigee-x-instance" {
   for_each            = var.apigee_instances
-  source              = "github.com/terraform-google-modules/cloud-foundation-fabric//modules/apigee-x-instance?ref=v16.0.0"
+  # Left for referrence
+  # source              = "github.com/terraform-google-modules/cloud-foundation-fabric//modules/apigee-x-instance?ref=v16.0.0"
+  source = "../cloud-foundation-fabric/apigee-x-instance"
   apigee_org_id       = module.apigee.org_id
   name                = each.key
   region              = each.value.region
