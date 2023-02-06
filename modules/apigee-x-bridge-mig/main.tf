@@ -19,7 +19,9 @@ locals {
 }
 
 module "bridge-template" {
-  source        = "github.com/terraform-google-modules/cloud-foundation-fabric//modules/compute-vm?ref=v16.0.0"
+  # Left for referrence
+  # source        = "github.com/terraform-google-modules/cloud-foundation-fabric//modules/compute-vm?ref=v16.0.0"
+  source = "../cloud-foundation-fabric/compute-vm"
   project_id    = var.project_id
   name          = local.bridge_name
   zone          = "${var.region}-b"
@@ -47,7 +49,9 @@ module "bridge-template" {
 }
 
 module "bridge-mig" {
-  source            = "github.com/terraform-google-modules/cloud-foundation-fabric//modules/compute-mig?ref=v16.0.0"
+  # Left for referrence
+  # source            = "github.com/terraform-google-modules/cloud-foundation-fabric//modules/compute-mig?ref=v16.0.0"
+  source = "../cloud-foundation-fabric/compute-mig"
   project_id        = var.project_id
   location          = var.region
   regional          = true

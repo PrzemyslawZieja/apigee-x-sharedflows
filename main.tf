@@ -23,7 +23,7 @@ locals {
 module "project" {
   # Left for referrence
   # source          = "github.com/terraform-google-modules/cloud-foundation-fabric//modules/project?ref=v16.0.0"
-  source          = "./modules/project"
+  source          = "./modules/cloud-foundation-fabric/project"
   name            = var.project_id
   parent          = var.project_parent
   billing_account = var.billing_account
@@ -39,7 +39,7 @@ module "project" {
 module "vpc" {
   # Left for referrence
   # source     = "github.com/terraform-google-modules/cloud-foundation-fabric//modules/net-vpc?ref=v16.0.0"
-  source     = "./modules/net-vpc"
+  source     = "./modules/cloud-foundation-fabric/net-vpc"
   project_id = module.project.project_id
   name       = var.network
   subnets    = var.exposure_subnets

@@ -4,6 +4,10 @@
 This is a test installation of Apigee X. It utilizes Google's Evaluation license offering - hence it has significant limitations and will exist only for the next 60 days.
 After that, the environment (Apigee instance + license) will be removed automaticaly by Google.
 
+## Requirements
+
+Terraform >= 1.3.6
+
 ## Credentials
 This terraform installation uses ```gcloud``` authorization to make changes to the infrastructure
 
