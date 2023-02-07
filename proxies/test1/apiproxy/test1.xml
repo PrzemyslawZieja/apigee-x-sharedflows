@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<APIProxy revision="1" name="test1">
+<APIProxy name="test1">
   <BasePaths>/test1</BasePaths>
-  <ConfigurationVersion majorVersion="4" minorVersion="0"/>
   <Description/>
   <DisplayName/>
-  <CreatedAt>1675768499342</CreatedAt>
-  <LastModifiedAt>1675768499342</LastModifiedAt>
   <ProxyEndpoints>
     <ProxyEndpoint>default</ProxyEndpoint>
   </ProxyEndpoints>
