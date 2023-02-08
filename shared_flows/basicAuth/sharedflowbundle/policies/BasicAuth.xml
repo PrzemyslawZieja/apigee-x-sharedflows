@@ -3,8 +3,7 @@
     <DisplayName>BasicAuth</DisplayName>
     <Operation>Encode</Operation>
     <IgnoreUnresolvedVariables>false</IgnoreUnresolvedVariables>
-    <User ref="credentials.username"/>
-    <Password ref="credentials.password"/>
+    <User ref="private.credentials.username"/>
+    <Password ref="private.credentials.password"/>
     <AssignTo createNew="true">request.header.Authorization</AssignTo>
-    <Source>request.header.Authorization</Source>
 </BasicAuthentication>
