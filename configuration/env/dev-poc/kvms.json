@@ -11,5 +11,17 @@
             }
         ],
         "name": "kvm1"
+    }, {
+        "entry": [
+            {
+                "name": "basicAuth_username",
+                "value": "ddd"
+            },
+            {
+                "name": "basicAuth_password",
+                "value": "ddd"
+            }
+        ],
+        "name": "environmentVariables"
     }
 ]
