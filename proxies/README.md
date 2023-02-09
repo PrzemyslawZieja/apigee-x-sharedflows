@@ -38,7 +38,7 @@ To deploy the proxy:
 1. move to the proxy directory (this with pom.xml file)
 2. Call:
 ```
-mvn clean install -P<env> -Dfile=<location with gcp service account json key> -Dapigee.options=override
+mvn clean install -P<env> -Dfile=<location with gcp service account json key> -Dapigee.options=<option>
 
 env - maven profile name configured in shared-pom.xml file (repo's root directory).
 
