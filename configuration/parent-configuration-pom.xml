@@ -1,8 +1,14 @@
 <?xml version="1.0" ?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<parent>
+		<groupId>apigee</groupId>
+		<artifactId>shared-pom</artifactId>
+		<version>1.0</version>
+		<relativePath>../shared-pom.xml</relativePath>
+	</parent>
     <modelVersion>4.0.0</modelVersion>
     <groupId>apigee</groupId>
-    <artifactId>parent-pom</artifactId>
+    <artifactId>parent-configuration-pom</artifactId>
     <packaging>pom</packaging>
     <version>1.0</version>
     <pluginRepositories>
@@ -116,34 +122,6 @@
             </plugin>            
         </plugins>
     </build>
-    <profiles>
-        <profile>
-            <id>prod-poc</id>
-            <properties>
-                <apigee.profile>prod-poc</apigee.profile>
-                <apigee.hosturl>https://apigee.googleapis.com</apigee.hosturl>
-                <apigee.apiversion>v1</apigee.apiversion>
-                <apigee.org>apigee-x-poc-374912</apigee.org>
-                <apigee.env>prod-poc</apigee.env>
-                <apigee.authtype>oauth</apigee.authtype> <!-- only option -->
-                <apigee.bearer>${bearer}</apigee.bearer> <!-- this takes precedence over service account file -->
-                <apigee.serviceaccount.file>${file}</apigee.serviceaccount.file>
-            </properties>
-        </profile>
-        <profile>
-            <id>dev-poc</id>
-            <properties>
-                <apigee.profile>dev-poc</apigee.profile>
-                <apigee.hosturl>https://apigee.googleapis.com</apigee.hosturl>
-                <apigee.apiversion>v1</apigee.apiversion>
-                <apigee.org>apigee-x-poc-374912</apigee.org>
-                <apigee.env>dev-poc</apigee.env>
-                <apigee.authtype>oauth</apigee.authtype> <!-- only option -->
-                <apigee.bearer>${bearer}</apigee.bearer> <!-- this takes precedence over service account file -->
-                <apigee.serviceaccount.file>${file}</apigee.serviceaccount.file>
-            </properties>
-        </profile>
-    </profiles>
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
