@@ -14,7 +14,7 @@
                 <apigee.apiversion>v1</apigee.apiversion>
                 <apigee.org>apigee-x-poc-374912</apigee.org>
                 <apigee.env>dev-poc</apigee.env>
-                <apigee.apitype>sharedflow</apigee.apitype> <!-- This is only for Shared Flows. Not required for deploying proxy -->
+                <apigee.apitype>{apitype}</apigee.apitype> <!-- This is only for Shared Flows. Not required for deploying proxy -->
                 <apigee.authtype>oauth</apigee.authtype> <!-- only option -->
                 <apigee.bearer>${bearer}</apigee.bearer> <!-- this takes precedence over service account file -->
                 <apigee.serviceaccount.file>${file}</apigee.serviceaccount.file>
@@ -30,7 +30,7 @@
                 <apigee.apiversion>v1</apigee.apiversion>
                 <apigee.org>apigee-x-poc-374912</apigee.org>
                 <apigee.env>prod-poc</apigee.env>
-                <apigee.apitype>sharedflow</apigee.apitype> <!-- This is only for Shared Flows. Not required for deploying proxy -->
+                <apigee.apitype>{apitype}</apigee.apitype> <!-- This is only for Shared Flows. Not required for deploying proxy -->
                 <apigee.authtype>oauth</apigee.authtype> <!-- only option -->
                 <apigee.bearer>${bearer}</apigee.bearer> <!-- this takes precedence over service account file -->
                 <apigee.serviceaccount.file>${file}</apigee.serviceaccount.file>
