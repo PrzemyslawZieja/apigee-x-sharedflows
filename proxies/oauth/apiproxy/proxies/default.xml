@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ProxyEndpoint name="default">
+    <Description/>
+    <FaultRules/>
+    <Flows>
+        <Flow name="RefreshAccessToken">
+            <Description/>
+            <Request>
+                <Step>
+                    <Name>Match-Client-With-App</Name>
+                </Step>
+                <Step>
+                    <FaultRules/>
+                    <Name>RefreshAccessToken</Name>
+                </Step>
+            </Request>
+            <Response>
+                <Step>
+                    <Name>RewriteRefreshToken</Name>
+                </Step>
+            </Response>
+            <Condition>((proxy.pathsuffix MatchesPath "/refresh_token") or ((proxy.pathsuffix MatchesPath "/refresh_accesstoken")) and (request.verb = "POST")</Condition>
+        </Flow>
+        <Flow name="generate-refresh-token">
+            <Request>
+                <Step>
+                    <Name>testregenerate</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/refresh") and (request.verb = "POST")</Condition>
+        </Flow>
+        <Flow name="AccessTokenClientCredential">
+            <Description/>
+            <Request>
+                <Step>
+                    <Name>DecodeBaseAuthHeaders</Name>
+                    <Condition>request.header.Authorization != null</Condition>
+                </Step>
+                <Step>
+                    <Name>Match-Client-With-App</Name>
+                </Step>
+                <Step>
+                    <Name>Add-default-tenant-scope</Name>
+                </Step>
+                <Step>
+                    <Name>GenerateAccessTokenClient</Name>
+                </Step>
+            </Request>
+            <Response>
+                <Step>
+                    <Name>AddHybrisSessionIdFromParam</Name>
+                    <Condition>(request.formparam.session-id = null) and (request.formparam.hybris-session-id != null)</Condition>
+                </Step>
+                <Step>
+                    <Name>debug</Name>
+                    <Condition>(request.formparam.session-id = null) and (request.formparam.hybris-session-id != null)</Condition>
+                </Step>
+                <Step>
+                    <Name>AddSessionIdFromParam</Name>
+                    <Condition>request.formparam.session-id != null</Condition>
+                </Step>
+                <Step>
+                    <Name>RewriteToken</Name>
+                    <Condition>request.formparam.hybris-user-id == null</Condition>
+                </Step>
+                <Step>
+                    <Name>RewriteTokenWithIAM</Name>
+                    <Condition>request.formparam.hybris-user-id != null</Condition>
+                </Step>
+            </Response>
+            <Condition>((proxy.pathsuffix MatchesPath "/token") or (proxy.pathsuffix MatchesPath "/accesstoken")) and (request.verb = "POST")</Condition>
+        </Flow>
+        <Flow name="AccessTokenClientCredentialMinute">
+            <Description/>
+            <Request>
+                <Step>
+                    <Name>Generate1MINUTEAccessTokenClient</Name>
+                </Step>
+            </Request>
+            <Response>
+                <Step>
+                    <Name>RewriteToken</Name>
+                    <Condition>oauthV2.failed = false</Condition>
+                </Step>
+            </Response>
+            <Condition>((proxy.pathsuffix MatchesPath "/minute") and (request.verb = "POST")</Condition>
+        </Flow>
+        <Flow name="RevokeToken">
+            <Description/>
+            <Request>
+                <Step>
+                    <Name>Spike-Arrest</Name>
+                </Step>
+                <Step>
+                    <Name>RevokeToken</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/revoke") and (request.verb = "POST")</Condition>
+        </Flow>
+        <Flow name="Anonymous">
+            <Description/>
+            <Request>
+                <Step>
+                    <Name>Wrong-Grant-Type</Name>
+                    <Condition>request.formparam.grant_type != "client_credentials"</Condition>
+                </Step>
+                <Step>
+                    <Name>Decode-Basic-Auth</Name>
+                    <Condition>request.formparam.client_id == null AND request.formparam.client_secret == null</Condition>
+                </Step>
+                <Step>
+                    <Name>Verify-API-Key</Name>
+                </Step>
+                <Step>
+                    <Name>Add-Tenant-Scope</Name>
+                </Step>
+                <Step>
+                    <Name>GenerateSessionId</Name>
+                    <Condition>request.queryparam.session-id == null</Condition>
+                </Step>
+                <Step>
+                    <Name>Assign-Fake-Username</Name>
+                </Step>
+                <Step>
+                    <Name>Assign-Fake-Password</Name>
+                </Step>
+                <Step>
+                    <Name>Assign-Grant-Type-Paasword</Name>
+                </Step>
+                <Step>
+                    <Name>Generate-Anonymous-Access-Token</Name>
+                </Step>
+            </Request>
+            <Response>
+                <Step>
+                    <Name>Build-Anonymous-Token-Response</Name>
+                </Step>
+            </Response>
+            <Condition>(proxy.pathsuffix MatchesPath "/anonymous/token") and (request.verb = "POST")</Condition>
+        </Flow>
+        <Flow name="Anonymous Refresh">
+            <Description/>
+            <Request>
+                <Step>
+                    <Name>Wrong-Grant-Type</Name>
+                    <Condition>request.formparam.grant_type != "refresh_token"</Condition>
+                </Step>
+                <Step>
+                    <Name>Decode-Basic-Auth</Name>
+                    <Condition>request.formparam.client_id == null AND request.formparam.client_secret == null</Condition>
+                </Step>
+                <Step>
+                    <Name>Verify-API-Key</Name>
+                </Step>
+                <Step>
+                    <Name>Refresh-Anonymous-Access-Token</Name>
+                </Step>
+            </Request>
+            <Response>
+                <Step>
+                    <Name>Build-Refresh-Token-Response</Name>
+                </Step>
+            </Response>
+            <Condition>(proxy.pathsuffix MatchesPath "/anonymous/refresh") and (request.verb = "POST")</Condition>
+        </Flow>
+    </Flows>
+    <HTTPProxyConnection>
+        <BasePath>/oauth</BasePath>
+        <Properties/>
+        <VirtualHost>secure</VirtualHost>
+        <VirtualHost>emporix-vhost</VirtualHost>
+    </HTTPProxyConnection>
+    <RouteRule name="NoRoute"/>
+</ProxyEndpoint>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage async="false" continueOnError="false" enabled="true" name="Build-Refresh-Token-Response">
+    <DisplayName>Build Refresh Token Response</DisplayName>
+    <Set>
+        <Payload contentType="application/json" variableSuffix="%" variablePrefix="$">  
+         {  
+            "access_token": "$oauthv2accesstoken.Refresh-Anonymous-Access-Token.access_token%",  
+            "expires_in": $oauthv2accesstoken.Refresh-Anonymous-Access-Token.expires_in%,
+            "scope": "$oauthv2accesstoken.Refresh-Anonymous-Access-Token.scope%",
+            "refresh_token": "$oauthv2accesstoken.Refresh-Anonymous-Access-Token.refresh_token%",
+            "refresh_token_expires_in": $oauthv2accesstoken.Refresh-Anonymous-Access-Token.refresh_token_expires_in%,
+            "token_type": "Bearer"
+         }  
+ </Payload>
+    </Set>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <AssignTo createNew="false" transport="http" type="request"/>
+</AssignMessage>

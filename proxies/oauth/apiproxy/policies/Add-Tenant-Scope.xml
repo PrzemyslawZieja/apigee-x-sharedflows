@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage async="false" continueOnError="false" enabled="true" name="Add-Tenant-Scope">
+    <DisplayName>Add Tenant Scope</DisplayName>
+    <Properties/>
+    <AssignVariable>
+        <Name>request.formparam.scope</Name>
+        <Template>tenant={verifyapikey.Verify-API-Key.tenant} {request.formparam.scope}</Template>
+    </AssignVariable>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <AssignTo createNew="false" transport="http" type="request"/>
+</AssignMessage>

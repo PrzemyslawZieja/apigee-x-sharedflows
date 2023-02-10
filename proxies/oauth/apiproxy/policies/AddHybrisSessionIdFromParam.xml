@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<SetOAuthV2Info async="false" continueOnError="false" enabled="true" name="AddHybrisSessionIdFromParam">
+    <DisplayName>AddHybrisSessionIdFromParam</DisplayName>
+    <AccessToken ref="oauthv2accesstoken.GenerateAccessTokenClient.access_token"/>
+    <Attributes>
+        <Attribute name="sessionId" ref="request.formparam.hybris-session-id"/>
+    </Attributes>
+</SetOAuthV2Info>

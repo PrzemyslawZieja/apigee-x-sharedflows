@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<OAuthV2 async="false" continueOnError="false" enabled="true" name="Refresh-Anonymous-Access-Token">
+    <DisplayName>Refresh Anonymous Access Token</DisplayName>
+    <Properties/>
+    <Attributes/>
+    <ExternalAuthorization>false</ExternalAuthorization>
+    <Operation>RefreshAccessToken</Operation>
+    <SupportedGrantTypes/>
+    <GenerateResponse enabled="true"/>
+    <GenerateErrorResponse enabled="true"/>
+    <ReuseRefreshToken>false</ReuseRefreshToken>
+    <!--One hour-->
+    <ExpiresIn>3600000</ExpiresIn>
+    <!--30 days-->
+    <RefreshTokenExpiresIn>2592000000</RefreshTokenExpiresIn>
+    <Tokens/>
+</OAuthV2>

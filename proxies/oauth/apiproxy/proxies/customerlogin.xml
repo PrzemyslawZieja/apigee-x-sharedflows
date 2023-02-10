@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ProxyEndpoint name="customerlogin">
+    <Description/>
+    <FaultRules/>
+    <Flows>
+        <Flow name="RefreshAccessToken">
+            <Description/>
+            <Request>
+                <Step>
+                    <FaultRules/>
+                    <Name>RefreshAccessToken</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>((proxy.pathsuffix MatchesPath "/refresh_token") or ((proxy.pathsuffix MatchesPath "/refresh_access_token")) and (request.verb = "POST")</Condition>
+        </Flow>
+        <Flow name="AccessTokenClientCredential">
+            <Description/>
+            <Request>
+                <Step>
+                    <Name>Generate1HOURAccessTokenClient</Name>
+                </Step>
+            </Request>
+            <Response>
+                <Step>
+                    <Name>RewriteToken</Name>
+                    <Condition>oauthV2.failed = false</Condition>
+                </Step>
+            </Response>
+            <Condition>((proxy.pathsuffix MatchesPath "/token") or (proxy.pathsuffix MatchesPath "/accesstoken")) and (request.verb = "POST")</Condition>
+        </Flow>
+        <Flow name="AccessTokenClientCredentialMinute">
+            <Description/>
+            <Request>
+                <Step>
+                    <Name>Generate1MINUTEAccessTokenClient</Name>
+                </Step>
+            </Request>
+            <Response>
+                <Step>
+                    <Name>RewriteToken</Name>
+                    <Condition>oauthV2.failed = false</Condition>
+                </Step>
+            </Response>
+            <Condition>((proxy.pathsuffix MatchesPath "/minute") and (request.verb = "POST")</Condition>
+        </Flow>
+    </Flows>
+    <HTTPProxyConnection>
+        <BasePath>/oauth/customerlogin</BasePath>
+        <Properties/>
+        <VirtualHost>secure</VirtualHost>
+        <VirtualHost>emporix-vhost</VirtualHost>
+    </HTTPProxyConnection>
+    <RouteRule name="NoRoute"/>
+</ProxyEndpoint>
