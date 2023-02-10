@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<SharedFlowBundle name="IAM-scope-callout">
+    <Policies>
+        <Policy>BasicAuth</Policy>
+        <Policy>BasicAuthKVM</Policy>
+        <Policy>Execute-IAM-Request</Policy>
+        <Policy>extractIAMResponse</Policy>
+        <Policy>prepare-IAM-Request</Policy>
+        <Policy>setIAMscopes</Policy>
+    </Policies>
+    <Resources>
+        <Resource>jsc://prepare-IAM-request.js</Resource>
+    </Resources>
+    <Spec></Spec>
+    <subType>SharedFlow</subType>
+    <SharedFlows>
+        <SharedFlow>default</SharedFlow>
+    </SharedFlows>
+</SharedFlowBundle>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ServiceCallout name="Execute-IAM-Request">
+    <DisplayName>Execute-IAM-Request</DisplayName>
+    <Properties/>
+    <Request>
+        <IgnoreUnresolvedVariables>false</IgnoreUnresolvedVariables>
+        <Set>
+            <Headers>
+                <Header name="Authorization">{basicAuth.Authorization}</Header>
+                <Header name="tenant">{IAM.tenant}</Header>
+                <Header name="scopes">iam.scope_read</Header>
+            </Headers>
+        </Set>
+    </Request>
+    <Response>iamResponse</Response>
+    <HTTPTargetConnection>
+        <Properties/>
+        <URL>https://iam.k8s-{IAM.k8sEnvironment}.emporix.io/{IAM.tenant}/users/{IAM.userId}/scopes</URL>
+    </HTTPTargetConnection>
+</ServiceCallout>
