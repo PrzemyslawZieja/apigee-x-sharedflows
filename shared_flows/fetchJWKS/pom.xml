@@ -26,8 +26,8 @@
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>apigee</groupId>
-    <artifactId>fetchJWKS-sharedflow</artifactId>
+    <artifactId>fetchJWKS</artifactId>
     <version>1.0</version>
-    <name>fetchJWKS-sharedflow</name>
+    <name>fetchJWKS</name>
     <packaging>pom</packaging>
 </project>
