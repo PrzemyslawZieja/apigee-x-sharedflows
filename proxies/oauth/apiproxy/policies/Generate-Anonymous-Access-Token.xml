@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<OAuthV2 async="false" continueOnError="false" enabled="true" name="Generate-Anonymous-Access-Token">
+    <DisplayName>Generate Anonymous Access Token</DisplayName>
+    <Properties/>
+    <ExternalAuthorization>false</ExternalAuthorization>
+    <Operation>GenerateAccessToken</Operation>
+    <SupportedGrantTypes>
+        <GrantType>password</GrantType>
+    </SupportedGrantTypes>
+    <Attributes>
+        <Attribute name="user">ANONYMOUS</Attribute>
+        <Attribute name="tenant" ref="verifyapikey.Verify-API-Key.tenant" display="true"/>
+        <Attribute name="clientId" ref="request.formparam.client_id" display="false"/>
+        <Attribute name="sessionId" ref="request.queryparam.session-id" display="true"/>
+    </Attributes>
+    <!--One hour-->
+    <ExpiresIn>3600000</ExpiresIn>
+    <!--30 days-->
+    <RefreshTokenExpiresIn>2592000000</RefreshTokenExpiresIn>
+    <GenerateResponse enabled="false"/>
+    <GrantType>request.formparam.grant_type</GrantType>
+    <UserName>request.formparam.username</UserName>
+    <PassWord>request.formparam.password</PassWord>
+    <Tokens/>
+</OAuthV2>

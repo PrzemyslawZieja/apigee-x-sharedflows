@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage async="false" continueOnError="false" enabled="true" name="Assign-Grant-Type-Paasword">
+    <DisplayName>Assing Fake Password</DisplayName>
+    <AssignVariable>
+        <Name>request.formparam.grant_type</Name>
+        <Template>password</Template>
+    </AssignVariable>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <AssignTo createNew="false" transport="http" type="request"/>
+</AssignMessage>

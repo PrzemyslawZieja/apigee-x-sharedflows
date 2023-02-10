@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<RaiseFault async="false" continueOnError="false" enabled="true" name="Wrong-Grant-Type">
+    <DisplayName>Wrong Grant Type</DisplayName>
+    <Properties/>
+    <FaultResponse>
+        <Set>
+            <Headers/>
+            <Payload contentType="application/json">{"ErrorCode" : "invalid_request", "Error" :"Not supported Grant Type"}</Payload>
+            <StatusCode>400</StatusCode>
+            <ReasonPhrase/>
+        </Set>
+    </FaultResponse>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+</RaiseFault>

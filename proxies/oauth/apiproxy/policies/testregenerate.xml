@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<OAuthV2 name="testregenerate">
+    <DisplayName>testregenerate</DisplayName>
+    <Operation>RefreshAccessToken</Operation>
+    <GenerateResponse enabled="true"/>
+    <ExpiresIn>1800000</ExpiresIn>
+    <Attributes>
+        <Attribute name="sessionId" ref="request.formparam.hybris-session-id"/>
+        <Attribute name="userId" ref="request.formparam.hybris-user-id"/>
+        <Attribute name="user" ref="request.formparam.hybris-user"/>
+    </Attributes>
+    <!-- 30 minutes -->
+    <RefreshTokenExpiresIn>28800000</RefreshTokenExpiresIn>
+    <!-- 8 hours -->
+</OAuthV2>

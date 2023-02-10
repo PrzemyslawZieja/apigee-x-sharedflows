@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<OAuthV2 name="RefreshAccessToken">
+    <Operation>RefreshAccessToken</Operation>
+    <!-- This is in millseconds, so expire in half an hour -->
+    <RefreshToken>request.formparam.refresh_token</RefreshToken>
+    <!--<ExpiresIn>1800000</ExpiresIn>-->
+    <ExpiresIn ref="verifyapikey.Match-Client-With-App.oauth.expires_in">1800000</ExpiresIn>
+    <!--<RefreshTokenExpiresIn ref="verifyapikey.Match-Client-With-App.oauth.refresh_token_expires_in">86400000</RefreshTokenExpiresIn>-->
+    <GrantType>request.formparam.grant_type</GrantType>
+    <Attributes>
+        <Attribute name="sessionId" ref="request.formparam.hybris-session-id"/>
+        <Attribute name="userId" ref="request.formparam.hybris-user-id"/>
+        <Attribute name="user" ref="request.formparam.hybris-user"/>
+    </Attributes>
+    <GenerateResponse/>
+    <ReuseRefreshToken>true</ReuseRefreshToken>
+</OAuthV2>
