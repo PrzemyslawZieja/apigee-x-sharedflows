@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<PopulateCache async="false" continueOnError="false" enabled="true" name="Store-JWKS-in-cache">
+    <DisplayName>Store JWKS in cache</DisplayName>
+    <CacheKey>
+        <KeyFragment ref="cache.auth_id"/>
+    </CacheKey>
+    <CacheResource>jwk_cache</CacheResource>
+    <Scope>Global</Scope>
+    <ExpirySettings>
+        <!--year-->
+        <TimeoutInSeconds>2592000</TimeoutInSeconds>
+    </ExpirySettings>
+    <Source>jwks.response</Source>
+</PopulateCache>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ServiceCallout async="false" continueOnError="false" enabled="true" name="Fetch-JWKS-URI">
+    <DisplayName>Fetch JWKS URI</DisplayName>
+    <Response>jwks_response</Response>
+    <HTTPTargetConnection>
+        <Properties/>
+        <URL>https://{jwks.host}/oauth2/{jwks.auth_id}/{jwks.postfix}</URL>
+        <!--<URL>https://{jwks.host}/oauth2/default/{jwks.postfix}</URL>-->
+    </HTTPTargetConnection>
+</ServiceCallout>

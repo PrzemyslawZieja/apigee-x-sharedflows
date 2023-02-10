@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<SharedFlowBundle name="fetchJWKS">
+    <Policies>
+        <Policy>Check-is-kid-exists</Policy>
+        <Policy>Fetch-JWKS-URI</Policy>
+        <Policy>Lookup-JWKS-from-cache</Policy>
+        <Policy>Normalize-variable-names</Policy>
+        <Policy>PerpareCacheKey</Policy>
+        <Policy>Store-JWKS-in-cache</Policy>
+        <Policy>Store-JWKS-response-content-in-variable</Policy>
+    </Policies>
+    <Resources>
+        <Resource>jsc://PerpareCacheKey.js</Resource>
+        <Resource>jsc://check-is-kid-exists.js</Resource>
+    </Resources>
+    <Spec></Spec>
+    <subType>SharedFlow</subType>
+    <SharedFlows>
+        <SharedFlow>default</SharedFlow>
+    </SharedFlows>
+</SharedFlowBundle>
