@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<SharedFlow name="default">
+    <Step>
+        <Name>BasicAuthKVM</Name>
+    </Step>
+    <Step>
+        <Name>BasicAuth</Name>
+    </Step>
+    <Step>
+        <Name>prepare-IAM-Request</Name>
+    </Step>
+    <Step>
+        <Name>Execute-IAM-Request</Name>
+    </Step>
+    <Step>
+        <Name>extractIAMResponse</Name>
+    </Step>
+    <Step>
+        <Name>setIAMscopes</Name>
+    </Step>
+</SharedFlow>

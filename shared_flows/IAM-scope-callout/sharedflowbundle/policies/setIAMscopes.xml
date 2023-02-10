@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage async="false" continueOnError="false" enabled="true" name="setIAMscopes">
+    <DisplayName>setIAMscopes</DisplayName>
+    <Properties/>
+    <Remove>
+        <Headers>
+            <Header name="scopes"/>
+        </Headers>
+    </Remove>
+    <Add>
+        <Headers>
+            <Header name="scopes">{IAMResponse.scopes}</Header>
+        </Headers>
+    </Add>
+    <AssignTo createNew="false" transport="http" type="request"/>
+</AssignMessage>
