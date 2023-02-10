@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<LookupCache async="false" continueOnError="false" enabled="true" name="Lookup-JWKS-from-cache">
+    <DisplayName>Lookup JWKS from cache</DisplayName>
+    <CacheKey>
+        <KeyFragment ref="cache.auth_id"/>
+    </CacheKey>
+    <CacheLookupTimeoutInSeconds>1</CacheLookupTimeoutInSeconds>
+    <CacheResource>jwk_cache</CacheResource>
+    <Scope>Global</Scope>
+    <AssignTo>jwks_cached_response</AssignTo>
+</LookupCache>
