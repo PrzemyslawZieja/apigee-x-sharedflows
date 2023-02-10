@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage async="false" continueOnError="false" enabled="true" name="Clear-and-set-headers">
+    <DisplayName>Clear and set headers</DisplayName>
+    <Properties/>
+    <!--<Copy source="request">-->
+    <!--    <Headers/>-->
+    <!--    <QueryParams/>-->
+    <!--    <FormParams/>-->
+    <!--    <Payload/>-->
+    <!--    <Verb/>-->
+    <!--    <StatusCode/>-->
+    <!--    <ReasonPhrase/>-->
+    <!--    <Path/>-->
+    <!--</Copy>-->
+    <Remove>
+        <Headers>
+            <Header name="tenant"/>
+            <Header name="hybris-tenant"/>
+            <Header name="hybris-user"/>
+            <Header name="hybris-user-id"/>
+            <Header name="hybris-client"/>
+            <Header name="hybris-client-id"/>
+        </Headers>
+    </Remove>
+    <Add>
+        <Headers>
+            <Header name="tenant">{jwt.verify-JWT-token.claim.tn}</Header>
+            <!--Needed fo redirect to dev flow-->
+            <Header name="hybris-tenant">{jwt.verify-JWT-token.claim.tn}</Header>
+            <Header name="hybris-user">{jwt.verify-JWT-token.claim.uid}</Header>
+            <!--<Header name="hybris-user-id">{accesstoken.userId}</Header>-->
+            <!--<Header name="hybris-client-id">{client_id}</Header>-->
+            <!--<Header name="hybris-session-id">{accesstoken.sessionId}</Header>-->
+            <Header name="hybris-client">{organization.name}.{app_name}</Header>
+        </Headers>
+    </Add>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <AssignTo createNew="false" transport="http" type="request"/>
+</AssignMessage>

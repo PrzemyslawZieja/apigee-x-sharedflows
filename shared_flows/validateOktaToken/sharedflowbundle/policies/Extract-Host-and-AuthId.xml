@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ExtractVariables async="false" continueOnError="false" enabled="true" name="Extract-Host-and-AuthId">
+    <DisplayName>Extract Host and AuthId</DisplayName>
+    <Variable name="jwt.decode-JWT.claim.issuer">
+        <Pattern ignoreCase="true">https://{jwks.host}/oauth2/{jwks.auth_id}</Pattern>
+    </Variable>
+</ExtractVariables>

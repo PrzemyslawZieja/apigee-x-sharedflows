@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<RaiseFault async="false" continueOnError="false" enabled="true" name="Rise-error">
+    <DisplayName>Rise error</DisplayName>
+    <Properties/>
+    <FaultResponse>
+        <Set>
+            <Payload contentType="application/json">
+                { "fault":{ "faultstring":"Invalid Access Token", "detail":{ "errorcode":"keymanagement.service.invalid_access_token" } } }
+            </Payload>
+            <StatusCode>401</StatusCode>
+            <ReasonPhrase>Not authorized</ReasonPhrase>
+        </Set>
+    </FaultResponse>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+</RaiseFault>
