@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<SharedFlow name="default">
+    <Step>
+        <Name>checkIsJwt</Name>
+    </Step>
+    <Step>
+        <Name>bearerSharedAuth</Name>
+        <Condition>is_jwt != true</Condition>
+    </Step>
+    <Step>
+        <Name>validateOktaToken</Name>
+        <Condition>is_jwt == true</Condition>
+    </Step>
+    <Step>
+        <Name>Set-redirect-to-dev-flag</Name>
+        <Condition>environment.name = "dev"</Condition>
+    </Step>
+</SharedFlow>
