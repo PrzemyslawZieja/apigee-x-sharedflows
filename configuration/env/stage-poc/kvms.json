@@ -1,0 +1,15 @@
+[
+    {
+        "entry": [
+            {
+                "name": "basicAuth_username",
+                "value": "yaasproxy"
+            },
+            {
+                "name": "basicAuth_password",
+                "value": "OOO9QGrl58myCcIgo"
+            }
+        ],
+        "name": "environmentVariables"
+    }
+]
