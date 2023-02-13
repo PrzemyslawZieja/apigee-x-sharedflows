@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ExtractVariables async="false" continueOnError="false" enabled="true" name="GetCORS">
+    <DisplayName>GetCORS</DisplayName>
+    <Properties/>
+    <Source>request</Source>
+    <Header name="Access-Control-Request-Headers.values">
+        <Pattern ignoreCase="true">{allowHeaders}</Pattern>
+    </Header>
+    <Header name="Access-Control-Request-Method.values">
+        <Pattern ignoreCase="true">{allowMethods}</Pattern>
+    </Header>
+    <Header name="Origin">
+        <Pattern ignoreCase="true">{origin}</Pattern>
+    </Header>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <VariablePrefix>cors</VariablePrefix>
+</ExtractVariables>
