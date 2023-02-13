@@ -23,13 +23,13 @@
             </properties>
         </profile>
         <profile>
-            <id>prod-poc</id>
+            <id>stage-poc</id>
             <properties>
-                <apigee.profile>prod-poc</apigee.profile>
+                <apigee.profile>stage-poc</apigee.profile>
                 <apigee.hosturl>https://apigee.googleapis.com</apigee.hosturl>
                 <apigee.apiversion>v1</apigee.apiversion>
                 <apigee.org>apigee-x-poc-374912</apigee.org>
-                <apigee.env>prod-poc</apigee.env>
+                <apigee.env>stage-poc</apigee.env>
                 <apigee.apitype>${apitype}</apigee.apitype> <!-- This is only for Shared Flows. Not required for deploying proxy -->
                 <apigee.authtype>oauth</apigee.authtype> <!-- only option -->
                 <apigee.bearer>${bearer}</apigee.bearer> <!-- this takes precedence over service account file -->
@@ -40,9 +40,3 @@
         </profile>
     </profiles>
 </project>
-
-
-
-
-
-
