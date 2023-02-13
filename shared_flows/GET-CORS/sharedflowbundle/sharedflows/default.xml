@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<SharedFlow name="default">
+    <Step>
+        <Name>GetCORS</Name>
+    </Step>
+    <Step>
+        <Name>GetScopes</Name>
+    </Step>
+    <Step>
+        <Name>recordDeprecatedScopes</Name>
+    </Step>
+    <Step>
+        <Condition>(request.header.Content-Type == "application/x-www-form-urlencoded" AND request.header.X-Deprecated-Scopes != null)</Condition>
+        <Name>ReassignScopes</Name>
+    </Step>
+</SharedFlow>
