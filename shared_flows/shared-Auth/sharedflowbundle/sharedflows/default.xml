@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<SharedFlow name="default">
+    <Step>
+        <Name>OAuth-v20-1</Name>
+        <Condition>request.verb != "OPTIONS"</Condition>
+    </Step>
+    <Step>
+        <Name>fetchUserforIAM</Name>
+    </Step>
+    <Step>
+        <Name>Set-hybris-headers-without-scopes</Name>
+        <Condition>request.verb != "OPTIONS"</Condition>
+    </Step>
+    <Step>
+        <Name>RewriteTenant</Name>
+        <Condition>request.verb != "OPTIONS"</Condition>
+    </Step>
+    <Step>
+        <Name>IAM-scope-flow</Name>
+        <Condition>request.verb != "OPTIONS" AND IAM.userId != null</Condition>
+    </Step>
+</SharedFlow>

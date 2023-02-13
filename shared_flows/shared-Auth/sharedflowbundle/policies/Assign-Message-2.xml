@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage async="false" continueOnError="false" enabled="true" name="Assign-Message-2">
+    <DisplayName>Set hybris-headers</DisplayName>
+    <Properties/>
+    <Copy source="request">
+        <Headers/>
+        <QueryParams/>
+        <FormParams/>
+        <Payload/>
+        <Verb/>
+        <StatusCode/>
+        <ReasonPhrase/>
+        <Path/>
+    </Copy>
+    <Remove>
+        <Headers>
+            <Header name="tenant"/>
+            <Header name="hybris-tenant"/>
+            <Header name="hybris-user"/>
+            <Header name="hybris-user-id"/>
+            <Header name="hybris-client"/>
+            <Header name="hybris-client-id"/>
+        </Headers>
+    </Remove>
+    <Add>
+        <Headers>
+            <Header name="hybris-user">{accesstoken.user}</Header>
+            <Header name="hybris-user-id">{accesstoken.userId}</Header>
+            <Header name="hybris-client-id">{client_id}</Header>
+            <Header name="hybris-session-id">{accesstoken.sessionId}</Header>
+            <Header name="session-id">{accesstoken.sessionId}</Header>
+            <Header name="hybris-external-url">https://{request.header.Host}{proxy.basepath}</Header>
+            <Header name="hybris-target-url">https://{request.header.Host}{proxy.basepath}{proxy.pathsuffix}</Header>
+            <Header name="hybris-external-path">{proxy.basepath}</Header>
+            <Header name="hybris-client">{organization.name}.{developer.app.name}</Header>
+        </Headers>
+    </Add>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <AssignTo createNew="false" transport="http" type="request"/>
+</AssignMessage>
