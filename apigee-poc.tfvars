@@ -18,20 +18,25 @@ billing_account = "019F6F-001716-B60DE7"
 project_id      = "apigee-x-poc-374912"
 ax_region       = "europe-west1"
 
-apigee_environments = ["dev-poc", "prod-poc"]
+apigee_environments = ["dev-poc", "stage-poc"]
 
 apigee_instances = {
   euw1-instance = {
     region       = "europe-west1"
     ip_range     = "10.0.0.0/22"
-    environments = ["dev-poc", "prod-poc"]
+    environments = ["dev-poc", "stage-poc"]
   }
 }
 
 apigee_envgroups = {
-  poc-envs = {
-    environments = ["dev-poc", "prod-poc"]
+  stage = {
+    environments = ["stage-poc"]
     hostnames    = ["poc.api.example.com"]
+  }
+
+  dev = {
+    environments = ["dev-poc"]
+    hostnames    = ["dev-poc.api.example.com"]
   }
 }
 
