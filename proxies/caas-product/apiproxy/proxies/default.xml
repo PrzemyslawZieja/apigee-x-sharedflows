@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ProxyEndpoint name="default">
+    <Description/>
+    <FaultRules/>
+    <PreFlow name="PreFlow">
+        <Request>
+            <Step>
+                <Name>sharedAuthWithOkta</Name>
+            </Step>
+        </Request>
+        <Response/>
+    </PreFlow>
+    <PostFlow name="PostFlow">
+        <Request/>
+        <Response/>
+    </PostFlow>
+    <Flows>
+        <Flow name="OptionsPreFlight">
+            <Request/>
+            <Response/>
+            <Condition>request.verb = "OPTIONS" AND request.header.origin != null AND request.header.Access-Control-Request-Method != null</Condition>
+        </Flow>
+        <Flow name="GET/*/products*">
+            <Description/>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/*/products*") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="GET/*/variants*">
+            <Description/>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/*/variants*") and (request.verb = "GET")</Condition>
+        </Flow>
+    </Flows>
+    <HTTPProxyConnection>
+        <BasePath>/caas-product</BasePath>
+        <Properties/>
+    </HTTPProxyConnection>
+    <RouteRule name="NoRoute">
+        <Condition>request.verb = "OPTIONS" AND request.header.origin != null AND request.header.Access-Control-Request-Method != null</Condition>
+    </RouteRule>
+    <RouteRule name="k8s-v2-develop">
+        <Condition>environment.name ~ "dev*" AND !(proxy.pathsuffix MatchesPath "/*/products/*/media2" OR proxy.pathsuffix MatchesPath "/*/products/*/media" OR proxy.pathsuffix MatchesPath "/*/products/*/media**" OR proxy.pathsuffix MatchesPath "/*/products/markantUpdate")</Condition>
+        <TargetEndpoint>k8s-v2-develop</TargetEndpoint>
+    </RouteRule>
+    <RouteRule name="k8s-v2-prod">
+        <Condition>environment.name ~ "prod*" AND !(proxy.pathsuffix MatchesPath "/*/products/*/media2" OR proxy.pathsuffix MatchesPath "/*/products/*/media" OR proxy.pathsuffix MatchesPath "/*/products/*/media**" OR proxy.pathsuffix MatchesPath "/*/products/markantUpdate")</Condition>
+        <TargetEndpoint>k8s-v2-prod</TargetEndpoint>
+    </RouteRule>
+    <RouteRule name="k8s-v2-stage">
+        <Condition>environment.name ~ "stage*" AND !(proxy.pathsuffix MatchesPath "/*/products/*/media2" OR proxy.pathsuffix MatchesPath "/*/products/*/media" OR proxy.pathsuffix MatchesPath "/*/products/*/media**" OR proxy.pathsuffix MatchesPath "/*/products/markantUpdate")</Condition>
+        <TargetEndpoint>k8s-v2-stage</TargetEndpoint>
+    </RouteRule>
+    <RouteRule name="k8s-prod">
+        <Condition>environment.name ~ "prod*"</Condition>
+        <TargetEndpoint>k8s-prod</TargetEndpoint>
+    </RouteRule>
+    <RouteRule name="k8s-develop">
+        <Condition>environment.name ~ "dev*"</Condition>
+        <TargetEndpoint>k8s-develop</TargetEndpoint>
+    </RouteRule>
+    <RouteRule name="default">
+        <TargetEndpoint>k8s-stage</TargetEndpoint>
+    </RouteRule>
+</ProxyEndpoint>
