@@ -19,18 +19,18 @@ For example if we want to have configuration for develop, stage and prod envs, d
 
 ## Deploying configuration
 Apigee configuration plugin can load (every configuration has its json file, see [docs](https://cloud.google.com/apigee/docs/reference/apis/apigee/rest) for files structure):
-| Configuration | file                   |
-|---------------|------------------------|
-| keyvaluemaps  | kvm.json               |
-| targetservers | targetServers.json     |
-| flowhooks     | flowhooks.json         |
-| apiproducts   | apiProducts.json       |
-| developers    | developers.json        |
-| apps          | developerApps.json     |
-| reports       | reports.json           |
-| references    | references.json        |
-| keystores     | keystores.json         |
-| aliases       | aliases.json           |
+| Configuration | file                       |
+|---------------|----------------------------|
+| keyvaluemaps  | kvm.json                   |
+| targetservers | targetServers.json         |
+| flowhooks     | flowhooks.json             |
+| apiproducts   | apiProducts.json (org dir) |
+| developers    | developers.json (org dir)  |
+| apps          | developerApps.json         |
+| reports       | reports.json               |
+| references    | references.json            |
+| keystores     | keystores.json             |
+| aliases       | aliases.json               |
 
 
 In order to deploy the configuration:
