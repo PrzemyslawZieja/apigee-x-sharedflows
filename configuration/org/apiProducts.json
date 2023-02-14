@@ -10,7 +10,7 @@
           "caas-product"
        ],
        "apiResources":[
-          "/caas-product", "/product"
+          "/"
        ],
        "attributes":[
         {
