@@ -10,7 +10,7 @@
     <Response/>
   </PostFlow>
   <HTTPProxyConnection>
-    <BasePath>/test_pz</BasePath>
+    <BasePath>/test_pzz</BasePath>
   </HTTPProxyConnection>
   <RouteRule name="default">
     <TargetEndpoint>default</TargetEndpoint>
