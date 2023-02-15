@@ -1,0 +1,48 @@
+<?xml version="1.0" ?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>apigee</groupId>
+    <artifactId>shared-pom</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0</version>
+    <profiles>
+        <profile>
+            <id>dev-poc</id>
+            <properties>
+                <apigee.profile>dev-poc</apigee.profile>
+                <apigee.hosturl>https://apigee.googleapis.com</apigee.hosturl>
+                <apigee.apiversion>v1</apigee.apiversion>
+                <apigee.org>apigee-x-poc-374912</apigee.org>
+                <apigee.env>dev-poc</apigee.env>
+                <apigee.apitype>${apitype}</apigee.apitype> <!-- This is only for Shared Flows. Not required for deploying proxy -->
+                <apigee.authtype>oauth</apigee.authtype> <!-- only option -->
+                <apigee.bearer>${bearer}</apigee.bearer> <!-- this takes precedence over service account file -->
+                <apigee.serviceaccount.file>${file}</apigee.serviceaccount.file>
+                <apigee.options>override</apigee.options> <!-- override is default. Other options are async|clean-->
+                <apigee.googletoken.email>${googleTokenEmail}</apigee.googletoken.email> <!-- Available in Apigee X and Apigee hybrid 1.6 + -->
+            </properties>
+        </profile>
+        <profile>
+            <id>prod-poc</id>
+            <properties>
+                <apigee.profile>prod-poc</apigee.profile>
+                <apigee.hosturl>https://apigee.googleapis.com</apigee.hosturl>
+                <apigee.apiversion>v1</apigee.apiversion>
+                <apigee.org>apigee-x-poc-374912</apigee.org>
+                <apigee.env>prod-poc</apigee.env>
+                <apigee.apitype>${apitype}</apigee.apitype> <!-- This is only for Shared Flows. Not required for deploying proxy -->
+                <apigee.authtype>oauth</apigee.authtype> <!-- only option -->
+                <apigee.bearer>${bearer}</apigee.bearer> <!-- this takes precedence over service account file -->
+                <apigee.serviceaccount.file>${file}</apigee.serviceaccount.file>
+                <apigee.options>override</apigee.options> <!-- override is default. Other options are async|clean-->
+                <apigee.googletoken.email>${googleTokenEmail}</apigee.googletoken.email> <!-- Available in Apigee X and Apigee hybrid 1.6 + -->
+            </properties>
+        </profile>
+    </profiles>
+</project>
+
+
+
+
+
+

@@ -1,7 +1,1 @@
-.terraform
-*-gcp.json
-*.tfstate
-*.key
-*.pem
-.DS_Store
-.idea
+.vscode
