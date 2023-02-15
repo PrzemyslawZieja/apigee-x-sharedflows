@@ -27,9 +27,19 @@ locals {
   domains    = concat([local.hostname], local.subdomains)
 }
 
+resource "random_id" "certificate_name" {
+  byte_length = 4
+  prefix      = "${local.certname}-"
+}
+
 resource "google_compute_managed_ssl_certificate" "google_cert" {
   project = var.project_id
-  name    = local.certname
+  name    = random_id.certificate_name.dec
+  
+  lifecycle {
+    create_before_destroy = true
+  }
+
   managed {
     domains = local.domains
   }
