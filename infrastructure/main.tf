@@ -92,3 +92,8 @@ module "mig-l7xlb" {
   ssl_certificate = module.nip-development-hostname.ssl_certificate
   external_ip     = module.nip-development-hostname.ip_address
 }
+
+module "cloud-build" {
+  source     = "./modules/cloud-build/proxy"
+  proxy-name = "oauth"
+}
