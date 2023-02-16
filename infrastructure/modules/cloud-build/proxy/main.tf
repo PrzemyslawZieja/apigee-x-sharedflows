@@ -12,7 +12,7 @@ resource "google_cloudbuild_trigger" "apigee-proxy-deploy-trigger" {
         }
     }
 
-    included_files = ["proxies/test_pz/**"]
+    included_files = ["proxies/${var.proxy-name}/**"]
 
     build {
         step {
@@ -25,8 +25,15 @@ resource "google_cloudbuild_trigger" "apigee-proxy-deploy-trigger" {
         step {
             name = "maven:3.3-jdk-8"
             args = ["clean", "install", "-Pdev-poc", "-Dfile=../../key.json"]
-            dir  = "proxies/test_pz"
+            dir  = "proxies/${var.proxy-name}"
             entrypoint = "mvn"
+        }
+
+        available_secrets {
+            secret_manager {
+                env = "APIGEE_CD_KEY"
+                version_name = "projects/1012847900619/secrets/apigee-cicd-test-key/versions/latest"
+            }
         }
     }
 }
