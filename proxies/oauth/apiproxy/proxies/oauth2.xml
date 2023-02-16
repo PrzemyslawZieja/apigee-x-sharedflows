@@ -52,8 +52,6 @@
     <HTTPProxyConnection>
         <BasePath>/oauth2</BasePath>
         <Properties/>
-        <VirtualHost>secure</VirtualHost>
-        <VirtualHost>emporix-vhost</VirtualHost>
     </HTTPProxyConnection>
     <RouteRule name="NoRoute"/>
 </ProxyEndpoint>

@@ -48,8 +48,6 @@
     <HTTPProxyConnection>
         <BasePath>/oauth/customerlogin</BasePath>
         <Properties/>
-        <VirtualHost>secure</VirtualHost>
-        <VirtualHost>emporix-vhost</VirtualHost>
     </HTTPProxyConnection>
     <RouteRule name="NoRoute"/>
 </ProxyEndpoint>
