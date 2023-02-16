@@ -31,12 +31,12 @@ apigee_instances = {
 apigee_envgroups = {
   stage = {
     environments = ["stage-poc"]
-    hostnames    = ["poc.api.example.com"]
+    hostnames    = ["apigeex-stage-api.emporix.io"]
   }
 
   dev = {
     environments = ["dev-poc"]
-    hostnames    = ["dev-poc.api.example.com"]
+    hostnames    = ["apigeex-dev-api.emporix.io"]
   }
 }
 
