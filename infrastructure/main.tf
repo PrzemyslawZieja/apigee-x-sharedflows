@@ -95,5 +95,6 @@ module "mig-l7xlb" {
 
 module "cloud-build" {
   source     = "./modules/cloud-build/proxy"
-  proxy-name = "oauth"
+  proxy-name = "test-pz"
+  project    = var.project_id
 }
