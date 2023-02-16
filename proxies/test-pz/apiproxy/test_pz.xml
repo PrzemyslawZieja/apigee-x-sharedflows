@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <APIProxy name="test_pz">
-  <BasePaths>/test_pz</BasePaths>
+  <BasePaths>/test_pz2</BasePaths>
   <Description/>
   <DisplayName/>
   <ProxyEndpoints>
