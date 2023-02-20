@@ -17,8 +17,8 @@
 
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>apigee</groupId>
-	<artifactId>test_pz</artifactId>
-	<version>2.0</version>
-	<name>test_pz</name>
+	<artifactId>test-pz</artifactId>
+	<version>2.1</version>
+	<name>test-pz</name>
 	<packaging>pom</packaging>
 </project>
