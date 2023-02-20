@@ -2,24 +2,12 @@
     {
         "entry": [
             {
-                "name": "COMPANY",
-                "value": "example.com"
-            },
-            {
-                "name": "PREFIX",
-                "value": "EXMPL"
-            }
-        ],
-        "name": "kvm1"
-    }, {
-        "entry": [
-            {
                 "name": "basicAuth_username",
-                "value": "ddd"
+                "value": "__secret__"
             },
             {
                 "name": "basicAuth_password",
-                "value": "ddd"
+                "value": "__secret__"
             }
         ],
         "name": "environmentVariables"

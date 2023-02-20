@@ -3,11 +3,11 @@
         "entry": [
             {
                 "name": "basicAuth_username",
-                "value": "yaasproxy"
+                "value": "__secret__"
             },
             {
                 "name": "basicAuth_password",
-                "value": "OOO9QGrl58myCcIgo"
+                "value": "__secret__"
             }
         ],
         "name": "environmentVariables"
