@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<SharedFlowBundle name="sharedAuthWithOkta">
+    <Policies>
+        <Policy>Set-redirect-to-dev-flag</Policy>
+        <Policy>Tenants-Statistics</Policy>
+        <Policy>bearerSharedAuth</Policy>
+        <Policy>checkIsJwt</Policy>
+        <Policy>validateOktaToken</Policy>
+    </Policies>
+    <Resources>
+        <Resource>jsc://check-is-jwt.js</Resource>
+    </Resources>
+    <Spec></Spec>
+    <subType>SharedFlow</subType>
+    <SharedFlows>
+        <SharedFlow>default</SharedFlow>
+    </SharedFlows>
+</SharedFlowBundle>

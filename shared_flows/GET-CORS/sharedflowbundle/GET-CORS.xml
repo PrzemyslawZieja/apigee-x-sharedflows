@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<SharedFlowBundle name="GET-CORS">
+    <Policies>
+        <Policy>GetCORS</Policy>
+        <Policy>GetScopes</Policy>
+        <Policy>ReassignScopes</Policy>
+        <Policy>recordDeprecatedScopes</Policy>
+    </Policies>
+    <Resources>
+        <Resource>jsc://deprecatedScopes.js</Resource>
+    </Resources>
+    <Spec></Spec>
+    <subType>SharedFlow</subType>
+    <SharedFlows>
+        <SharedFlow>default</SharedFlow>
+    </SharedFlows>
+</SharedFlowBundle>

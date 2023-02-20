@@ -1,0 +1,33 @@
+[
+    {
+       "name":"caas-product",
+       "displayName":"product",
+       "approvalType":"auto",
+       "environments":[
+          "stage-poc"
+       ],
+       "proxies":[
+          "caas-product"
+       ],
+       "apiResources":[
+          "/"
+       ],
+       "attributes":[
+        {
+            "name": "access",
+            "value": "private"
+        }
+       ],
+       "scopes":[
+           "product.product_create",
+           "product.product_delete",
+           "product.product_delete_all",
+           "product.product_publish",
+           "product.product_read_unpublished",
+           "product.product_template_manage",
+           "product.product_template_read",
+           "product.product_unpublish",
+           "product.product_update"
+       ]
+    }
+]

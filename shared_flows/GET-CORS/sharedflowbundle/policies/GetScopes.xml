@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ExtractVariables async="false" continueOnError="true" enabled="true" name="GetScopes">
+    <DisplayName>GetScopes</DisplayName>
+    <Properties/>
+    <Source>request</Source>
+    <FormParam name="scope">
+        <Pattern>{scope}</Pattern>
+    </FormParam>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <VariablePrefix>emporixScopes</VariablePrefix>
+</ExtractVariables>

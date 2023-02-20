@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ExtractVariables name="extractIAMResponse">
+    <DisplayName>ExtractIAMResponse</DisplayName>
+    <Source>iamResponse</Source>
+    <VariablePrefix>IAMResponse</VariablePrefix>
+    <JSONPayload>
+        <Variable name="scopes">
+            <JSONPath>$.scopes</JSONPath>
+        </Variable>
+    </JSONPayload>
+</ExtractVariables>

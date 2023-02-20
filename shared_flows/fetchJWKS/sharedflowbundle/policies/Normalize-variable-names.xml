@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage async="false" continueOnError="false" enabled="true" name="Normalize-variable-names">
+    <DisplayName>Normalize variable names</DisplayName>
+    <AssignVariable>
+        <Name>jwks.response</Name>
+        <Ref>jwks_cached_response</Ref>
+    </AssignVariable>
+</AssignMessage>

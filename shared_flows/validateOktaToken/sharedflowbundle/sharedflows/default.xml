@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<SharedFlow name="default">
+    <Step>
+        <Name>getKvmVariables</Name>
+    </Step>
+    <Step>
+        <Name>decode-JWT</Name>
+    </Step>
+    <Step>
+        <Name>Extract-Host-and-AuthId</Name>
+    </Step>
+    <Step>
+        <Name>Extract-Host</Name>
+        <Condition>jwks.auth_id == null </Condition>
+    </Step>
+    <Step>
+        <Name>Validate-trusted-domain</Name>
+    </Step>
+    <Step>
+        <Name>Fetch-JWKS</Name>
+        <Condition>jwt_isValid = true AND jwks.auth_id != null</Condition>
+    </Step>
+    <Step>
+        <Name>verify-JWT-token</Name>
+        <Condition>jwt_isValid = true AND jwks.auth_id != null</Condition>
+    </Step>
+    <Step>
+        <Name>Rise-error</Name>
+        <Condition>jwt_isValid != true </Condition>
+    </Step>
+    <Step>
+        <Name>IAMscopes</Name>
+        <Condition>jwks.auth_id != null AND jwt.verify-JWT-token.claim.tn != null </Condition>
+    </Step>
+    <Step>
+        <Name>Clear-and-set-headers</Name>
+    </Step>
+</SharedFlow>

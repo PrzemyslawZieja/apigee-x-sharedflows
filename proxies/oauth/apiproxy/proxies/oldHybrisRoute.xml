@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ProxyEndpoint name="oldHybrisRoute">
+    <Description/>
+    <FaultRules/>
+    <Flows>
+        <Flow name="RefreshAccessToken">
+            <Description/>
+            <Request>
+                <Step>
+                    <FaultRules/>
+                    <Name>RefreshAccessToken</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>((proxy.pathsuffix MatchesPath "/refresh_token") or ((proxy.pathsuffix MatchesPath "/refresh_access_token")) and (request.verb = "POST")</Condition>
+        </Flow>
+        <Flow name="AccessTokenClientCredential">
+            <Description/>
+            <Request>
+                <Step>
+                    <FaultRules/>
+                    <Name>GenerateAccessTokenClient</Name>
+                </Step>
+            </Request>
+            <Response>
+                <Step>
+                    <Name>RewriteToken</Name>
+                    <Condition>oauthV2.failed = false</Condition>
+                </Step>
+            </Response>
+            <Condition>((proxy.pathsuffix MatchesPath "/token") or (proxy.pathsuffix MatchesPath "/accesstoken")) and (request.verb = "POST")</Condition>
+        </Flow>
+    </Flows>
+    <HTTPProxyConnection>
+        <BasePath>/hybris/oauth2/v1</BasePath>
+        <Properties/>
+    </HTTPProxyConnection>
+    <RouteRule name="NoRoute"/>
+</ProxyEndpoint>

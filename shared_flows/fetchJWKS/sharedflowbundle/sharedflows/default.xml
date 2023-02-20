@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<SharedFlow name="default">
+    <Step>
+        <Name>PerpareCacheKey</Name>
+    </Step>
+    <Step>
+        <Name>Lookup-JWKS-from-cache</Name>
+    </Step>
+    <Step>
+        <Name>Check-is-kid-exists</Name>
+    </Step>
+    <Step>
+        <Name>Fetch-JWKS-URI</Name>
+        <Condition>cache_hit = false</Condition>
+    </Step>
+    <Step>
+        <Name>Store-JWKS-response-content-in-variable</Name>
+        <Condition>cache_hit = false</Condition>
+    </Step>
+    <Step>
+        <Name>Store-JWKS-in-cache</Name>
+        <Condition>cache_hit = false</Condition>
+    </Step>
+    <Step>
+        <Name>Normalize-variable-names</Name>
+        <Condition>jwks_cached_response != null</Condition>
+    </Step>
+</SharedFlow>
