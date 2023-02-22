@@ -7,7 +7,7 @@
             </Step>
             <Step>
                 <Name>verifyScopes</Name>
-                <Condition>(request.header.scopes Matches "**cxp**")</Condition>
+                <Condition>!(IAMResponse.scopes Matches "**cxp**")</Condition>
             </Step>
         </Request>
         <Response/>
