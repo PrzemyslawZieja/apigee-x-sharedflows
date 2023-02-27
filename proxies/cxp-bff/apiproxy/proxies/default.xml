@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ProxyEndpoint name="default">
+    <PreFlow name="PreFlow">
+        <Request>
+            <Step>
+                <Name>sharedAuthWithOkta</Name>
+            </Step>
+            <Step>
+                <Name>verifyScopes</Name>
+                <Condition>!(IAMResponse.scopes Matches "**cxp**")</Condition>
+            </Step>
+        </Request>
+        <Response/>
+    </PreFlow>
+    <Flows/>
+    <PostFlow name="PostFlow">
+        <Request/>
+        <Response/>
+    </PostFlow>
+    <HTTPProxyConnection>
+        <BasePath>/cxp-bff</BasePath>
+    </HTTPProxyConnection>
+    <RouteRule name="k8s-prod">
+        <Condition>environment.name ~ "prod*"</Condition>
+        <TargetEndpoint>k8s-prod</TargetEndpoint>
+    </RouteRule>
+    <RouteRule name="k8s-stage">
+        <Condition>environment.name ~ "stage*"</Condition>
+        <TargetEndpoint>k8s-stage</TargetEndpoint>
+    </RouteRule>
+    <RouteRule name="default">
+        <TargetEndpoint>k8s-develop</TargetEndpoint>
+    </RouteRule>
+</ProxyEndpoint>

@@ -11,5 +11,17 @@
             }
         ],
         "name": "environmentVariables"
+    }, {
+        "entry": [
+            {
+                "name": "jwks_postfix",
+                "value": "v1/keys"
+            },
+            {
+                "name": "trusted_domains",
+                "value": "auth-dev.emporix.io,auth-stage.emporix.io,auth-test.emporix.io"
+            }
+        ],
+        "name": "oktaVariables"
     }
 ]
