@@ -8,20 +8,20 @@ steps:
     args:
       - '-c'
       - >
-        /go/bin/jsonnet \
-        --ext-str clientID="clientID" \
-        --ext-str clientSecret="clientSecret" \
-        --ext-str saasTokenKey="saasTokenKey" \
-        --ext-str user="$$BASIC_AUTH_USER" \
-        --ext-str password="$$BASIC_AUTH_PASSWORD" \
-        --ext-str hubSpotSignature="hubSpotSignature" \
-        --ext-str icecat_basicAuth_password="icecat_basicAuth_password" \
-        --ext-str basicAuth_username="basicAuth_username" \
-        --ext-str okta_basicAuth="okta_basicAuth" \
-        --ext-str aesIv="aesIv" \
-        --ext-str aesKey="aesKey" \
-        --ext-str tokenPublicKey="tokenPublicKey" \
-        kvms.jsonnet \
+        /go/bin/jsonnet 
+        --ext-str clientID="clientID" 
+        --ext-str clientSecret="clientSecret" 
+        --ext-str saasTokenKey="saasTokenKey" 
+        --ext-str user="$$BASIC_AUTH_USER" 
+        --ext-str password="$$BASIC_AUTH_PASSWORD" 
+        --ext-str hubSpotSignature="hubSpotSignature" 
+        --ext-str icecat_basicAuth_password="icecat_basicAuth_password" 
+        --ext-str basicAuth_username="basicAuth_username" 
+        --ext-str okta_basicAuth="okta_basicAuth" 
+        --ext-str aesIv="aesIv" 
+        --ext-str aesKey="aesKey" 
+        --ext-str tokenPublicKey="tokenPublicKey" 
+        kvms.jsonnet 
         -o kvms.json
     dir: configuration/env/dev-poc
     entrypoint: /bin/bash
