@@ -1,0 +1,62 @@
+steps:
+  - name: golang
+    args:
+      - install
+      - github.com/google/go-jsonnet/cmd/jsonnet@latest
+    entrypoint: go
+  - name: golang
+    args:
+      - '-c'
+      - >
+        /go/bin/jsonnet \
+        --ext-str clientID="clientID" \
+        --ext-str clientSecret="clientSecret" \
+        --ext-str saasTokenKey="saasTokenKey" \
+        --ext-str user="$$BASIC_AUTH_USER" \
+        --ext-str password="$$BASIC_AUTH_PASSWORD" \
+        --ext-str hubSpotSignature="hubSpotSignature" \
+        --ext-str icecat_basicAuth_password="icecat_basicAuth_password" \
+        --ext-str basicAuth_username="basicAuth_username" \
+        --ext-str okta_basicAuth="okta_basicAuth" \
+        --ext-str aesIv="aesIv" \
+        --ext-str aesKey="aesKey" \
+        --ext-str tokenPublicKey="tokenPublicKey" \
+        kvms.jsonnet \
+        -o kvms.json
+    dir: configuration/env/dev-poc
+    entrypoint: /bin/bash
+    secretEnv:
+      - BASIC_AUTH_USER
+      - BASIC_AUTH_PASSWORD
+  - name: gcr.io/google.com/cloudsdktool/cloud-sdk
+    args:
+      - '-c'
+      - |
+        echo -n $$APIGEE_CD_KEY > key.json
+    entrypoint: /bin/bash
+    secretEnv:
+      - APIGEE_CD_KEY
+  - name: 'maven:3.3-jdk-8'
+    args:
+      - clean
+      - install
+      - '-Dfile=../key.json'
+      - '-Pdev-poc'
+      - '-Dapigee.config.dir=.'
+      - '-Dapigee.config.options=update'
+    dir: configuration
+    entrypoint: mvn
+options:
+  volumes:
+    - name: go-modules
+      path: /go
+availableSecrets:
+  secretManager:
+    - versionName: projects/1012847900619/secrets/apigee-cicd-test-key/versions/latest
+      env: APIGEE_CD_KEY
+    - versionName: >-
+        projects/1012847900619/secrets/apigee-cicd-basicAuth-user/versions/latest
+      env: BASIC_AUTH_USER
+    - versionName: >-
+        projects/1012847900619/secrets/apigee-cicd-basicAuth-password/versions/latest
+      env: BASIC_AUTH_PASSWORD
