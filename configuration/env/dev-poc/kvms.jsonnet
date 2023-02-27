@@ -1,6 +1,6 @@
 [
     {
-        "name": "apigeeCredentials"
+        "name": "apigeeCredentials",
         "entry": [
             {
                 "name": "clientID",
@@ -14,10 +14,10 @@
                 "name": "saasTokenKey",
                 "value": std.extVar("saasTokenKey")
             }
-        ],
+        ]
     },
     {
-        "name": "environmentVariables"
+        "name": "environmentVariables",
         "entry": [
             {
                 "name": "basicAuth_username",
@@ -27,19 +27,19 @@
                 "name": "basicAuth_password",
                 "value": std.extVar("password")
             }
-        ],
+        ]
     },
     {
-        "name": "hubSpot"
+        "name": "hubSpot",
         "entry": [
             {
                 "name": "hubSpotSignature",
                 "value": std.extVar("hubSpotSignature")
             }
-        ],
+        ]
     },
     {
-        "name": "icecatVariables"
+        "name": "icecatVariables",
         "entry": [
             {
                 "name": "basicAuth_password",
@@ -49,19 +49,19 @@
                 "name": "basicAuth_username",
                 "value": std.extVar("basicAuth_username")
             }
-        ],
+        ]
     },
     {
-        "name": "oktaBasicAuth"
+        "name": "oktaBasicAuth",
         "entry": [
             {
                 "name": "basicAuth",
                 "value": std.extVar("okta_basicAuth")
             }
-        ],
+        ]
     },
     {
-        "name": "socialLogin"
+        "name": "socialLogin",
         "entry": [
             {
                 "name": "aesIv",
@@ -75,6 +75,6 @@
                 "name": "tokenPublicKey",
                 "value": std.extVar("tokenPublicKey")
             }
-        ],
+        ]
     }
 ]
