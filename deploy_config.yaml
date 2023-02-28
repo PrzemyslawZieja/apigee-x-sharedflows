@@ -9,25 +9,35 @@ steps:
       - '-c'
       - >
         /go/bin/jsonnet 
-        --ext-str clientID="clientID" 
-        --ext-str clientSecret="clientSecret" 
-        --ext-str saasTokenKey="saasTokenKey" 
+        --ext-str clientID="$$CLIENT_ID" 
+        --ext-str clientSecret="$$CLIENT_SECRET" 
+        --ext-str saasTokenKey="$$SAAS_TOKEN_KEY" 
         --ext-str user="$$BASIC_AUTH_USER" 
         --ext-str password="$$BASIC_AUTH_PASSWORD" 
-        --ext-str hubSpotSignature="hubSpotSignature" 
-        --ext-str icecat_basicAuth_password="icecat_basicAuth_password" 
-        --ext-str basicAuth_username="basicAuth_username" 
-        --ext-str okta_basicAuth="okta_basicAuth" 
-        --ext-str aesIv="aesIv" 
-        --ext-str aesKey="aesKey" 
-        --ext-str tokenPublicKey="tokenPublicKey" 
+        --ext-str hubSpotSignature="$$HUBSPOT_SIGNATURE" 
+        --ext-str icecat_basicAuth_password="$$ICECAT_BASIC_AUTH_USERNAME" 
+        --ext-str basicAuth_username="$$ICECAT_BASIC_AUTH_PASSWORD" 
+        --ext-str okta_basicAuth="$$OKTA_BASIC_AUTH" 
+        --ext-str aesIv="$$AES_IV" 
+        --ext-str aesKey="$$AES_KEY" 
+        --ext-str tokenPublicKey="$$TOKEN_PUBLIC_KEY" 
         kvms.jsonnet 
         -o kvms.json
     dir: configuration/env/dev-poc
     entrypoint: /bin/bash
     secretEnv:
+      - CLIENT_ID
+      - CLIENT_SECRET
+      - SAAS_TOKEN_KEY
       - BASIC_AUTH_USER
       - BASIC_AUTH_PASSWORD
+      - HUBSPOT_SIGNATURE
+      - ICECAT_BASIC_AUTH_USERNAME
+      - ICECAT_BASIC_AUTH_PASSWORD
+      - OKTA_BASIC_AUTH
+      - AES_IV
+      - AES_KEY
+      - TOKEN_PUBLIC_KEY
   - name: gcr.io/google.com/cloudsdktool/cloud-sdk
     args:
       - '-c'
@@ -54,9 +64,27 @@ availableSecrets:
   secretManager:
     - versionName: projects/1012847900619/secrets/apigee-cicd-test-key/versions/latest
       env: APIGEE_CD_KEY
-    - versionName: >-
-        projects/1012847900619/secrets/apigee-cicd-basicAuth-user/versions/latest
+    - versionName: projects/1012847900619/secrets/apigee-cicd-basicAuth-user/versions/latest
       env: BASIC_AUTH_USER
-    - versionName: >-
-        projects/1012847900619/secrets/apigee-cicd-basicAuth-password/versions/latest
+    - versionName: projects/1012847900619/secrets/apigee-cicd-basicAuth-password/versions/latest
       env: BASIC_AUTH_PASSWORD
+    - versionName: projects/1012847900619/secrets/apigee-cicd-clientId/versions/latest
+      env: CLIENT_ID
+    - versionName: projects/1012847900619/secrets/apigee-cicd-clientSecret/versions/latest
+      env: CLIENT_SECRET
+    - versionName: projects/1012847900619/secrets/apigee-cicd-saasTokenKey/versions/latest
+      env: SAAS_TOKEN_KEY
+    - versionName: projects/1012847900619/secrets/apigee-cicd-hubSpotSignature/versions/latest
+      env: HUBSPOT_SIGNATURE
+    - versionName: projects/1012847900619/secrets/apigee-cicd-icecat-basicAuth-username/versions/latest
+      env: ICECAT_BASIC_AUTH_USERNAME
+    - versionName: projects/1012847900619/secrets/apigee-cicd-icecat-basicAuth-password/versions/latest
+      env: ICECAT_BASIC_AUTH_PASSWORD
+    - versionName: projects/1012847900619/secrets/apigee-cicd-okta-basicAuth/versions/latest
+      env: OKTA_BASIC_AUTH
+    - versionName: projects/1012847900619/secrets/apigee-cicd-aesIv/versions/latest
+      env: AES_IV
+    - versionName: projects/1012847900619/secrets/apigee-cicd-aesKey/versions/latest
+      env: AES_KEY
+    - versionName: projects/1012847900619/secrets/apigee-cicd-tokenPublicKey/versions/latest
+      env: TOKEN_PUBLIC_KEY
