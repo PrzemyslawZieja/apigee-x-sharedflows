@@ -76,5 +76,39 @@
                 "value": std.extVar("tokenPublicKey")
             }
         ]
+    },
+    {
+        "name": "backofficeRoles2Scopes",
+        "entry": [
+            {
+                "name": "0oa1qvzni8XxBAxd90x7",
+                "value": std.extVar("BA")
+            },
+            {
+                "name": "0oa1qvzni8XxBMxd90x7",
+                "value": std.extVar("BM")
+            },
+            {
+                "name": "0oa1qvzni8XxBUxd90x7",
+                "value": std.extVar("BU")
+            },
+            {
+                "name": "0oa1qvzni8XxSUxd90x7",
+                "value": std.extVar("SU")
+            }
+        ]
+    },
+    {
+        "name": "oktaVariables",
+        "entry": [
+            {
+                "name": "jwks_postfix",
+                "value": std.extVar("jwks_postfix")
+            },
+            {
+                "name": "trusted_domains",
+                "value": std.extVar("trusted_domains")
+            }
+        ]
     }
 ]
