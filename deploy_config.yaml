@@ -88,3 +88,15 @@ availableSecrets:
       env: AES_KEY
     - versionName: projects/1012847900619/secrets/apigee-cicd-tokenPublicKey/versions/latest
       env: TOKEN_PUBLIC_KEY
+    - versionName: projects/1012847900619/secrets/apigee-cicd-0oa1qvzni8XxBAxd90x7/versions/latest
+      env: BOR2S_BA
+    - versionName: projects/1012847900619/secrets/apigee-cicd-0oa1qvzni8XxBMxd90x7/versions/latest
+      env: BOR2S_BM
+    - versionName: projects/1012847900619/secrets/apigee-cicd-0oa1qvzni8XxSUxd90x7/versions/latest
+      env: BOR2S_SU
+    - versionName: projects/1012847900619/secrets/apigee-cicd-0oa1qvzni8XxBUxd90x7/versions/latest
+      env: BOR2S_BU
+    - versionName: projects/1012847900619/secrets/apigee-cicd-trusted_domains/versions/latest
+      env: TRUSTED_DOMAINS
+    - versionName: projects/1012847900619/secrets/apigee-cicd-jwks_postfix/versions/latest
+      env: JWKS_POSTFIX
