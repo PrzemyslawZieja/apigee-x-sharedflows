@@ -21,6 +21,12 @@ steps:
         --ext-str aesIv="$$AES_IV" 
         --ext-str aesKey="$$AES_KEY" 
         --ext-str tokenPublicKey="$$TOKEN_PUBLIC_KEY" 
+        --ext-str BA="$$BOR2S_BA"
+        --ext-str BM="$$BOR2S_BM"
+        --ext-str BU="$$BOR2S_BU"
+        --ext-str SU="$$BOR2S_SU"
+        --ext-str jwks_postfix="$$TRUSTED_DOMAINS"
+        --ext-str trusted_domains="$$JWKS_POSTFIX"
         kvms.jsonnet 
         -o kvms.json
     dir: configuration/env/dev-poc
@@ -38,6 +44,12 @@ steps:
       - AES_IV
       - AES_KEY
       - TOKEN_PUBLIC_KEY
+      - BOR2S_BA
+      - BOR2S_BM
+      - BOR2S_SU
+      - BOR2S_BU
+      - TRUSTED_DOMAINS
+      - JWKS_POSTFIX
   - name: gcr.io/google.com/cloudsdktool/cloud-sdk
     args:
       - '-c'
