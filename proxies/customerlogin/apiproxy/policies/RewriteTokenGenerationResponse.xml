@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage async="false" continueOnError="false" enabled="true" name="RewriteTokenGenerationResponse">
+    <DisplayName>RewriteTokenGenerationResponse</DisplayName>
+    <Properties/>
+    <Copy source="response">
+        <Headers/>
+        <QueryParams/>
+        <FormParams/>
+        <Payload/>
+        <Verb/>
+        <StatusCode/>
+        <ReasonPhrase/>
+        <Path/>
+    </Copy>
+    <Set>
+        <Headers/>
+        <QueryParams/>
+        <FormParams/>
+        <!-- <Verb>GET</Verb> -->
+        <Path/>
+        <Payload contentType="application/json" variableSuffix="%" variablePrefix="$">  
+ {  
+    "token_type": "Bearer" ,  
+    "access_token" : "$oauthv2accesstoken.GenerateAnonymousToken.access_token%"  ,  
+    "expires_in" : $oauthv2accesstoken.GenerateAnonymousToken.expires_in%,
+    "sessionId": "$oauthv2accesstoken.GenerateAnonymousToken.sessionId%",
+    "scope" : "$oauthv2accesstoken.GenerateAnonymousToken.scope%"
+ }  
+ </Payload>
+    </Set>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <AssignTo createNew="true" transport="http" type="request"/>
+</AssignMessage>

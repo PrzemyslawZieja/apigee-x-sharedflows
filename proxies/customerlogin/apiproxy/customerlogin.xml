@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<APIProxy name="customerlogin">
+    <Basepaths>/oauth/client_credential</Basepaths>
+    <Description>An API proxy that enforces OAuth 2.0 Client Credential Grant flow</Description>
+    <Policies>
+        <Policy>BasicAuth</Policy>
+        <Policy>BuildTenantScope</Policy>
+        <Policy>ExecuteSessionContextRequest</Policy>
+        <Policy>ExtractAnonymousTokenInfo</Policy>
+        <Policy>ExtractSessionContextResponse</Policy>
+        <Policy>ExtractSessionId</Policy>
+        <Policy>GenerateAnonymousToken</Policy>
+        <Policy>GetTenantClientSecret</Policy>
+        <Policy>HandleAnonymousSessionNotFound</Policy>
+        <Policy>HandleInvalidTenantRequest</Policy>
+        <Policy>OldTenantWhitelist</Policy>
+        <Policy>PrepareRefreshSessionContextRequest</Policy>
+        <Policy>PrepareTokenGenerationRequest</Policy>
+        <Policy>RewriteTokenGenerationResponse</Policy>
+        <Policy>TokenGenerationBasicAuth</Policy>
+        <Policy>getCredentials</Policy>
+        <Policy>getEnvironment</Policy>
+        <Policy>prepareSessionContextRequest</Policy>
+        <Policy>setSessionIdFromHeader-delete-AuthorizationHeader</Policy>
+    </Policies>
+    <ProxyEndpoints>
+        <ProxyEndpoint>default</ProxyEndpoint>
+    </ProxyEndpoints>
+    <Resources>
+        <Resource>jsc://ExtractSessionId.js</Resource>
+        <Resource>jsc://OldTenantWhitelist.js</Resource>
+        <Resource>jsc://PrepareRefreshSessionContextRequest.js</Resource>
+        <Resource>jsc://getEnvironment.js</Resource>
+    </Resources>
+    <Spec></Spec>
+    <TargetServers/>
+    <TargetEndpoints>
+        <TargetEndpoint>default</TargetEndpoint>
+    </TargetEndpoints>
+</APIProxy>

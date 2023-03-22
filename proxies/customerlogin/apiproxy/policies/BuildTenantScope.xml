@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage async="false" continueOnError="false" enabled="true" name="BuildTenantScope">
+    <DisplayName>BuildTenantScope</DisplayName>
+    <Properties/>
+    <AssignVariable>
+        <Name>tenant_scope</Name>
+        <Template>hybris.tenant={tenant} tenant={tenant}</Template>
+    </AssignVariable>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <AssignTo createNew="false" transport="http" type="request"/>
+</AssignMessage>

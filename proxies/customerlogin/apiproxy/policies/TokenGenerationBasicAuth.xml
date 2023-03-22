@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<BasicAuthentication async="false" continueOnError="false" enabled="true" name="TokenGenerationBasicAuth">
+    <DisplayName>Basic Authentication-1</DisplayName>
+    <Operation>Encode</Operation>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <User ref="request.queryparam.client_id"/>
+    <Password ref="variable.client_secret"/>
+    <AssignTo createNew="false">request.header.Authorization</AssignTo>
+    <Source>request.header.Authorization</Source>
+    <GenerateResponse/>
+</BasicAuthentication>

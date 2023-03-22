@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<RaiseFault async="false" continueOnError="false" enabled="true" name="HandleAnonymousSessionNotFound">
+    <DisplayName>HandleAnonymousSessionNotFound</DisplayName>
+    <Properties/>
+    <FaultResponse>
+        <Set>
+            <Headers/>
+            <StatusCode>400</StatusCode>
+            <ReasonPhrase>Bad request</ReasonPhrase>
+            <Payload contentType="application/json">
+                {"error":"There is no anonymous session associated with this anonymous token. Please check the session, it may be already attached to a customer od deleted."}
+            </Payload>
+        </Set>
+    </FaultResponse>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+</RaiseFault>
