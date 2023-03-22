@@ -3,7 +3,7 @@
     <Basepaths>/oauth/client_credential</Basepaths>
     <Description>An API proxy that enforces OAuth 2.0 Client Credential Grant flow</Description>
     <Policies>
-        <Policy>BasicAuth</Policy>
+        <Policy>sharedBasicAuth</Policy>
         <Policy>BuildTenantScope</Policy>
         <Policy>ExecuteSessionContextRequest</Policy>
         <Policy>ExtractAnonymousTokenInfo</Policy>
@@ -18,7 +18,6 @@
         <Policy>PrepareTokenGenerationRequest</Policy>
         <Policy>RewriteTokenGenerationResponse</Policy>
         <Policy>TokenGenerationBasicAuth</Policy>
-        <Policy>getCredentials</Policy>
         <Policy>getEnvironment</Policy>
         <Policy>prepareSessionContextRequest</Policy>
         <Policy>setSessionIdFromHeader-delete-AuthorizationHeader</Policy>

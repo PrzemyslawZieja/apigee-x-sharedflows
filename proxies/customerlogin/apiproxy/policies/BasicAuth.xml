@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<BasicAuthentication async="false" continueOnError="false" enabled="true" name="BasicAuth">
-    <DisplayName>BasicAuth</DisplayName>
-    <Operation>Encode</Operation>
-    <IgnoreUnresolvedVariables>false</IgnoreUnresolvedVariables>
-    <User ref="private.credentials.username"/>
-    <Password ref="private.credentials.password"/>
-    <AssignTo createNew="true">basicAuth.Authorization</AssignTo>
-</BasicAuthentication>

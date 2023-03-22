@@ -29,10 +29,7 @@
                     <Name>getEnvironment</Name>
                 </Step>
                 <Step>
-                    <Name>getCredentials</Name>
-                </Step>
-                <Step>
-                    <Name>BasicAuth</Name>
+                    <Name>sharedBasicAuth</Name>
                 </Step>
                 <Step>
                     <Name>prepareSessionContextRequest</Name>
@@ -84,10 +81,7 @@
                     <Name>getEnvironment</Name>
                 </Step>
                 <Step>
-                    <Name>getCredentials</Name>
-                </Step>
-                <Step>
-                    <Name>BasicAuth</Name>
+                    <Name>sharedBasicAuth</Name>
                 </Step>
                 <Step>
                     <Name>prepareSessionContextRequest</Name>
