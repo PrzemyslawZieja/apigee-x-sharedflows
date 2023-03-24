@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ServiceCallout name="ExecuteSessionContextRequest" continueOnError="true">
+    <DisplayName>SessionContextCallout</DisplayName>
+    <Properties/>
+    <Request clearPayload="true" variable="sessionContextRequest"/>
+    <Response>sessionContextResponse</Response>
+    <HTTPTargetConnection>
+        <Properties/>
+        <URL>https://session-context.k8s-{SessionContext.k8sEnvironment}.emporix.io/{tenant}/context/{SessionContext.path}</URL>
+    </HTTPTargetConnection>
+</ServiceCallout>

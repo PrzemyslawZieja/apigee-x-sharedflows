@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage async="false" continueOnError="false" enabled="true" name="PrepareTokenGenerationRequest">
+    <DisplayName>AssignRequestParams</DisplayName>
+    <Properties/>
+    <Set>
+        <FormParams>
+            <FormParam name="scope">{tenant_scope}</FormParam>
+            <FormParam name="grant_type">client_credentials</FormParam>
+        </FormParams>
+    </Set>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <AssignTo createNew="false" transport="http" type="request"/>
+</AssignMessage>

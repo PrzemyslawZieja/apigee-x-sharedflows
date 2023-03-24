@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ProxyEndpoint name="default">
+    <Description/>
+    <FaultRules/>
+    <Flows>
+        <Flow name="option-flow">
+            <Request/>
+            <Response/>
+            <Condition>request.verb == "OPTIONS"</Condition>
+        </Flow>
+        <Flow name="GenerateAnonymousToken">
+            <Description/>
+            <Request>
+                <Step>
+                    <Name>ExtractSessionId</Name>
+                </Step>
+                <Step>
+                    <Name>OldTenantWhitelist</Name>
+                </Step>
+                <Step>
+                    <Name>HandleInvalidTenantRequest</Name>
+                    <Condition>SessionContext.tenantWrongRequest = true</Condition>
+                </Step>
+                <Step>
+                    <Name>setSessionIdFromHeader-delete-AuthorizationHeader</Name>
+                    <Condition>request.header.sessionId isNot null</Condition>
+                </Step>
+                <Step>
+                    <Name>getEnvironment</Name>
+                </Step>
+                <Step>
+                    <Name>sharedBasicAuth</Name>
+                </Step>
+                <Step>
+                    <Name>prepareSessionContextRequest</Name>
+                </Step>
+                <Step>
+                    <Name>ExecuteSessionContextRequest</Name>
+                </Step>
+                <Step>
+                    <Name>ExtractSessionContextResponse</Name>
+                </Step>
+                <Step>
+                    <Name>GetTenantClientSecret</Name>
+                </Step>
+                <Step>
+                    <Name>BuildTenantScope</Name>
+                </Step>
+                <Step>
+                    <Name>PrepareTokenGenerationRequest</Name>
+                </Step>
+                <Step>
+                    <Name>TokenGenerationBasicAuth</Name>
+                </Step>
+                <Step>
+                    <FaultRules/>
+                    <Name>GenerateAnonymousToken</Name>
+                </Step>
+            </Request>
+            <Response>
+                <Step>
+                    <Name>RewriteTokenGenerationResponse</Name>
+                    <Condition>oauthV2.failed = false</Condition>
+                </Step>
+            </Response>
+            <Condition>((proxy.pathsuffix MatchesPath "/login") or (proxy.pathsuffix MatchesPath "/accesstoken")) and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="RefreshAnonymousToken">
+            <Description/>
+            <Request>
+                <Step>
+                    <Name>ExtractSessionId</Name>
+                </Step>
+                <Step>
+                    <Name>ExtractAnonymousTokenInfo</Name>
+                </Step>
+                <Step>
+                    <Name>PrepareRefreshSessionContextRequest</Name>
+                </Step>
+                <Step>
+                    <Name>getEnvironment</Name>
+                </Step>
+                <Step>
+                    <Name>sharedBasicAuth</Name>
+                </Step>
+                <Step>
+                    <Name>prepareSessionContextRequest</Name>
+                </Step>
+                <Step>
+                    <Name>ExecuteSessionContextRequest</Name>
+                </Step>
+                <Step>
+                    <Name>HandleAnonymousSessionNotFound</Name>
+                    <Condition>sessionContextResponse.status.code = 404</Condition>
+                </Step>
+                <Step>
+                    <Name>GetTenantClientSecret</Name>
+                </Step>
+                <Step>
+                    <Name>BuildTenantScope</Name>
+                </Step>
+                <Step>
+                    <Name>PrepareTokenGenerationRequest</Name>
+                </Step>
+                <Step>
+                    <Name>TokenGenerationBasicAuth</Name>
+                </Step>
+                <Step>
+                    <Name>GenerateAnonymousToken</Name>
+                </Step>
+            </Request>
+            <Response>
+                <Step>
+                    <Name>RewriteTokenGenerationResponse</Name>
+                </Step>
+            </Response>
+            <Condition>(proxy.pathsuffix MatchesPath "/refresh")</Condition>
+        </Flow>
+    </Flows>
+    <HTTPProxyConnection>
+        <BasePath>/customerlogin/auth/anonymous</BasePath>
+        <Properties/>
+    </HTTPProxyConnection>
+    <RouteRule name="NoRoute"/>
+</ProxyEndpoint>
