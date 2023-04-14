@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<APIProxy revision="7" name="cxpb-api">
+<APIProxy name="cxpb-api">
     <Basepaths>/cxpb-api</Basepaths>
-    <ConfigurationVersion majorVersion="4" minorVersion="0"/>
-    <CreatedAt>1678291575802</CreatedAt>
-    <CreatedBy>dev@emporix.com</CreatedBy>
     <Description></Description>
-    <DisplayName>cxpb-api</DisplayName>
-    <LastModifiedAt>1678291575802</LastModifiedAt>
-    <LastModifiedBy>dev@emporix.com</LastModifiedBy>
-    <ManifestVersion>SHA-512:487cd28991f0d1ae781a21c58067f4a89fbcef3b8171b890af81f1197ce901d3c64e7864686af0cd2374c0d6c5295909cb535a09e75f4a30689be6c0121bc7ae:eu-west-1</ManifestVersion>
     <Policies>
         <Policy>Assign-Message-3</Policy>
         <Policy>Assign-Message-4</Policy>
