@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage async="false" continueOnError="false" enabled="true" name="Assign-Message-4">
+    <DisplayName>JWTSecret</DisplayName>
+    <Properties/>
+    <AssignVariable>
+        <Name>private.key</Name>
+        <Value>t0j!m1*tFZHp1Pmq5e4ExoTgNE3Ww!03D</Value>
+    </AssignVariable>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <AssignTo createNew="false" transport="http" type="request"/>
+</AssignMessage>

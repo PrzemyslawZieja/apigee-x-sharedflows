@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<GenerateJWT async="false" continueOnError="false" enabled="true" name="Assign-Message-3">
+    <DisplayName>Generate JWT for CXPB</DisplayName>
+    <Algorithm>HS256</Algorithm>
+    <SecretKey>
+        <Value ref="private.key"/>
+    </SecretKey>
+    <Subject>cxpb-api</Subject>
+    <Issuer>urn://apigee-edge-JWT-policy-cxpb</Issuer>
+    <Audience>cxpb-api,cxpbf</Audience>
+    <ExpiresIn>8h</ExpiresIn>
+    <AdditionalHeaders>
+        <Claim name="kid">apigee</Claim>
+    </AdditionalHeaders>
+    <AdditionalClaims>
+        <Claim name="tenant" type="string" ref="request.header.hybris-tenant"/>
+        <Claim name="scopes" type="string" ref="request.header.scopes"/>
+        <Claim name="user" type="string" ref="request.header.hybris-user"/>
+        <Claim name="userid" type="string" ref="request.header.hybris-user-id"/>
+    </AdditionalClaims>
+    <OutputVariable>jwt-variable</OutputVariable>
+</GenerateJWT>
