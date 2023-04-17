@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<FlowCallout async="false" continueOnError="true" enabled="true" name="Set-redirect-to-dev-flag">
-    <DisplayName>Set redirect to dev flag</DisplayName>
-    <FaultRules/>
-    <Properties/>
-    <SharedFlowBundle>Redirect-to-K8S</SharedFlowBundle>
-</FlowCallout>
