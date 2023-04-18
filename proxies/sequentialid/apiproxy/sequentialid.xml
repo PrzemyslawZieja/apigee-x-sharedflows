@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<APIProxy name="sequentialid">
+    <Basepaths>/sequentialid</Basepaths>
+    <ConfigurationVersion majorVersion="4" minorVersion="0"/>
+    <Description>SequentialId-Service</Description>
+    <DisplayName>sequentialid</DisplayName>
+    <Policies>
+        <Policy>add-cors</Policy>
+        <Policy>saasag.sequentialid_manage</Policy>
+        <Policy>sharedAuthWithOkta</Policy>
+    </Policies>
+    <ProxyEndpoints>
+        <ProxyEndpoint>default</ProxyEndpoint>
+        <ProxyEndpoint>emporix</ProxyEndpoint>
+    </ProxyEndpoints>
+    <Resources/>
+    <Spec></Spec>
+    <TargetServers/>
+    <TargetEndpoints>
+        <TargetEndpoint>k8s-develop</TargetEndpoint>
+        <TargetEndpoint>k8s-stage</TargetEndpoint>
+        <TargetEndpoint>k8s-prod</TargetEndpoint>
+    </TargetEndpoints>
+</APIProxy>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ProxyEndpoint name="default">
+    <Description/>
+    <FaultRules/>
+    <PreFlow name="PreFlow">
+        <Request>
+            <Step>
+                <Name>sharedAuthWithOkta</Name>
+            </Step>
+        </Request>
+        <Response/>
+    </PreFlow>
+    <PostFlow name="PostFlow">
+        <Request/>
+        <Response/>
+    </PostFlow>
+    <Flows>
+        <Flow name="OptionsPreFlight">
+            <Request/>
+            <Response>
+                <Step>
+                    <Name>add-cors</Name>
+                </Step>
+            </Response>
+            <Condition>request.verb == "OPTIONS" AND request.header.origin != null AND request.header.Access-Control-Request-Method != null</Condition>
+        </Flow>
+        <Flow name="*/sequenceSchemas">
+            <Description/>
+            <Request>
+                <Step>
+                    <Name>saasag.sequentialid_manage</Name>
+                    <Condition>(is_jwt != true) OR !(request.header.scopes ~ "*sequentialid%.sequentialid_manage*")</Condition>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/sequenceSchemas") and (request.verb = "*")</Condition>
+        </Flow>
+    </Flows>
+    <HTTPProxyConnection>
+        <BasePath>/sequentialid</BasePath>
+        <Properties/>
+    </HTTPProxyConnection>
+    <RouteRule name="NoRoute">
+        <Condition>request.verb == "OPTIONS" AND request.header.origin != null AND request.header.Access-Control-Request-Method != null</Condition>
+    </RouteRule>
+    <RouteRule name="k8s-develop">
+        <Condition>environment.name ~ "*dev*"</Condition>
+        <TargetEndpoint>k8s-develop</TargetEndpoint>
+    </RouteRule>
+    <RouteRule name="k8s-stage">
+        <Condition>environment.name ~ "*stage*"</Condition>
+        <TargetEndpoint>k8s-stage</TargetEndpoint>
+    </RouteRule>
+    <RouteRule name="k8s-prod">
+        <Condition>environment.name ~ "*prod*"</Condition>
+        <TargetEndpoint>k8s-prod</TargetEndpoint>
+    </RouteRule>
+</ProxyEndpoint>
