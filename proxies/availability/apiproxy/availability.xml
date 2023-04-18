@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <APIProxy name="availability">
     <Basepaths>/availability</Basepaths>
-    <Description></Description>
+    <Description>availability proxy</Description>
     <DisplayName>availability</DisplayName>
     <Policies>
         <Policy>sharedAuthWithOkta</Policy>
