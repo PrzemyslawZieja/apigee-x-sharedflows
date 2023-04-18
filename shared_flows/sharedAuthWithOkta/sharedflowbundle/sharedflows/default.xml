@@ -11,8 +11,4 @@
         <Name>validateOktaToken</Name>
         <Condition>is_jwt == true</Condition>
     </Step>
-    <Step>
-        <Name>Set-redirect-to-dev-flag</Name>
-        <Condition>environment.name = "dev"</Condition>
-    </Step>
 </SharedFlow>
