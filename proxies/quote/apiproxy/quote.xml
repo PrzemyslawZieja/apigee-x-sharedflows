@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<APIProxy name="quote">
+    <Basepaths>/quote</Basepaths>
+    <ConfigurationVersion majorVersion="4" minorVersion="0"/>
+     <Description></Description>
+    <DisplayName>quote</DisplayName>
+     <Policies>
+        <Policy>rewriteUserId</Policy>
+        <Policy>sharedAuthWithOkta</Policy>
+    </Policies>
+    <ProxyEndpoints>
+        <ProxyEndpoint>default</ProxyEndpoint>
+    </ProxyEndpoints>
+    <Resources/>
+    <Spec></Spec>
+    <TargetServers/>
+    <TargetEndpoints>
+        <TargetEndpoint>k8s-develop</TargetEndpoint>
+        <TargetEndpoint>k8s-stage</TargetEndpoint>
+        <TargetEndpoint>k8s-prod</TargetEndpoint>
+    </TargetEndpoints>
+</APIProxy>
