@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<APIProxy name="delivery">
+    <Basepaths>/delivery</Basepaths>
+    <ConfigurationVersion majorVersion="4" minorVersion="0"/>
+    <Description></Description>
+    <DisplayName>delivery</DisplayName>
+    <Policies>
+        <Policy>Invalidate-Cache-1</Policy>
+        <Policy>JavaScript-1</Policy>
+        <Policy>Response-Cache-2</Policy>
+        <Policy>saasag.delivery_area_delete</Policy>
+        <Policy>saasag.delivery_area_manage</Policy>
+        <Policy>saasag.delivery_time_delete</Policy>
+        <Policy>saasag.delivery_time_manage</Policy>
+        <Policy>sharedAuthWithOkta</Policy>
+    </Policies>
+    <ProxyEndpoints>
+        <ProxyEndpoint>default</ProxyEndpoint>
+    </ProxyEndpoints>
+    <Resources>
+        <Resource>jsc://JavaScript-1.js</Resource>
+    </Resources>
+    <Spec></Spec>
+    <TargetServers/>
+    <TargetEndpoints>
+        <TargetEndpoint>k8s-develop</TargetEndpoint>
+        <TargetEndpoint>k8s-prod</TargetEndpoint>
+        <TargetEndpoint>k8s-stage</TargetEndpoint>
+    </TargetEndpoints>
+</APIProxy>

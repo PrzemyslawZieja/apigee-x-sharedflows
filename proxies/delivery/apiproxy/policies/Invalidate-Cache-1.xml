@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<InvalidateCache async="false" continueOnError="false" enabled="true" name="Invalidate-Cache-1">
+    <DisplayName>Invalidate Cache-1</DisplayName>
+    <Properties/>
+    <CacheKey>
+        <Prefix>v4</Prefix>
+        <KeyFragment ref="request.header.hybris-tenant " type="string"/>
+        <KeyFragment>deliveryAreas-v2</KeyFragment>
+    </CacheKey>
+    <Scope>Exclusive</Scope>
+    <CacheResource>deliveryAreaCache</CacheResource>
+    <CacheContext>
+        <APIProxyName/>
+        <ProxyName>default</ProxyName>
+        <TargetName>default</TargetName>
+    </CacheContext>
+    <PurgeChildEntries>false</PurgeChildEntries>
+</InvalidateCache>

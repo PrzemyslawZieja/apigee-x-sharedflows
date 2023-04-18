@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ResponseCache async="false" continueOnError="false" enabled="true" name="Response-Cache-2">
+    <DisplayName>DeliveryAreaCacheResponseFor1Hour(changePrefixToInvalidate)</DisplayName>
+    <Properties/>
+    <CacheKey>
+        <Prefix>v4</Prefix>
+        <KeyFragment ref="request.header.hybris-tenant " type="string"/>
+        <KeyFragment>deliveryAreas-v2</KeyFragment>
+    </CacheKey>
+    <CacheResource>deliveryAreaCache</CacheResource>
+    <Scope>Exclusive</Scope>
+    <ExpirySettings>
+        <ExpiryDate/>
+        <TimeOfDay/>
+        <TimeoutInSec ref="">3600</TimeoutInSec>
+    </ExpirySettings>
+    <SkipCacheLookup/>
+    <SkipCachePopulation/>
+</ResponseCache>
