@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ProxyEndpoint name="default">
+    <Description/>
+    <FaultRules/>
+    <PreFlow name="PreFlow">
+        <Request>
+            <Step>
+                <Name>sharedAuthWithOkta</Name>
+            </Step>
+        </Request>
+        <Response/>
+    </PreFlow>
+    <PostFlow name="PostFlow">
+        <Request/>
+        <Response/>
+    </PostFlow>
+    <Flows>
+        <Flow name="OptionsPreFlight">
+            <Request/>
+            <Response/>
+            <Condition>request.verb == "OPTIONS" AND request.header.origin != null AND request.header.Access-Control-Request-Method != null</Condition>
+        </Flow>
+        <Flow name="socialLogin">
+            <Description>social login authorization</Description>
+            <Request>
+                <Step>
+                    <Name>extractSocialLoginRequestVariables</Name>
+                </Step>
+                <Step>
+                    <Name>parseConfigurationEnvironment</Name>
+                </Step>
+                <Step>
+                    <Name>sharedBasicAuth</Name>
+                </Step>
+                <Step>
+                    <Name>prepareConfigurationRequest</Name>
+                </Step>
+                <Step>
+                    <Name>ExecuteClientConfigurationRequest</Name>
+                </Step>
+                <Step>
+                    <Name>extractConfigurationResponse</Name>
+                </Step>
+                <Step>
+                    <Name>AesKVM</Name>
+                </Step>
+                <Step>
+                    <Name>AesCallout</Name>
+                </Step>
+                <Step>
+                    <Name>parseClientSecret</Name>
+                </Step>
+                <Step>
+                    <Name>prepareAuth0Request</Name>
+                </Step>
+                <Step>
+                    <Name>ExecuteAuth0Request</Name>
+                </Step>
+                <Step>
+                    <Name>ExtractAuth0Response</Name>
+                </Step>
+                <Step>
+                    <Name>VerifyAuth0Token</Name>
+                </Step>
+                <Step>
+                    <Name>PrepareCustomerRequest</Name>
+                </Step>
+            </Request>
+            <Response>
+                <Step>
+                    <Name>parseAuth0Token</Name>
+                </Step>
+                <Step>
+                    <Name>ExtractCustomerResponse</Name>
+                </Step>
+                <Step>
+                    <Name>Key-Value-Map-Operations-1</Name>
+                </Step>
+                <Step>
+                    <Name>ExecuteTokenRequest</Name>
+                </Step>
+                <Step>
+                    <Name>ExtractTokenResponse</Name>
+                </Step>
+                <Step>
+                    <Name>GenerateSaasToken</Name>
+                </Step>
+                <Step>
+                    <Name>RewriteToken</Name>
+                </Step>
+            </Response>
+            <Condition>(proxy.pathsuffix MatchesPath "/*/socialLogin") and (request.verb = "POST")</Condition>
+        </Flow>
+    </Flows>
+    <HTTPProxyConnection>
+        <BasePath>/caas-customer</BasePath>
+        <Properties/>
+    </HTTPProxyConnection>
+    <RouteRule name="NoRoute">
+        <Condition>request.verb == "OPTIONS" AND request.header.origin != null AND request.header.Access-Control-Request-Method != null</Condition>
+    </RouteRule>
+    <RouteRule name="k8s-prod">
+        <Condition>environment.name ~ "*prod*"</Condition>
+        <TargetEndpoint>k8s-prod</TargetEndpoint>
+    </RouteRule>
+    <RouteRule name="k8s-develop">
+        <Condition>environment.name ~ "*dev*"</Condition>
+        <TargetEndpoint>k8s-develop</TargetEndpoint>
+    </RouteRule>
+    <RouteRule name="default">
+        <Condition>environment.name ~ "*stage*"</Condition>
+        <TargetEndpoint>k8s-stage</TargetEndpoint>
+    </RouteRule>
+</ProxyEndpoint>

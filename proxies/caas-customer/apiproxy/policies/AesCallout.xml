@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<JavaCallout name="AesCallout">
+    <Properties>
+        <Property name="action">decrypt</Property>
+        <Property name="source">ConfigurationResponse.clientSecret</Property>
+        <Property name="decode-source">base64</Property>
+        <Property name="key">{private.aesKey}</Property>
+        <Property name="iv">{private.aesIv}</Property>
+        <Property name="utf8-decode-result">true</Property>
+    </Properties>
+    <ClassName>com.google.apigee.edgecallouts.AesCryptoCallout</ClassName>
+    <ResourceURL>java://edge-callout-aes-crypto-20200616.jar</ResourceURL>
+</JavaCallout>

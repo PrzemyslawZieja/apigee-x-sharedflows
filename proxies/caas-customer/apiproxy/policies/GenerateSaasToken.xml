@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<GenerateJWT async="false" continueOnError="false" enabled="true" name="GenerateSaasToken">
+    <DisplayName>GenerateSaasToken</DisplayName>
+    <Algorithm>HS256</Algorithm>
+    <SecretKey>
+        <Value ref="private.saasTokenKey"/>
+    </SecretKey>
+    <Subject ref="CustomerResponse.customerNumber"/>
+    <ExpiresIn>4h</ExpiresIn>
+    <OutputVariable>saasToken</OutputVariable>
+</GenerateJWT>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage async="false" continueOnError="false" enabled="true" name="RewriteToken">
+    <DisplayName>Rewrite Token</DisplayName>
+    <Set>
+        <Payload contentType="application/json" variableSuffix="%" variablePrefix="$">  
+         {  
+            "social_access_token":"$Auth0Response.accessToken%",
+            "social_id_token":"$Auth0Response.idToken%",
+            "refresh_token" : "$TokenResponse.refresh_token%",
+            "refresh_token_expires_in" : "$TokenResponse.refresh_token_expires_in%",
+            "session_idle_time" : 120,
+            "token_type": "Bearer" ,  
+            "access_token" : "$TokenResponse.access_token%",  
+            "sass_token" : "$saasToken%",  
+            "expires_in" : $TokenResponse.expires_in%,
+            "scope" : "$TokenResponse.scope%"
+         }  
+        </Payload>
+    </Set>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <AssignTo createNew="true" transport="http" type="request"/>
+</AssignMessage>

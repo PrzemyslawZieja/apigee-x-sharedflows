@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<VerifyJWT async="false" continueOnError="false" enabled="true" name="VerifyAuth0Token">
+    <DisplayName>VerifyAuth0Token</DisplayName>
+    <Algorithm>RS256</Algorithm>
+    <Source>Auth0Response.idToken</Source>
+    <PublicKey>
+        <Value ref="ConfigurationResponse.publicKey"/>
+    </PublicKey>
+    <Issuer ref="ConfigurationResponse.fullDomain"/>
+    <Audience ref="ConfigurationResponse.clientId"/>
+</VerifyJWT>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ServiceCallout name="ExecuteClientConfigurationRequest">
+    <DisplayName>ExecuteConfigurationRequest</DisplayName>
+    <Properties/>
+    <Request clearPayload="true" variable="configurationRequest"/>
+    <Response>configurationResponse</Response>
+    <HTTPTargetConnection>
+        <Properties/>
+        <URL>https://configuration.k8s-{SocialLogin.k8sEnvironment}.emporix.io/{SocialLogin.tenant}/configurations/socialLogin</URL>
+    </HTTPTargetConnection>
+</ServiceCallout>

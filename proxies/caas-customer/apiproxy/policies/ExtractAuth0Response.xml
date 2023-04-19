@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ExtractVariables name="ExtractAuth0Response">
+    <DisplayName>ExtractAuth0Response</DisplayName>
+    <Properties/>
+    <JSONPayload>
+        <Variable name="accessToken">
+            <JSONPath>$.access_token</JSONPath>
+        </Variable>
+        <Variable name="idToken">
+            <JSONPath>$.id_token</JSONPath>
+        </Variable>
+    </JSONPayload>
+    <VariablePrefix>Auth0Response</VariablePrefix>
+    <Source>auth0Response</Source>
+</ExtractVariables>

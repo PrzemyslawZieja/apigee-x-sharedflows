@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage continueOnError="false" name="prepareAuth0Request">
+    <DisplayName>PrepareAuth0Request</DisplayName>
+    <AssignTo createNew="true" type="request">auth0Request</AssignTo>
+    <Set>
+        <Payload contentType="application/json" variablePrefix="@" variableSuffix="#">
+        {
+        "client_id": "@ConfigurationResponse.clientId#",
+        "client_secret": "@crypto_output#",
+        "grant_type": "authorization_code",
+        "code": "@SocialLogin.socialLoginCode#",
+        "redirect_uri": "@ConfigurationResponse.redirectUrl#"
+        }
+        </Payload>
+        <Verb>POST</Verb>
+    </Set>
+    <IgnoreUnresolvedVariables>false</IgnoreUnresolvedVariables>
+</AssignMessage>

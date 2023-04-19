@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage name="prepareConfigurationRequest">
+    <AssignTo createNew="true" type="request">configurationRequest</AssignTo>
+    <DisplayName>PrepareConfigurationRequest</DisplayName>
+    <Set>
+        <Headers>
+            <Header name="Authorization">{basicAuth.Authorization}</Header>
+            <Header name="hybris-tenant">{SocialLogin.tenant}</Header>
+            <Header name="hybris-scopes">configuration.configuration_view</Header>
+        </Headers>
+    </Set>
+</AssignMessage>

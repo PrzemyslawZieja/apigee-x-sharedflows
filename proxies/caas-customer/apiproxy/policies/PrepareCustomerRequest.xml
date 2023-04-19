@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage async="false" continueOnError="false" enabled="true" name="PrepareCustomerRequest">
+    <DisplayName>PrepareCustomerRequest</DisplayName>
+    <Properties/>
+    <Remove>
+        <QueryParams>
+            <QueryParam name="code"/>
+        </QueryParams>
+    </Remove>
+    <Set>
+        <Payload contentType="application/json" variablePrefix="@" variableSuffix="#">
+        {
+        "email": "@jwt.VerifyAuth0Token.claim.email#",
+        "picture": "@jwt.VerifyAuth0Token.claim.picture#",
+        "provider": "@jwt.VerifyAuth0Token.claim.subject#",
+        "name": "@jwt.VerifyAuth0Token.claim.name#"
+        }
+        </Payload>
+        <Verb>POST</Verb>
+    </Set>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <AssignTo createNew="false" transport="http" type="request"/>
+</AssignMessage>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ExtractVariables name="extractSocialLoginRequestVariables">
+    <DisplayName>ExtractSocialLoginVariables</DisplayName>
+    <VariablePrefix>SocialLogin</VariablePrefix>
+    <Properties/>
+    <URIPath>
+        <Pattern ignoreCase="true">/{tenant}/socialLogin</Pattern>
+    </URIPath>
+    <QueryParam name="code">
+        <Pattern>{socialLoginCode}</Pattern>
+    </QueryParam>
+    <Header name="hybris-session-id">
+        <Pattern ignoreCase="true">{session}</Pattern>
+    </Header>
+    <Source>request</Source>
+</ExtractVariables>

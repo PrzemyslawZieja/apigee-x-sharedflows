@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ExtractVariables name="extractConfigurationResponse">
+    <DisplayName>ExtractConfigurationResponse</DisplayName>
+    <Source>configurationResponse</Source>
+    <VariablePrefix>ConfigurationResponse</VariablePrefix>
+    <JSONPayload>
+        <Variable name="clientSecret">
+            <JSONPath>$.value.client_secret</JSONPath>
+        </Variable>
+        <Variable name="clientId">
+            <JSONPath>$.value.client_id</JSONPath>
+        </Variable>
+        <Variable name="domain">
+            <JSONPath>$.value.domain</JSONPath>
+        </Variable>
+        <Variable name="redirectUrl">
+            <JSONPath>$.value.redirect_uri</JSONPath>
+        </Variable>
+        <Variable name="publicKey">
+            <JSONPath>$.value.public_key</JSONPath>
+        </Variable>
+    </JSONPayload>
+</ExtractVariables>

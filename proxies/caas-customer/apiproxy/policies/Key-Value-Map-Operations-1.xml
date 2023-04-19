@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<KeyValueMapOperations enabled="true" name="Key-Value-Map-Operations-1" mapIdentifier="apigeeCredentials">
+    <DisplayName>TokenKVM</DisplayName>
+    <Scope>apiproxy</Scope>
+    <Get assignTo="private.clientSecret">
+        <Key>
+            <Parameter>clientSecret</Parameter>
+        </Key>
+    </Get>
+    <Get assignTo="private.clientId">
+        <Key>
+            <Parameter>clientId</Parameter>
+        </Key>
+    </Get>
+    <Get assignTo="private.saasTokenKey">
+        <Key>
+            <Parameter>saasTokenKey</Parameter>
+        </Key>
+    </Get>
+    <Scope>environment</Scope>
+</KeyValueMapOperations>

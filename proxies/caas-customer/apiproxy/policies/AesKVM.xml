@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<KeyValueMapOperations enabled="true" name="AesKVM" mapIdentifier="socialLogin">
+    <DisplayName>AesKVM</DisplayName>
+    <Scope>apiproxy</Scope>
+    <Get assignTo="private.aesKey">
+        <Key>
+            <Parameter>aesKey</Parameter>
+        </Key>
+    </Get>
+    <Get assignTo="private.aesIv">
+        <Key>
+            <Parameter>aesIv</Parameter>
+        </Key>
+    </Get>
+    <Scope>environment</Scope>
+</KeyValueMapOperations>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ServiceCallout async="false" continueOnError="false" enabled="true" name="ExecuteTokenRequest">
+    <DisplayName>ExecuteTokenRequest</DisplayName>
+    <Properties/>
+    <Request clearPayload="true" variable="tokenRequest">
+        <IgnoreUnresolvedVariables>false</IgnoreUnresolvedVariables>
+        <Add>
+            <FormParams>
+                <FormParam name="client_secret">{private.clientSecret}</FormParam>
+                <FormParam name="client_id">{private.clientId}</FormParam>
+                <FormParam name="username">NOT_SET</FormParam>
+                <FormParam name="password">NOT_SET</FormParam>
+                <FormParam name="hybris-session-id">{SocialLogin.session}</FormParam>
+                <FormParam name="hybris-user-id">{CustomerResponse.customerNumber}</FormParam>
+                <FormParam name="hybris-user">{CustomerResponse.customerNumber}</FormParam>
+                <FormParam name="scope">{SocialLogin.scopes}</FormParam>
+                <FormParam name="grant_type">password</FormParam>
+            </FormParams>
+        </Add>
+    </Request>
+    <Response>tokenResponse</Response>
+    <HTTPTargetConnection>
+        <Properties/>
+        <URL>https://saas-ag-{SocialLogin.apigeeEnvironment}.apigee.net/oauth/token</URL>
+    </HTTPTargetConnection>
+</ServiceCallout>

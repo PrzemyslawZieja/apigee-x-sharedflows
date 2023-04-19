@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ServiceCallout name="ExecuteAuth0Request">
+    <DisplayName>ExecuteAuth0Request</DisplayName>
+    <Properties/>
+    <Request clearPayload="true" variable="auth0Request"/>
+    <Response>auth0Response</Response>
+    <HTTPTargetConnection>
+        <Properties/>
+        <URL>https://{ConfigurationResponse.domain}/oauth/token</URL>
+    </HTTPTargetConnection>
+</ServiceCallout>

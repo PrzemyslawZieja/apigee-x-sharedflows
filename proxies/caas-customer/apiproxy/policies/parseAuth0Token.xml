@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Javascript async="false" continueOnError="false" enabled="true" timeLimit="200" name="parseAuth0Token">
+    <DisplayName>parseAuth0Token</DisplayName>
+    <Properties/>
+    <ResourceURL>jsc://parseAuth0Token.js</ResourceURL>
+</Javascript>
