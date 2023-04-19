@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ProxyEndpoint name="emporix">
+    <Description/>
+    <FaultRules/>
+    <PreFlow name="PreFlow">
+        <Request>
+            <Step>
+                <Name>sharedAuthWithOkta</Name>
+                <Condition>(NOT(proxy.pathsuffix MatchesPath "/api-console/**") AND NOT(proxy.pathsuffix MatchesPath "/meta-data/**") AND NOT(proxy.pathsuffix MatchesPath "/readiness"))</Condition>
+            </Step>
+        </Request>
+        <Response/>
+    </PreFlow>
+    <PostFlow name="PostFlow">
+        <Request/>
+        <Response/>
+    </PostFlow>
+    <Flows>
+        <Flow name="OptionsPreFlight">
+            <Request/>
+            <Response/>
+            <Condition>request.verb == "OPTIONS" AND request.header.origin != null AND request.header.Access-Control-Request-Method != null</Condition>
+        </Flow>
+    </Flows>
+    <HTTPProxyConnection>
+        <BasePath>/order-v2</BasePath>
+        <Properties>
+            <Property name="response.streaming.enabled">true</Property>
+        </Properties>
+    </HTTPProxyConnection>
+    <RouteRule name="NoRoute">
+        <Condition>request.verb == "OPTIONS" AND request.header.origin != null AND request.header.Access-Control-Request-Method != null</Condition>
+    </RouteRule>
+    <RouteRule name="k8s-prod">
+        <Condition>environment.name ~ "*prod*"</Condition>
+        <TargetEndpoint>k8s-prod</TargetEndpoint>
+    </RouteRule>
+    <RouteRule name="k8s-develop">
+        <Condition>environment.name ~ "*dev*"</Condition>
+        <TargetEndpoint>k8s-develop</TargetEndpoint>
+    </RouteRule>
+    <RouteRule name="default">
+        <Condition>environment.name ~ "*stage*"</Condition>
+        <TargetEndpoint>k8s-stage</TargetEndpoint>
+    </RouteRule>
+</ProxyEndpoint>
