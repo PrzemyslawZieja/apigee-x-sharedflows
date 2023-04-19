@@ -40,4 +40,5 @@
     <RouteRule name="default">
         <Condition>environment.name ~ "*stage*"</Condition>
         <TargetEndpoint>k8s-stage</TargetEndpoint>
+    </RouteRule>
 </ProxyEndpoint>
