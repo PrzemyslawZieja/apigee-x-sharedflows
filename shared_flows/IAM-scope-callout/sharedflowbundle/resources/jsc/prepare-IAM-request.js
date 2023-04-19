@@ -13,21 +13,9 @@ if(env == "prod"){
     context.setVariable("IAM.k8sEnvironment", "prod");
     context.setVariable("IAM.apigeeEnvironment", "prod");
 }else if(env == "stage"){
+    context.setVariable("IAM.k8sEnvironment", "stage");
     context.setVariable("IAM.apigeeEnvironment", "stage");
-    if(tenant == "saasdev2" || tenant == "mpreisdev"){
-        context.setVariable("request.header.k8s-stage-redirect", true);
-        context.setVariable("IAM.k8sEnvironment", "stage");
-    }else{
-        context.setVariable("request.header.k8s-stage-redirect", false);
-        context.setVariable("IAM.k8sEnvironment", "stage");
-    }
 }else{
     context.setVariable("IAM.apigeeEnvironment", "dev");
-    if(tenant == "saasdev2" || tenant == "mpreisdev"){
-        context.setVariable("request.header.k8s-develop-redirect", true);
-        context.setVariable("IAM.k8sEnvironment", "develop");
-    }else{
-        context.setVariable("request.header.k8s-develop-redirect", false);
-        context.setVariable("IAM.k8sEnvironment", "stage");
-    }
+    context.setVariable("IAM.k8sEnvironment", "develop");
 }
