@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<APIProxy name="content">
+    <Basepaths>/content</Basepaths>
+    <Description>The content service</Description>
+    <DisplayName>content</DisplayName>
+    <Policies>
+        <Policy>saasag.content_component_delete</Policy>
+        <Policy>saasag.content_component_delete_all</Policy>
+        <Policy>saasag.content_component_manage</Policy>
+        <Policy>saasag.content_type_delete</Policy>
+        <Policy>saasag.content_type_manage</Policy>
+        <Policy>saasag.content_type_view</Policy>
+        <Policy>saasag.content_type_view_all</Policy>
+        <Policy>sharedAuthWithOkta</Policy>
+    </Policies>
+    <ProxyEndpoints>
+        <ProxyEndpoint>default</ProxyEndpoint>
+    </ProxyEndpoints>
+    <Resources/>
+    <Spec></Spec>
+    <TargetServers/>
+    <TargetEndpoints>
+        <TargetEndpoint>default</TargetEndpoint>
+        <TargetEndpoint>k8s-prod</TargetEndpoint>
+        <TargetEndpoint>k8s-stage</TargetEndpoint>
+    </TargetEndpoints>
+</APIProxy>
