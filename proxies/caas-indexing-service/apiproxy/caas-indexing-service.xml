@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<APIProxy name="caas-indexing-service">
+    <Basepaths>/caas-indexing-service</Basepaths>
+    <Description></Description>
+    <DisplayName>caas-indexing-service</DisplayName>
+    <Policies>
+        <Policy>sharedAuthWithOkta</Policy>
+    </Policies>
+    <ProxyEndpoints>
+        <ProxyEndpoint>alternative-route</ProxyEndpoint>
+        <ProxyEndpoint>default</ProxyEndpoint>
+    </ProxyEndpoints>
+    <Resources/>
+    <Spec></Spec>
+    <TargetServers/>
+    <TargetEndpoints>
+        <TargetEndpoint>k8s-develop</TargetEndpoint>
+        <TargetEndpoint>k8s-prod</TargetEndpoint>
+        <TargetEndpoint>k8s-stage</TargetEndpoint>
+    </TargetEndpoints>
+</APIProxy>
