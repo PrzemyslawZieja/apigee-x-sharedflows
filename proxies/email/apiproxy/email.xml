@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<APIProxy name="email">
+    <Basepaths>/email</Basepaths>
+    <Description>Email Service</Description>
+    <DisplayName>email</DisplayName>
+    <Policies>
+        <Policy>saasag.email_coupons_send</Policy>
+        <Policy>saasag.email_invoice_send</Policy>
+        <Policy>saasag.email_newsletterdoi_send</Policy>
+        <Policy>saasag.email_picklist_send</Policy>
+        <Policy>saasag.email_shippingconfirmation_send</Policy>
+        <Policy>sharedAuthWithOkta</Policy>
+    </Policies>
+    <ProxyEndpoints>
+        <ProxyEndpoint>default</ProxyEndpoint>
+    </ProxyEndpoints>
+    <Resources/>
+    <Spec></Spec>
+    <TargetServers/>
+    <TargetEndpoints>
+        <TargetEndpoint>default</TargetEndpoint>
+        <TargetEndpoint>k8s-prod</TargetEndpoint>
+        <TargetEndpoint>k8s-stage</TargetEndpoint>
+    </TargetEndpoints>
+</APIProxy>

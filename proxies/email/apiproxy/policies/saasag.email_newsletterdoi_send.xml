@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<OAuthV2 async="false" continueOnError="false" enabled="true" name="saasag.email_newsletterdoi_send">
+    <DisplayName>saasag.email_newsletterdoi_send</DisplayName>
+    <Properties/>
+    <Attributes/>
+    <ExternalAuthorization>false</ExternalAuthorization>
+    <Operation>VerifyAccessToken</Operation>
+    <SupportedGrantTypes/>
+    <GenerateResponse enabled="true"/>
+    <Scope>saasag.email_newsletterdoi_send email.newsletterdoi_send</Scope>
+    <Tokens/>
+</OAuthV2>
