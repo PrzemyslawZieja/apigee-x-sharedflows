@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<APIProxy name="html2pdf">
+    <Basepaths>/html2pdf</Basepaths>
+    <Description>The html2pdf service</Description>
+    <DisplayName>html2pdf</DisplayName>
+    <Policies>
+        <Policy>Extract-Variables-1</Policy>
+        <Policy>ExtractVariables-3</Policy>
+        <Policy>add-cors</Policy>
+        <Policy>saasag.html2pdf_delete</Policy>
+        <Policy>saasag.html2pdf_link</Policy>
+        <Policy>saasag.html2pdf_read</Policy>
+        <Policy>saasag.html2pdf_search</Policy>
+        <Policy>saasag.html2pdf_stream</Policy>
+        <Policy>saasag.html2pdf_update_metadata</Policy>
+        <Policy>sharedAuthWithOkta</Policy>
+    </Policies>
+    <ProxyEndpoints>
+        <ProxyEndpoint>default</ProxyEndpoint>
+    </ProxyEndpoints>
+    <Resources/>
+    <Spec></Spec>
+    <TargetServers/>
+    <TargetEndpoints>
+        <TargetEndpoint>default</TargetEndpoint>
+        <TargetEndpoint>k8s-prod</TargetEndpoint>
+        <TargetEndpoint>k8s-stage</TargetEndpoint>
+    </TargetEndpoints>
+</APIProxy>

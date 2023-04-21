@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<OAuthV2 async="false" continueOnError="false" enabled="true" name="saasag.html2pdf_update_metadata">
+    <DisplayName>saasag.html2pdf_update_metadata</DisplayName>
+    <Properties/>
+    <Attributes/>
+    <ExternalAuthorization>false</ExternalAuthorization>
+    <Operation>VerifyAccessToken</Operation>
+    <SupportedGrantTypes/>
+    <GenerateResponse enabled="true"/>
+    <Scope>saasag.html2pdf_update_metadata html2pdf.metadata_update</Scope>
+    <Tokens/>
+</OAuthV2>

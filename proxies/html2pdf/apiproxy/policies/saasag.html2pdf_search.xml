@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<OAuthV2 async="false" continueOnError="false" enabled="true" name="saasag.html2pdf_search">
+    <DisplayName>saasag.html2pdf_search</DisplayName>
+    <Properties/>
+    <Attributes/>
+    <ExternalAuthorization>false</ExternalAuthorization>
+    <Operation>VerifyAccessToken</Operation>
+    <SupportedGrantTypes/>
+    <GenerateResponse enabled="true"/>
+    <Scope>saasag.html2pdf_search html2pdf.html2pdf_search</Scope>
+    <Tokens/>
+</OAuthV2>

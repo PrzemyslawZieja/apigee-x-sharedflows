@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ExtractVariables name="Extract-Variables-1">
+    <Source>response</Source>
+    <JSONPayload>
+        <Variable name="jsonPayload" type="json">
+            <JSONPath>$</JSONPath>
+        </Variable>
+    </JSONPayload>
+</ExtractVariables>
