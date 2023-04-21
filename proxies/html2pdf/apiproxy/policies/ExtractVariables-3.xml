@@ -2,7 +2,7 @@
 <ExtractVariables name="ExtractVariables-3">
     <Source>request</Source>
     <JSONPayload>
-        <Variable name="jsonPayload" type="json">
+        <Variable name="jsonPayload" type="nodeset">
             <JSONPath>$</JSONPath>
         </Variable>
     </JSONPayload>
