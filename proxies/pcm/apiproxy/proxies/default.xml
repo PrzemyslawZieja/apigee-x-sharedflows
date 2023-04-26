@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ProxyEndpoint name="default">
+    <Description/>
+    <FaultRules/>
+    <PreFlow name="PreFlow">
+        <Request>
+            <Step>
+                <Name>sharedAuthWithOkta</Name>
+            </Step>
+        </Request>
+        <Response/>
+    </PreFlow>
+    <PostFlow name="PostFlow">
+        <Request/>
+        <Response/>
+    </PostFlow>
+    <Flows>
+        <Flow name="OptionsPreFlight">
+            <Request/>
+            <Response/>
+            <Condition>request.verb == "OPTIONS" AND request.header.origin != null AND request.header.Access-Control-Request-Method != null</Condition>
+        </Flow>
+        <Flow name="GET/productcategories">
+            <Description/>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/productcategories") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="POST/productcategories">
+            <Description/>
+            <Request>
+                <Step>
+                    <Name>saasag.prod_cat_manage</Name>
+                    <Condition>(is_jwt != true) OR !(request.header.scopes ~ "*pcm%.prod_cat_manage*")</Condition>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/productcategories") and (request.verb = "POST")</Condition>
+        </Flow>
+        <Flow name="GET/productcategories/*">
+            <Description/>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/productcategories/*") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="PUT/productcategories/*">
+            <Description/>
+            <Request>
+                <Step>
+                    <Name>saasag.prod_cat_manage</Name>
+                    <Condition>(is_jwt != true) OR !(request.header.scopes ~ "*pcm%.prod_cat_manage*")</Condition>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/productcategories/*") and (request.verb = "PUT")</Condition>
+        </Flow>
+        <Flow name="DELETE/productcategories/*">
+            <Description/>
+            <Request>
+                <Step>
+                    <Name>saasag.prod_cat_delete</Name>
+                    <Condition>(is_jwt != true) OR !(request.header.scopes ~ "*pcm%.prod_cat_delete*")</Condition>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/productcategories/*") and (request.verb = "DELETE")</Condition>
+        </Flow>
+        <Flow name="GET/products">
+            <Description/>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/products") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="POST/products">
+            <Description/>
+            <Request>
+                <Step>
+                    <Name>saasag.prod_manage</Name>
+                    <Condition>(is_jwt != true) OR !(request.header.scopes ~ "*pcm%.prod_manage*")</Condition>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/products") and (request.verb = "POST")</Condition>
+        </Flow>
+        <Flow name="GET/products/*">
+            <Description/>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/products/*") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="PUT/products/*">
+            <Description/>
+            <Request>
+                <Step>
+                    <Name>saasag.prod_manage</Name>
+                    <Condition>(is_jwt != true) OR !(request.header.scopes ~ "*pcm%.prod_manage*")</Condition>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/products/*") and (request.verb = "PUT")</Condition>
+        </Flow>
+        <Flow name="DELETE/products/*">
+            <Description/>
+            <Request>
+                <Step>
+                    <Name>saasag.prod_delete</Name>
+                    <Condition>(is_jwt != true) OR !(request.header.scopes ~ "*pcm%.prod_delete*")</Condition>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/products/*") and (request.verb = "DELETE")</Condition>
+        </Flow>
+        <Flow name="DELETE/*/product/*">
+            <Description/>
+            <Request>
+                <Step>
+                    <Name>saasag.prod_cat_assignment_delete</Name>
+                    <Condition>(is_jwt != true) OR !(request.header.scopes ~ "*pcm%.assignment_delete*")</Condition>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/*/product/*") and (request.verb = "DELETE")</Condition>
+        </Flow>
+        <Flow name="PUT/*/product/*">
+            <Description/>
+            <Request>
+                <Step>
+                    <Name>saasag.prod_cat_assignment_manage</Name>
+                    <Condition>(is_jwt != true) OR !(request.header.scopes ~ "*pcm%.assignment_manage*")</Condition>
+                </Step>
+                <Step>
+                    <Name>saasag.prod_cat_read_unpublished</Name>
+                    <Condition>(is_jwt != true) OR !(request.header.scopes ~ "*pcm%.unpublished_read*")</Condition>
+                </Step>
+                <Step>
+                    <Name>hybris.category_read_unpublished</Name>
+                    <Condition>(is_jwt != true) OR !(request.header.scopes ~ "*category%.category_read_unpublished*")</Condition>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/*/product/*") and (request.verb = "PUT")</Condition>
+        </Flow>
+        <Flow name="POST/*/product/*">
+            <Description/>
+            <Request>
+                <Step>
+                    <Name>saasag.prod_cat_assignment_manage</Name>
+                    <Condition>(is_jwt != true) OR !(request.header.scopes ~ "*pcm%.assignment_manage*")</Condition>
+                </Step>
+                <Step>
+                    <Name>saasag.prod_cat_read_unpublished</Name>
+                    <Condition>(is_jwt != true) OR !(request.header.scopes ~ "*pcm%.unpublished_read*")</Condition>
+                </Step>
+                <Step>
+                    <Name>hybris.category_read_unpublished</Name>
+                    <Condition>(is_jwt != true) OR !(request.header.scopes ~ "*pcm%.category_read_unpublished*")</Condition>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/*/product/*") and (request.verb = "POST")</Condition>
+        </Flow>
+    </Flows>
+    <HTTPProxyConnection>
+        <BasePath>/pcm</BasePath>
+        <Properties/>
+    </HTTPProxyConnection>
+    <RouteRule name="NoRoute">
+        <Condition>request.verb == "OPTIONS" AND request.header.origin != null AND request.header.Access-Control-Request-Method != null</Condition>
+    </RouteRule>
+    <RouteRule name="k8s-prod">
+        <Condition>environment.name ~ "*prod*"</Condition>
+        <TargetEndpoint>k8s-prod</TargetEndpoint>
+    </RouteRule>
+    <RouteRule name="k8s-develop">
+        <Condition>environment.name ~ "*dev*"</Condition>
+        <TargetEndpoint>default</TargetEndpoint>
+    </RouteRule>
+    <RouteRule name="k8s-stage">
+        <Condition>environment.name ~ "*stage*"</Condition>
+        <TargetEndpoint>k8s-stage</TargetEndpoint>
+    </RouteRule>
+</ProxyEndpoint>

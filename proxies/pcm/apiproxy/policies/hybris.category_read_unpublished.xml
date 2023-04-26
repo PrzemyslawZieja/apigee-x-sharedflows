@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<OAuthV2 async="false" continueOnError="false" enabled="true" name="hybris.category_read_unpublished">
+    <DisplayName>hybris.category_read_unpublished</DisplayName>
+    <Properties/>
+    <Attributes/>
+    <ExternalAuthorization>false</ExternalAuthorization>
+    <Operation>VerifyAccessToken</Operation>
+    <SupportedGrantTypes/>
+    <GenerateResponse enabled="true"/>
+    <Scope>hybris.category_read_unpublished pcm.unpublished_read category.category_read_unpublished</Scope>
+    <Tokens/>
+</OAuthV2>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<APIProxy name="pcm">
+    <Basepaths>/pcm</Basepaths>
+    <Description>The dummy productcategorymshup service version 4.</Description>
+    <DisplayName>pcm</DisplayName>
+    <Policies>
+        <Policy>hybris.category_read_unpublished</Policy>
+        <Policy>saasag.prod_cat_assignment_delete</Policy>
+        <Policy>saasag.prod_cat_assignment_manage</Policy>
+        <Policy>saasag.prod_cat_delete</Policy>
+        <Policy>saasag.prod_cat_manage</Policy>
+        <Policy>saasag.prod_cat_read_unpublished</Policy>
+        <Policy>saasag.prod_delete</Policy>
+        <Policy>saasag.prod_manage</Policy>
+        <Policy>sharedAuthWithOkta</Policy>
+    </Policies>
+    <ProxyEndpoints>
+        <ProxyEndpoint>default</ProxyEndpoint>
+    </ProxyEndpoints>
+    <Resources/>
+    <Spec></Spec>
+    <TargetServers/>
+    <TargetEndpoints>
+        <TargetEndpoint>default</TargetEndpoint>
+        <TargetEndpoint>k8s-prod</TargetEndpoint>
+        <TargetEndpoint>k8s-stage</TargetEndpoint>
+    </TargetEndpoints>
+</APIProxy>
