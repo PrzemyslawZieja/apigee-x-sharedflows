@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<APIProxy name="report">
+    <Basepaths>/report</Basepaths>
+    <Description></Description>
+    <DisplayName>report</DisplayName>
+    <Policies>
+        <Policy>sharedAuthWithOkta</Policy>
+    </Policies>
+    <ProxyEndpoints>
+        <ProxyEndpoint>default</ProxyEndpoint>
+    </ProxyEndpoints>
+    <Resources/>
+    <Spec></Spec>
+    <TargetServers/>
+    <TargetEndpoints>
+        <TargetEndpoint>default</TargetEndpoint>
+        <TargetEndpoint>k8s-prod</TargetEndpoint>
+        <TargetEndpoint>k8s-stage</TargetEndpoint>
+    </TargetEndpoints>
+</APIProxy>
