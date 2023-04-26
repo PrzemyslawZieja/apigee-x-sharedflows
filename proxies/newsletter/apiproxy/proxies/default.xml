@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ProxyEndpoint name="default">
+    <Description/>
+    <FaultRules/>
+    <PreFlow name="PreFlow">
+        <Request>
+            <Step>
+                <Name>sharedAuthWithOkta</Name>
+            </Step>
+        </Request>
+        <Response/>
+    </PreFlow>
+    <PostFlow name="PostFlow">
+        <Request/>
+        <Response/>
+    </PostFlow>
+    <Flows>
+        <Flow name="OptionsPreFlight">
+            <Request/>
+            <Response/>
+            <Condition>request.verb == "OPTIONS" AND request.header.origin != null AND request.header.Access-Control-Request-Method != null</Condition>
+        </Flow>
+        <Flow name="GET/newsletters">
+            <Description/>
+            <Request>
+                <Step>
+                    <Name>saasag.newsletter_read_all</Name>
+                    <Condition>(is_jwt != true) OR !(request.header.scopes ~ "*newsletter%.newsletter_read*")</Condition>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/newsletters") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="POST/newsletters">
+            <Description/>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/newsletters") and (request.verb = "POST")</Condition>
+        </Flow>
+        <Flow name="PUT/newsletters">
+            <Description/>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/newsletters") and (request.verb = "PUT")</Condition>
+        </Flow>
+        <Flow name="DELETE/newsletters">
+            <Description/>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/newsletters") and (request.verb = "DELETE")</Condition>
+        </Flow>
+        <Flow name="GET/newsletters/*">
+            <Description/>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/newsletters/*") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="DELETE/newsletters/*">
+            <Description/>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/newsletters/*") and (request.verb = "DELETE")</Condition>
+        </Flow>
+        <Flow name="GET/export">
+            <Description/>
+            <Request>
+                <Step>
+                    <Name>saasag.newsletter_export_all</Name>
+                    <Condition>(is_jwt != true) OR !(request.header.scopes ~ "*newsletter%.newsletter_export*")</Condition>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/export") and (request.verb = "GET")</Condition>
+        </Flow>
+    </Flows>
+    <HTTPProxyConnection>
+        <BasePath>/newsletter</BasePath>
+        <Properties/>
+    </HTTPProxyConnection>
+    <RouteRule name="NoRoute">
+        <Condition>request.verb == "OPTIONS" AND request.header.origin != null AND request.header.Access-Control-Request-Method != null</Condition>
+    </RouteRule>
+    <RouteRule name="k8s-prod">
+        <Condition>environment.name ~ "*prod*"</Condition>
+        <TargetEndpoint>k8s-prod</TargetEndpoint>
+    </RouteRule>
+    <RouteRule name="k8s-develop">
+        <Condition>environment.name ~ "*dev*"</Condition>
+        <TargetEndpoint>default</TargetEndpoint>
+    </RouteRule>
+    <RouteRule name="k8s-stage">
+        <Condition>environment.name ~ "*stage*"</Condition>
+        <TargetEndpoint>k8s-stage</TargetEndpoint>
+    </RouteRule>
+</ProxyEndpoint>
