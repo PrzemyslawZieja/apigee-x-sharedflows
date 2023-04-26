@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<APIProxy name="pdfmashup">
+    <Basepaths>/pdfmashup</Basepaths>
+    <Description></Description>
+    <DisplayName>pdfmashup</DisplayName>
+    <Policies>
+        <Policy>add-cors</Policy>
+        <Policy>saasag.invoice_create</Policy>
+        <Policy>saasag.packlist_create</Policy>
+        <Policy>saasag.picklist_create</Policy>
+        <Policy>saasag.scheduler_manage</Policy>
+        <Policy>saasag.scheduler_read</Policy>
+        <Policy>saasag.shippingnote_create</Policy>
+        <Policy>sharedAuthWithOkta</Policy>
+    </Policies>
+    <ProxyEndpoints>
+        <ProxyEndpoint>default</ProxyEndpoint>
+    </ProxyEndpoints>
+    <Resources/>
+    <Spec></Spec>
+    <TargetServers/>
+    <TargetEndpoints>
+        <TargetEndpoint>default</TargetEndpoint>
+        <TargetEndpoint>k8s-prod</TargetEndpoint>
+        <TargetEndpoint>k8s-stage</TargetEndpoint>
+    </TargetEndpoints>
+</APIProxy>
