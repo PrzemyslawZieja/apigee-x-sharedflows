@@ -1,55 +1,16 @@
 steps:
-  - name: golang
+  - name: gcr.io/cloud-builders/wget
     args:
-      - install
-      - github.com/google/go-jsonnet/cmd/jsonnet@latest
-    entrypoint: go
-  - name: golang
+      - '-O'
+      - 'sops'
+      - 'https://github.com/mozilla/sops/releases/download/v3.7.3/sops-v3.7.3.linux.amd64'
+  - name: gcr.io/cloud-builders/wget
+    entrypoint: /bin/bash
     args:
       - '-c'
-      - >
-        /go/bin/jsonnet 
-        --ext-str clientID="$$CLIENT_ID" 
-        --ext-str clientSecret="$$CLIENT_SECRET" 
-        --ext-str saasTokenKey="$$SAAS_TOKEN_KEY" 
-        --ext-str user="$$BASIC_AUTH_USER" 
-        --ext-str password="$$BASIC_AUTH_PASSWORD" 
-        --ext-str hubSpotSignature="$$HUBSPOT_SIGNATURE" 
-        --ext-str icecat_basicAuth_password="$$ICECAT_BASIC_AUTH_USERNAME" 
-        --ext-str basicAuth_username="$$ICECAT_BASIC_AUTH_PASSWORD" 
-        --ext-str okta_basicAuth="$$OKTA_BASIC_AUTH" 
-        --ext-str aesIv="$$AES_IV" 
-        --ext-str aesKey="$$AES_KEY" 
-        --ext-str tokenPublicKey="$$TOKEN_PUBLIC_KEY" 
-        --ext-str BA="$$BOR2S_BA"
-        --ext-str BM="$$BOR2S_BM"
-        --ext-str BU="$$BOR2S_BU"
-        --ext-str SU="$$BOR2S_SU"
-        --ext-str jwks_postfix="$$TRUSTED_DOMAINS"
-        --ext-str trusted_domains="$$JWKS_POSTFIX"
-        kvms.jsonnet 
-        -o kvms.json
-    dir: configuration/env/dev-poc
-    entrypoint: /bin/bash
-    secretEnv:
-      - CLIENT_ID
-      - CLIENT_SECRET
-      - SAAS_TOKEN_KEY
-      - BASIC_AUTH_USER
-      - BASIC_AUTH_PASSWORD
-      - HUBSPOT_SIGNATURE
-      - ICECAT_BASIC_AUTH_USERNAME
-      - ICECAT_BASIC_AUTH_PASSWORD
-      - OKTA_BASIC_AUTH
-      - AES_IV
-      - AES_KEY
-      - TOKEN_PUBLIC_KEY
-      - BOR2S_BA
-      - BOR2S_BM
-      - BOR2S_SU
-      - BOR2S_BU
-      - TRUSTED_DOMAINS
-      - JWKS_POSTFIX
+      - |
+        chmod +x sops;
+        sops -d --output configuration/env/dev-poc/kvms.json configuration/env/dev-poc/kvms.json.enc;
   - name: gcr.io/google.com/cloudsdktool/cloud-sdk
     args:
       - '-c'
@@ -68,47 +29,7 @@ steps:
       - '-Dapigee.config.options=update'
     dir: configuration
     entrypoint: mvn
-options:
-  volumes:
-    - name: go-modules
-      path: /go
 availableSecrets:
   secretManager:
     - versionName: projects/1012847900619/secrets/apigee-cicd-test-key/versions/latest
       env: APIGEE_CD_KEY
-    - versionName: projects/1012847900619/secrets/apigee-cicd-basicAuth-user/versions/latest
-      env: BASIC_AUTH_USER
-    - versionName: projects/1012847900619/secrets/apigee-cicd-basicAuth-password/versions/latest
-      env: BASIC_AUTH_PASSWORD
-    - versionName: projects/1012847900619/secrets/apigee-cicd-clientId/versions/latest
-      env: CLIENT_ID
-    - versionName: projects/1012847900619/secrets/apigee-cicd-clientSecret/versions/latest
-      env: CLIENT_SECRET
-    - versionName: projects/1012847900619/secrets/apigee-cicd-saasTokenKey/versions/latest
-      env: SAAS_TOKEN_KEY
-    - versionName: projects/1012847900619/secrets/apigee-cicd-hubSpotSignature/versions/latest
-      env: HUBSPOT_SIGNATURE
-    - versionName: projects/1012847900619/secrets/apigee-cicd-icecat-basicAuth-username/versions/latest
-      env: ICECAT_BASIC_AUTH_USERNAME
-    - versionName: projects/1012847900619/secrets/apigee-cicd-icecat-basicAuth-password/versions/latest
-      env: ICECAT_BASIC_AUTH_PASSWORD
-    - versionName: projects/1012847900619/secrets/apigee-cicd-okta-basicAuth/versions/latest
-      env: OKTA_BASIC_AUTH
-    - versionName: projects/1012847900619/secrets/apigee-cicd-aesIv/versions/latest
-      env: AES_IV
-    - versionName: projects/1012847900619/secrets/apigee-cicd-aesKey/versions/latest
-      env: AES_KEY
-    - versionName: projects/1012847900619/secrets/apigee-cicd-tokenPublicKey/versions/latest
-      env: TOKEN_PUBLIC_KEY
-    - versionName: projects/1012847900619/secrets/apigee-cicd-0oa1qvzni8XxBAxd90x7/versions/latest
-      env: BOR2S_BA
-    - versionName: projects/1012847900619/secrets/apigee-cicd-0oa1qvzni8XxBMxd90x7/versions/latest
-      env: BOR2S_BM
-    - versionName: projects/1012847900619/secrets/apigee-cicd-0oa1qvzni8XxSUxd90x7/versions/latest
-      env: BOR2S_SU
-    - versionName: projects/1012847900619/secrets/apigee-cicd-0oa1qvzni8XxBUxd90x7/versions/latest
-      env: BOR2S_BU
-    - versionName: projects/1012847900619/secrets/apigee-cicd-trusted_domains/versions/latest
-      env: TRUSTED_DOMAINS
-    - versionName: projects/1012847900619/secrets/apigee-cicd-jwks_postfix/versions/latest
-      env: JWKS_POSTFIX
