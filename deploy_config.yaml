@@ -10,7 +10,7 @@ steps:
       - '-c'
       - |
         chmod +x sops;
-        sops -d --output configuration/env/dev-poc/kvms.json configuration/env/dev-poc/kvms.json.enc;
+        ./sops -d --output configuration/env/dev-poc/kvms.json configuration/env/dev-poc/kvms.json.enc;
   - name: gcr.io/google.com/cloudsdktool/cloud-sdk
     args:
       - '-c'
