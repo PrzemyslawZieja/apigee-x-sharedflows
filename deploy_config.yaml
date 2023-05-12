@@ -29,6 +29,9 @@ steps:
       - '-Dapigee.config.options=update'
     dir: configuration
     entrypoint: mvn
+logsBucket: 'gs://apigeex-deploy-trigger'
+options:
+  logging: GCS_ONLY
 availableSecrets:
   secretManager:
     - versionName: projects/1012847900619/secrets/apigee-cicd-test-key/versions/latest
