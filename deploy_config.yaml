@@ -3,14 +3,18 @@ steps:
     args:
       - '-O'
       - 'sops'
-      - 'https://github.com/mozilla/sops/releases/download/v3.7.3/sops-v3.7.3.linux.amd64'
+  - name: gcr.io/cloud-builders/wget
+    args:
+      - '-O'
+      - 'yq'
+      - 'https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64'
   - name: gcr.io/cloud-builders/wget
     entrypoint: /bin/bash
     args:
       - '-c'
       - |
-        chmod +x sops;
-        ./sops -d --input-type yaml --output-type yaml configuration/env/dev-poc/kvms.yaml.enc| yq -o json | sed '1d'  | sed -e '$d' | sed -e 's/"data"://1' > configuration/env/dev-poc/kvms.json
+        chmod +x sops yq;
+        ./sops -d --input-type yaml --output-type yaml configuration/env/dev-poc/kvms.yaml.enc| ./yq -o json | sed '1d'  | sed -e '$d' | sed -e 's/"data"://1' > configuration/env/dev-poc/kvms.json
   - name: gcr.io/google.com/cloudsdktool/cloud-sdk
     args:
       - '-c'
