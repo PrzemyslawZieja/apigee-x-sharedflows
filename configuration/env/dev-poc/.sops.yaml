@@ -1,0 +1,3 @@
+creation_rules:
+  - path_regex: kvms.yaml.enc$
+    gcp_kms: projects/apigee-x-poc-374912/locations/europe-west1/keyRings/key-ring-apigee-x/cryptoKeys/crypto-key-apigee
