@@ -11,8 +11,8 @@
     "description": "The API product should be attached only into Emporix and EmporixStage tenants",
     "displayName": "super-admin-emporix",
     "environments": [
-      "dev",
-      "prod"
+      "dev-poc",
+      "stage-poc"
     ],
     "name": "super-admin-emporix",
     "proxies": [],
@@ -32,7 +32,7 @@
     "description": "",
     "displayName": "common",
     "environments": [
-      "dev"
+      "dev-poc"
     ],
     "name": "common",
     "proxies": [],
@@ -52,8 +52,8 @@
     "description": "",
     "displayName": "search-service",
     "environments": [
-      "dev",
-      "prod"
+      "dev-poc",
+      "stage-poc"
     ],
     "name": "search-service",
     "proxies": [
@@ -75,8 +75,8 @@
     "description": "",
     "displayName": "quote",
     "environments": [
-      "dev",
-      "prod"
+      "dev-poc",
+      "stage-poc"
     ],
     "name": "quote",
     "proxies": [
@@ -101,8 +101,8 @@
     "description": "incoming media service",
     "displayName": "media",
     "environments": [
-      "dev",
-      "prod"
+      "dev-poc",
+      "stage-poc"
     ],
     "name": "media",
     "proxies": [
@@ -125,8 +125,8 @@
     "description": "",
     "displayName": "returns",
     "environments": [
-      "dev",
-      "prod"
+      "dev-poc",
+      "stage-poc"
     ],
     "name": "returns",
     "proxies": [
@@ -151,8 +151,8 @@
     "description": "",
     "displayName": "webhook",
     "environments": [
-      "dev",
-      "prod"
+      "dev-poc",
+      "stage-poc"
     ],
     "name": "webhook",
     "proxies": [
@@ -175,8 +175,8 @@
     "description": "",
     "displayName": "client-management",
     "environments": [
-      "dev",
-      "prod"
+      "dev-poc",
+      "stage-poc"
     ],
     "name": "client-management",
     "proxies": [
@@ -208,7 +208,7 @@
     "description": "",
     "displayName": "iam",
     "environments": [
-      "dev"
+      "dev-poc"
     ],
     "name": "iam",
     "proxies": [
@@ -256,8 +256,8 @@
     "description": "",
     "displayName": "tax",
     "environments": [
-      "dev",
-      "prod"
+      "dev-poc",
+      "stage-poc"
     ],
     "name": "tax",
     "proxies": [
@@ -280,8 +280,8 @@
     "description": "",
     "displayName": "currency",
     "environments": [
-      "dev",
-      "prod"
+      "dev-poc",
+      "stage-poc"
     ],
     "name": "currency",
     "proxies": [
@@ -305,8 +305,8 @@
     "description": "",
     "displayName": "feature-toggle",
     "environments": [
-      "dev",
-      "prod"
+      "dev-poc",
+      "stage-poc"
     ],
     "name": "feature-toggle",
     "proxies": [
@@ -329,8 +329,8 @@
     "description": "",
     "displayName": "catalogue",
     "environments": [
-      "dev",
-      "prod"
+      "dev-poc",
+      "stage-poc"
     ],
     "name": "catalogue",
     "proxies": [
@@ -355,8 +355,8 @@
     "description": "New price serivce",
     "displayName": "composable-price",
     "environments": [
-      "dev",
-      "prod"
+      "dev-poc",
+      "stage-poc"
     ],
     "name": "composable-price",
     "proxies": [
@@ -379,7 +379,7 @@
     "description": "",
     "displayName": "replenishment",
     "environments": [
-      "dev"
+      "dev-poc"
     ],
     "name": "replenishment",
     "proxies": [
@@ -399,8 +399,8 @@
     "description": "incoming unit-handling service",
     "displayName": "unit-handling",
     "environments": [
-      "dev",
-      "prod"
+      "dev-poc",
+      "stage-poc"
     ],
     "name": "unit-handling",
     "proxies": [
@@ -422,8 +422,8 @@
     "description": "Incoming session context service",
     "displayName": "session-context",
     "environments": [
-      "dev",
-      "prod"
+      "dev-poc",
+      "stage-poc"
     ],
     "name": "session-context",
     "proxies": [
@@ -445,8 +445,8 @@
     "description": "iban-validator",
     "displayName": "iban-validator",
     "environments": [
-      "dev",
-      "prod"
+      "dev-poc",
+      "stage-poc"
     ],
     "name": "iban-validator",
     "proxies": [
@@ -466,8 +466,8 @@
     "description": "Incoming price serivce",
     "displayName": "composable-price-1",
     "environments": [
-      "dev",
-      "prod"
+      "dev-poc",
+      "stage-poc"
     ],
     "name": "price-v2",
     "proxies": [
@@ -490,8 +490,8 @@
     "description": "",
     "displayName": "sepa-export",
     "environments": [
-      "dev",
-      "prod"
+      "dev-poc",
+      "stage-poc"
     ],
     "name": "Sepa-export",
     "proxies": [
@@ -515,8 +515,8 @@
     "description": "",
     "displayName": "Customer (read only)",
     "environments": [
-      "dev",
-      "prod"
+      "dev-poc",
+      "stage-poc"
     ],
     "name": "customer-read-only",
     "proxies": [
@@ -541,7 +541,7 @@
     "description": "",
     "displayName": "order-read",
     "environments": [
-      "prod"
+      "stage-poc"
     ],
     "name": "caas-order-read",
     "proxies": [
@@ -564,8 +564,8 @@
     "description": "",
     "displayName": "delivery-v2",
     "environments": [
-      "dev",
-      "prod"
+      "dev-poc",
+      "stage-poc"
     ],
     "name": "delivery-v2",
     "proxies": [
@@ -585,7 +585,7 @@
     "description": "The invoice service",
     "displayName": "invoice service",
     "environments": [
-      "dev"
+      "dev-poc"
     ],
     "name": "invoice",
     "proxies": [],
@@ -606,8 +606,8 @@
     "description": "The pickpack service",
     "displayName": "pickpack",
     "environments": [
-      "dev",
-      "prod"
+      "dev-poc",
+      "stage-poc"
     ],
     "name": "pick-pack",
     "proxies": [
@@ -632,7 +632,7 @@
     "description": "",
     "displayName": "cart-v2",
     "environments": [
-      "dev"
+      "dev-poc"
     ],
     "name": "cart-v2",
     "proxies": [
@@ -652,8 +652,8 @@
     "description": "The name Backoffice is misleading and is a misconfiguration. ",
     "displayName": "Markant Service",
     "environments": [
-      "dev",
-      "prod"
+      "dev-poc",
+      "stage-poc"
     ],
     "name": "Backoffice",
     "proxies": [
@@ -673,7 +673,7 @@
     "description": "this is a test and not yet in production",
     "displayName": "Storefront",
     "environments": [
-      "dev"
+      "dev-poc"
     ],
     "name": "storefront",
     "proxies": [],
@@ -691,8 +691,8 @@
     "description": "The availability and stock level service",
     "displayName": "Availability",
     "environments": [
-      "dev",
-      "prod"
+      "dev-poc",
+      "stage-poc"
     ],
     "name": "availabillity",
     "proxies": [
@@ -715,8 +715,8 @@
     "description": "picklist",
     "displayName": "picklist",
     "environments": [
-      "dev",
-      "prod"
+      "dev-poc",
+      "stage-poc"
     ],
     "name": "picklist-Product",
     "proxies": [],
@@ -734,8 +734,8 @@
     "description": "",
     "displayName": "Import Service",
     "environments": [
-      "dev",
-      "prod"
+      "dev-poc",
+      "stage-poc"
     ],
     "name": "import",
     "proxies": [
@@ -759,8 +759,8 @@
     "description": "",
     "displayName": "Schema",
     "environments": [
-      "dev",
-      "prod"
+      "dev-poc",
+      "stage-poc"
     ],
     "name": "schema",
     "proxies": [],
@@ -782,8 +782,8 @@
     "description": "The configuration service",
     "displayName": "configuration",
     "environments": [
-      "dev",
-      "prod"
+      "dev-poc",
+      "stage-poc"
     ],
     "name": "configuration",
     "proxies": [
@@ -807,8 +807,8 @@
     "description": "The vat-splitting service",
     "displayName": "vatsplitting",
     "environments": [
-      "dev",
-      "prod"
+      "dev-poc",
+      "stage-poc"
     ],
     "name": "vatsplitting",
     "proxies": [
@@ -830,8 +830,8 @@
     "description": "",
     "displayName": "supplier",
     "environments": [
-      "dev",
-      "prod"
+      "dev-poc",
+      "stage-poc"
     ],
     "name": "supplier",
     "proxies": [
@@ -854,8 +854,8 @@
     "description": "The shopping list",
     "displayName": "shoppinglist",
     "environments": [
-      "dev",
-      "prod"
+      "dev-poc",
+      "stage-poc"
     ],
     "name": "shoppinglist",
     "proxies": [
@@ -878,8 +878,8 @@
     "description": "SequentialId-Service",
     "displayName": "sequentialid",
     "environments": [
-      "dev",
-      "prod"
+      "dev-poc",
+      "stage-poc"
     ],
     "name": "sequentialid",
     "proxies": [
@@ -904,8 +904,8 @@
     "description": "Reward Points Service",
     "displayName": "rewardpoints",
     "environments": [
-      "dev",
-      "prod"
+      "dev-poc",
+      "stage-poc"
     ],
     "name": "rewardpoints",
     "proxies": [
@@ -928,8 +928,8 @@
     "description": "",
     "displayName": "report",
     "environments": [
-      "dev",
-      "prod"
+      "dev-poc",
+      "stage-poc"
     ],
     "name": "report",
     "proxies": [
@@ -953,8 +953,8 @@
     "description": "",
     "displayName": "productimport",
     "environments": [
-      "dev",
-      "prod"
+      "dev-poc",
+      "stage-poc"
     ],
     "name": "productimport",
     "proxies": [
@@ -977,8 +977,8 @@
     "description": "Deprecated price service",
     "displayName": "price-deprecated",
     "environments": [
-      "dev",
-      "prod"
+      "dev-poc",
+      "stage-poc"
     ],
     "name": "price",
     "proxies": [
@@ -1000,8 +1000,8 @@
     "description": "",
     "displayName": "pdfmashup",
     "environments": [
-      "dev",
-      "prod"
+      "dev-poc",
+      "stage-poc"
     ],
     "name": "pdfmashup",
     "proxies": [
@@ -1028,8 +1028,8 @@
     "description": "The dummy productcategorymshup service version 4.",
     "displayName": "pcm",
     "environments": [
-      "dev",
-      "prod"
+      "dev-poc",
+      "stage-poc"
     ],
     "name": "pcm",
     "proxies": [
@@ -1059,8 +1059,8 @@
     "description": "The payment service",
     "displayName": "payment",
     "environments": [
-      "dev",
-      "prod"
+      "dev-poc",
+      "stage-poc"
     ],
     "name": "payment",
     "proxies": [
@@ -1080,8 +1080,8 @@
     "description": "Saas Order Service to manage orders from the frontend",
     "displayName": "order-payment",
     "environments": [
-      "dev",
-      "prod"
+      "dev-poc",
+      "stage-poc"
     ],
     "name": "order",
     "proxies": [
@@ -1101,8 +1101,8 @@
     "description": "",
     "displayName": "onlinestock",
     "environments": [
-      "dev",
-      "prod"
+      "dev-poc",
+      "stage-poc"
     ],
     "name": "onlinestock",
     "proxies": [],
@@ -1120,8 +1120,8 @@
     "description": "",
     "displayName": "newsletter",
     "environments": [
-      "dev",
-      "prod"
+      "dev-poc",
+      "stage-poc"
     ],
     "name": "newsletter",
     "proxies": [
@@ -1144,8 +1144,8 @@
     "description": "The label service",
     "displayName": "label",
     "environments": [
-      "dev",
-      "prod"
+      "dev-poc",
+      "stage-poc"
     ],
     "name": "label",
     "proxies": [
@@ -1168,8 +1168,8 @@
     "description": "The saasag image-Service",
     "displayName": "image",
     "environments": [
-      "dev",
-      "prod"
+      "dev-poc",
+      "stage-poc"
     ],
     "name": "image",
     "proxies": [],
@@ -1187,8 +1187,8 @@
     "description": "The html2pdf service",
     "displayName": "html2pdf",
     "environments": [
-      "dev",
-      "prod"
+      "dev-poc",
+      "stage-poc"
     ],
     "name": "html2pdf",
     "proxies": [
@@ -1215,8 +1215,8 @@
     "description": "Charges and Fees Service",
     "displayName": "fee",
     "environments": [
-      "dev",
-      "prod"
+      "dev-poc",
+      "stage-poc"
     ],
     "name": "fee",
     "proxies": [
@@ -1243,8 +1243,8 @@
     "description": "Email Service",
     "displayName": "email",
     "environments": [
-      "dev",
-      "prod"
+      "dev-poc",
+      "stage-poc"
     ],
     "name": "email",
     "proxies": [
@@ -1272,8 +1272,8 @@
     "description": "Dummy service for holding scopes required for restoring",
     "displayName": "dummyrestore",
     "environments": [
-      "dev",
-      "prod"
+      "dev-poc",
+      "stage-poc"
     ],
     "name": "dummyrestore",
     "proxies": [],
@@ -1291,8 +1291,8 @@
     "description": "",
     "displayName": "delivery",
     "environments": [
-      "dev",
-      "prod"
+      "dev-poc",
+      "stage-poc"
     ],
     "name": "delivery",
     "proxies": [
@@ -1317,8 +1317,8 @@
     "description": "The creditCheck service",
     "displayName": "creditcheck",
     "environments": [
-      "dev",
-      "prod"
+      "dev-poc",
+      "stage-poc"
     ],
     "name": "creditcheck",
     "proxies": [
@@ -1338,8 +1338,8 @@
     "description": "Saas Coupon Service. To manage referral-coupons.",
     "displayName": "coupon",
     "environments": [
-      "dev",
-      "prod"
+      "dev-poc",
+      "stage-poc"
     ],
     "name": "coupon",
     "proxies": [
@@ -1361,8 +1361,8 @@
     "description": "The country service",
     "displayName": "country",
     "environments": [
-      "dev",
-      "prod"
+      "dev-poc",
+      "stage-poc"
     ],
     "name": "country",
     "proxies": [
@@ -1385,8 +1385,8 @@
     "description": "The content service",
     "displayName": "content",
     "environments": [
-      "dev",
-      "prod"
+      "dev-poc",
+      "stage-poc"
     ],
     "name": "content",
     "proxies": [
@@ -1415,8 +1415,8 @@
     "description": "",
     "displayName": "tax-avalara",
     "environments": [
-      "dev",
-      "prod"
+      "dev-poc",
+      "stage-poc"
     ],
     "name": "caas-tax-avalara",
     "proxies": [],
@@ -1434,8 +1434,8 @@
     "description": "",
     "displayName": "tax",
     "environments": [
-      "dev",
-      "prod"
+      "dev-poc",
+      "stage-poc"
     ],
     "name": "caas-tax",
     "proxies": [],
@@ -1456,8 +1456,8 @@
     "description": "",
     "displayName": "site",
     "environments": [
-      "dev",
-      "prod"
+      "dev-poc",
+      "stage-poc"
     ],
     "name": "caas-site",
     "proxies": [
@@ -1480,8 +1480,8 @@
     "description": "",
     "displayName": "shipping",
     "environments": [
-      "dev",
-      "prod"
+      "dev-poc",
+      "stage-poc"
     ],
     "name": "caas-shipping",
     "proxies": [
@@ -1503,8 +1503,8 @@
     "description": "",
     "displayName": "indexing-service",
     "environments": [
-      "dev",
-      "prod"
+      "dev-poc",
+      "stage-poc"
     ],
     "name": "caas-indexing-service",
     "proxies": [
@@ -1530,8 +1530,8 @@
     "description": "",
     "displayName": "productdetails",
     "environments": [
-      "dev",
-      "prod"
+      "dev-poc",
+      "stage-poc"
     ],
     "name": "caas-productdetails",
     "proxies": [],
@@ -1549,8 +1549,8 @@
     "description": "",
     "displayName": "product",
     "environments": [
-      "dev",
-      "prod"
+      "dev-poc",
+      "stage-poc"
     ],
     "name": "caas-product",
     "proxies": [
@@ -1581,8 +1581,8 @@
     "description": "Current price service",
     "displayName": "price",
     "environments": [
-      "dev",
-      "prod"
+      "dev-poc",
+      "stage-poc"
     ],
     "name": "caas-price",
     "proxies": [
@@ -1611,8 +1611,8 @@
     "description": "",
     "displayName": "payment-stripe",
     "environments": [
-      "dev",
-      "prod"
+      "dev-poc",
+      "stage-poc"
     ],
     "name": "caas-payment-stripe",
     "proxies": [],
@@ -1630,8 +1630,8 @@
     "description": "",
     "displayName": "order",
     "environments": [
-      "dev",
-      "prod"
+      "dev-poc",
+      "stage-poc"
     ],
     "name": "caas-order",
     "proxies": [
@@ -1660,8 +1660,8 @@
     "description": "",
     "displayName": "customer",
     "environments": [
-      "dev",
-      "prod"
+      "dev-poc",
+      "stage-poc"
     ],
     "name": "caas-customer",
     "proxies": [
@@ -1689,8 +1689,8 @@
     "description": "",
     "displayName": "coupon-v2",
     "environments": [
-      "dev",
-      "prod"
+      "dev-poc",
+      "stage-poc"
     ],
     "name": "caas-coupon",
     "proxies": [
@@ -1714,8 +1714,8 @@
     "description": "",
     "displayName": "checkout",
     "environments": [
-      "dev",
-      "prod"
+      "dev-poc",
+      "stage-poc"
     ],
     "name": "caas-checkout",
     "proxies": [
@@ -1764,8 +1764,8 @@
     "description": "",
     "displayName": "cart-calculation",
     "environments": [
-      "dev",
-      "prod"
+      "dev-poc",
+      "stage-poc"
     ],
     "name": "caas-cartcalculation",
     "proxies": [],
@@ -1783,8 +1783,8 @@
     "description": "",
     "displayName": "cart",
     "environments": [
-      "dev",
-      "prod"
+      "dev-poc",
+      "stage-poc"
     ],
     "name": "caas-cart",
     "proxies": [
@@ -1806,8 +1806,8 @@
     "description": "",
     "displayName": "algolia-reindexer",
     "environments": [
-      "dev",
-      "prod"
+      "dev-poc",
+      "stage-poc"
     ],
     "name": "caas-algolia-reindexer",
     "proxies": [],
@@ -1825,8 +1825,8 @@
     "description": "",
     "displayName": "brand",
     "environments": [
-      "dev",
-      "prod"
+      "dev-poc",
+      "stage-poc"
     ],
     "name": "brand",
     "proxies": [
