@@ -1,33 +1,1840 @@
 [
-    {
-       "name":"caas-product",
-       "displayName":"product",
-       "approvalType":"auto",
-       "environments":[
-          "stage-poc"
-       ],
-       "proxies":[
-          "caas-product"
-       ],
-       "apiResources":[
-          "/"
-       ],
-       "attributes":[
-        {
-            "name": "access",
-            "value": "private"
-        }
-       ],
-       "scopes":[
-           "product.product_create",
-           "product.product_delete",
-           "product.product_delete_all",
-           "product.product_publish",
-           "product.product_read_unpublished",
-           "product.product_template_manage",
-           "product.product_template_read",
-           "product.product_unpublish",
-           "product.product_update"
-       ]
-    }
+  {
+    "apiResources": [],
+    "approvalType": "auto",
+    "attributes": [
+      {
+        "name": "access",
+        "value": "private"
+      }
+    ],
+    "description": "The API product should be attached only into Emporix and EmporixStage tenants",
+    "displayName": "super-admin-emporix",
+    "environments": [
+      "dev-poc",
+      "stage-poc"
+    ],
+    "name": "super-admin-emporix",
+    "proxies": [],
+    "scopes": [
+      "admin.statistics_all_read"
+    ]
+  },
+  {
+    "apiResources": [],
+    "approvalType": "auto",
+    "attributes": [
+      {
+        "name": "access",
+        "value": "private"
+      }
+    ],
+    "description": "",
+    "displayName": "common",
+    "environments": [
+      "dev-poc"
+    ],
+    "name": "common",
+    "proxies": [],
+    "scopes": [
+      "common.unversioned_upsert"
+    ]
+  },
+  {
+    "apiResources": [],
+    "approvalType": "auto",
+    "attributes": [
+      {
+        "name": "access",
+        "value": "private"
+      }
+    ],
+    "description": "",
+    "displayName": "search-service",
+    "environments": [
+      "dev-poc",
+      "stage-poc"
+    ],
+    "name": "search-service",
+    "proxies": [
+      "search-service"
+    ],
+    "scopes": [
+      "search-service.search_manage"
+    ]
+  },
+  {
+    "apiResources": [],
+    "approvalType": "auto",
+    "attributes": [
+      {
+        "name": "access",
+        "value": "private"
+      }
+    ],
+    "description": "",
+    "displayName": "quote",
+    "environments": [
+      "dev-poc",
+      "stage-poc"
+    ],
+    "name": "quote",
+    "proxies": [
+      "quote"
+    ],
+    "scopes": [
+      "quote.quote_manage",
+      "quote.quote_manage_own",
+      "quote.quote_read",
+      "quote.quote_read_own"
+    ]
+  },
+  {
+    "apiResources": [],
+    "approvalType": "auto",
+    "attributes": [
+      {
+        "name": "access",
+        "value": "private"
+      }
+    ],
+    "description": "incoming media service",
+    "displayName": "media",
+    "environments": [
+      "dev-poc",
+      "stage-poc"
+    ],
+    "name": "media",
+    "proxies": [
+      "media"
+    ],
+    "scopes": [
+      "media.asset_manage",
+      "media.asset_read"
+    ]
+  },
+  {
+    "apiResources": [],
+    "approvalType": "auto",
+    "attributes": [
+      {
+        "name": "access",
+        "value": "private"
+      }
+    ],
+    "description": "",
+    "displayName": "returns",
+    "environments": [
+      "dev-poc",
+      "stage-poc"
+    ],
+    "name": "returns",
+    "proxies": [
+      "returns"
+    ],
+    "scopes": [
+      "returns.returns_manage",
+      "returns.returns_manage_own",
+      "returns.returns_read",
+      "returns.returns_read_own"
+    ]
+  },
+  {
+    "apiResources": [],
+    "approvalType": "auto",
+    "attributes": [
+      {
+        "name": "access",
+        "value": "private"
+      }
+    ],
+    "description": "",
+    "displayName": "webhook",
+    "environments": [
+      "dev-poc",
+      "stage-poc"
+    ],
+    "name": "webhook",
+    "proxies": [
+      "webhook"
+    ],
+    "scopes": [
+      "webhook.subscription_manage",
+      "webhook.subscription_read"
+    ]
+  },
+  {
+    "apiResources": [],
+    "approvalType": "auto",
+    "attributes": [
+      {
+        "name": "access",
+        "value": "private"
+      }
+    ],
+    "description": "",
+    "displayName": "client-management",
+    "environments": [
+      "dev-poc",
+      "stage-poc"
+    ],
+    "name": "client-management",
+    "proxies": [
+      "client-management"
+    ],
+    "scopes": [
+      "customermanagement.contact_manage",
+      "customermanagement.contact_read",
+      "customermanagement.contactassignment_manage",
+      "customermanagement.contactassignment_read",
+      "customermanagement.customerassignment_manage",
+      "customermanagement.customerassignment_read",
+      "customermanagement.legalentity_manage",
+      "customermanagement.legalentity_read",
+      "customermanagement.legalentity_read_own",
+      "customermanagement.location_manage",
+      "customermanagement.location_read"
+    ]
+  },
+  {
+    "apiResources": [],
+    "approvalType": "auto",
+    "attributes": [
+      {
+        "name": "access",
+        "value": "private"
+      }
+    ],
+    "description": "",
+    "displayName": "iam",
+    "environments": [
+      "dev-poc"
+    ],
+    "name": "iam",
+    "proxies": [
+      "iam"
+    ],
+    "scopes": [
+      "iam.access_create",
+      "iam.access_delete",
+      "iam.access_read",
+      "iam.access_update",
+      "iam.assignment_create",
+      "iam.assignment_delete",
+      "iam.assignment_read",
+      "iam.assignment_update",
+      "iam.group_create",
+      "iam.group_delete",
+      "iam.group_read",
+      "iam.group_update",
+      "iam.permission_create",
+      "iam.permission_delete",
+      "iam.permission_read",
+      "iam.permission_update",
+      "iam.resource_create",
+      "iam.resource_delete",
+      "iam.resource_read",
+      "iam.resource_update",
+      "iam.role_create",
+      "iam.role_delete",
+      "iam.role_read",
+      "iam.role_update",
+      "iam.scope_read",
+      "iam.template_read",
+      "iam.user_read"
+    ]
+  },
+  {
+    "apiResources": [],
+    "approvalType": "auto",
+    "attributes": [
+      {
+        "name": "access",
+        "value": "private"
+      }
+    ],
+    "description": "",
+    "displayName": "tax",
+    "environments": [
+      "dev-poc",
+      "stage-poc"
+    ],
+    "name": "tax",
+    "proxies": [
+      "tax"
+    ],
+    "scopes": [
+      "tax.tax_manage",
+      "tax.tax_read"
+    ]
+  },
+  {
+    "apiResources": [],
+    "approvalType": "auto",
+    "attributes": [
+      {
+        "name": "access",
+        "value": "private"
+      }
+    ],
+    "description": "",
+    "displayName": "currency",
+    "environments": [
+      "dev-poc",
+      "stage-poc"
+    ],
+    "name": "currency",
+    "proxies": [
+      "currency"
+    ],
+    "scopes": [
+      "currency.currency_manage",
+      "currency.currency_manage_admin",
+      "currency.currency_read"
+    ]
+  },
+  {
+    "apiResources": [],
+    "approvalType": "auto",
+    "attributes": [
+      {
+        "name": "access",
+        "value": "private"
+      }
+    ],
+    "description": "",
+    "displayName": "feature-toggle",
+    "environments": [
+      "dev-poc",
+      "stage-poc"
+    ],
+    "name": "feature-toggle",
+    "proxies": [
+      "feature-toggle"
+    ],
+    "scopes": [
+      "featuretoggle.toggle_get_value",
+      "featuretoggle.toggle_manage"
+    ]
+  },
+  {
+    "apiResources": [],
+    "approvalType": "auto",
+    "attributes": [
+      {
+        "name": "access",
+        "value": "private"
+      }
+    ],
+    "description": "",
+    "displayName": "catalogue",
+    "environments": [
+      "dev-poc",
+      "stage-poc"
+    ],
+    "name": "catalogue",
+    "proxies": [
+      "catalog"
+    ],
+    "scopes": [
+      "catalog.catalog_create",
+      "catalog.catalog_delete",
+      "catalog.catalog_update",
+      "catalog.catalog_view"
+    ]
+  },
+  {
+    "apiResources": [],
+    "approvalType": "auto",
+    "attributes": [
+      {
+        "name": "access",
+        "value": "private"
+      }
+    ],
+    "description": "New price serivce",
+    "displayName": "composable-price",
+    "environments": [
+      "dev-poc",
+      "stage-poc"
+    ],
+    "name": "composable-price",
+    "proxies": [
+      "composable-price"
+    ],
+    "scopes": [
+      "composableprice.price_manage",
+      "composableprice.price_match_own"
+    ]
+  },
+  {
+    "apiResources": [],
+    "approvalType": "auto",
+    "attributes": [
+      {
+        "name": "access",
+        "value": "private"
+      }
+    ],
+    "description": "",
+    "displayName": "replenishment",
+    "environments": [
+      "dev-poc"
+    ],
+    "name": "replenishment",
+    "proxies": [
+      "replenishment"
+    ],
+    "scopes": []
+  },
+  {
+    "apiResources": [],
+    "approvalType": "auto",
+    "attributes": [
+      {
+        "name": "access",
+        "value": "private"
+      }
+    ],
+    "description": "incoming unit-handling service",
+    "displayName": "unit-handling",
+    "environments": [
+      "dev-poc",
+      "stage-poc"
+    ],
+    "name": "unit-handling",
+    "proxies": [
+      "unit-handling"
+    ],
+    "scopes": [
+      "unithandling.unit_manage"
+    ]
+  },
+  {
+    "apiResources": [],
+    "approvalType": "auto",
+    "attributes": [
+      {
+        "name": "access",
+        "value": "private"
+      }
+    ],
+    "description": "Incoming session context service",
+    "displayName": "session-context",
+    "environments": [
+      "dev-poc",
+      "stage-poc"
+    ],
+    "name": "session-context",
+    "proxies": [
+      "session-context"
+    ],
+    "scopes": [
+      "sessioncontext.context_manage"
+    ]
+  },
+  {
+    "apiResources": [],
+    "approvalType": "auto",
+    "attributes": [
+      {
+        "name": "access",
+        "value": "private"
+      }
+    ],
+    "description": "iban-validator",
+    "displayName": "iban-validator",
+    "environments": [
+      "dev-poc",
+      "stage-poc"
+    ],
+    "name": "iban-validator",
+    "proxies": [
+      "iban-validator"
+    ],
+    "scopes": []
+  },
+  {
+    "apiResources": [],
+    "approvalType": "auto",
+    "attributes": [
+      {
+        "name": "access",
+        "value": "private"
+      }
+    ],
+    "description": "Incoming price serivce",
+    "displayName": "composable-price-1",
+    "environments": [
+      "dev-poc",
+      "stage-poc"
+    ],
+    "name": "price-v2",
+    "proxies": [
+      "composable-price"
+    ],
+    "scopes": [
+      "composableprice.price_manage",
+      "composableprice.price_match_own"
+    ]
+  },
+  {
+    "apiResources": [],
+    "approvalType": "auto",
+    "attributes": [
+      {
+        "name": "access",
+        "value": "private"
+      }
+    ],
+    "description": "",
+    "displayName": "sepa-export",
+    "environments": [
+      "dev-poc",
+      "stage-poc"
+    ],
+    "name": "Sepa-export",
+    "proxies": [
+      "sepa-export"
+    ],
+    "scopes": [
+      "sepaexport.job_manage",
+      "sepaexport.job_view",
+      "sepaexport.media_view"
+    ]
+  },
+  {
+    "apiResources": [],
+    "approvalType": "auto",
+    "attributes": [
+      {
+        "name": "access",
+        "value": "private"
+      }
+    ],
+    "description": "",
+    "displayName": "Customer (read only)",
+    "environments": [
+      "dev-poc",
+      "stage-poc"
+    ],
+    "name": "customer-read-only",
+    "proxies": [
+      "caas-customer"
+    ],
+    "scopes": [
+      "customer.customer_read",
+      "emporix.customer_read",
+      "hybris.customer_read",
+      "saasag.customer_read"
+    ]
+  },
+  {
+    "apiResources": [],
+    "approvalType": "auto",
+    "attributes": [
+      {
+        "name": "access",
+        "value": "private"
+      }
+    ],
+    "description": "",
+    "displayName": "order-read",
+    "environments": [
+      "stage-poc"
+    ],
+    "name": "caas-order-read",
+    "proxies": [
+      "caas-order"
+    ],
+    "scopes": [
+      "order.history_view",
+      "order.order_read"
+    ]
+  },
+  {
+    "apiResources": [],
+    "approvalType": "auto",
+    "attributes": [
+      {
+        "name": "access",
+        "value": "private"
+      }
+    ],
+    "description": "",
+    "displayName": "delivery-v2",
+    "environments": [
+      "dev-poc",
+      "stage-poc"
+    ],
+    "name": "delivery-v2",
+    "proxies": [
+      "delivery-v2"
+    ],
+    "scopes": []
+  },
+  {
+    "apiResources": [],
+    "approvalType": "auto",
+    "attributes": [
+      {
+        "name": "access",
+        "value": "private"
+      }
+    ],
+    "description": "The invoice service",
+    "displayName": "invoice service",
+    "environments": [
+      "dev-poc"
+    ],
+    "name": "invoice",
+    "proxies": [],
+    "scopes": [
+      "invoice.invoice_manage",
+      "invoice.invoice_view"
+    ]
+  },
+  {
+    "apiResources": [],
+    "approvalType": "auto",
+    "attributes": [
+      {
+        "name": "access",
+        "value": "private"
+      }
+    ],
+    "description": "The pickpack service",
+    "displayName": "pickpack",
+    "environments": [
+      "dev-poc",
+      "stage-poc"
+    ],
+    "name": "pick-pack",
+    "proxies": [
+      "pick-pack"
+    ],
+    "scopes": [
+      "availability.availability_manage",
+      "availability.availability_view",
+      "pickpack.pickpack_manage",
+      "pickpack.pickpack_view"
+    ]
+  },
+  {
+    "apiResources": [],
+    "approvalType": "auto",
+    "attributes": [
+      {
+        "name": "access",
+        "value": "private"
+      }
+    ],
+    "description": "",
+    "displayName": "cart-v2",
+    "environments": [
+      "dev-poc"
+    ],
+    "name": "cart-v2",
+    "proxies": [
+      "cart-v2"
+    ],
+    "scopes": []
+  },
+  {
+    "apiResources": [],
+    "approvalType": "auto",
+    "attributes": [
+      {
+        "name": "access",
+        "value": "private"
+      }
+    ],
+    "description": "The name Backoffice is misleading and is a misconfiguration. ",
+    "displayName": "Markant Service",
+    "environments": [
+      "dev-poc",
+      "stage-poc"
+    ],
+    "name": "Backoffice",
+    "proxies": [
+      "markant-service"
+    ],
+    "scopes": []
+  },
+  {
+    "apiResources": [],
+    "approvalType": "auto",
+    "attributes": [
+      {
+        "name": "access",
+        "value": "private"
+      }
+    ],
+    "description": "this is a test and not yet in production",
+    "displayName": "Storefront",
+    "environments": [
+      "dev-poc"
+    ],
+    "name": "storefront",
+    "proxies": [],
+    "scopes": []
+  },
+  {
+    "apiResources": [],
+    "approvalType": "auto",
+    "attributes": [
+      {
+        "name": "access",
+        "value": "private"
+      }
+    ],
+    "description": "The availability and stock level service",
+    "displayName": "Availability",
+    "environments": [
+      "dev-poc",
+      "stage-poc"
+    ],
+    "name": "availabillity",
+    "proxies": [
+      "availability"
+    ],
+    "scopes": [
+      "availability.availability_manage",
+      "availability.availability_view"
+    ]
+  },
+  {
+    "apiResources": [],
+    "approvalType": "auto",
+    "attributes": [
+      {
+        "name": "access",
+        "value": "private"
+      }
+    ],
+    "description": "picklist",
+    "displayName": "picklist",
+    "environments": [
+      "dev-poc",
+      "stage-poc"
+    ],
+    "name": "picklist-Product",
+    "proxies": [],
+    "scopes": []
+  },
+  {
+    "apiResources": [],
+    "approvalType": "auto",
+    "attributes": [
+      {
+        "name": "access",
+        "value": "private"
+      }
+    ],
+    "description": "",
+    "displayName": "Import Service",
+    "environments": [
+      "dev-poc",
+      "stage-poc"
+    ],
+    "name": "import",
+    "proxies": [
+      "import"
+    ],
+    "scopes": [
+      "import.import_admin",
+      "import.import_manage",
+      "import.import_view"
+    ]
+  },
+  {
+    "apiResources": [],
+    "approvalType": "auto",
+    "attributes": [
+      {
+        "name": "access",
+        "value": "private"
+      }
+    ],
+    "description": "",
+    "displayName": "Schema",
+    "environments": [
+      "dev-poc",
+      "stage-poc"
+    ],
+    "name": "schema",
+    "proxies": [],
+    "scopes": [
+      "sequentialid.schema_admin",
+      "sequentialid.schema_manage",
+      "sequentialid.schema_view"
+    ]
+  },
+  {
+    "apiResources": [],
+    "approvalType": "auto",
+    "attributes": [
+      {
+        "name": "access",
+        "value": "private"
+      }
+    ],
+    "description": "The configuration service",
+    "displayName": "configuration",
+    "environments": [
+      "dev-poc",
+      "stage-poc"
+    ],
+    "name": "configuration",
+    "proxies": [
+      "configuration"
+    ],
+    "scopes": [
+      "configuration.configuration_admin",
+      "configuration.configuration_manage",
+      "configuration.configuration_view"
+    ]
+  },
+  {
+    "apiResources": [],
+    "approvalType": "auto",
+    "attributes": [
+      {
+        "name": "access",
+        "value": "private"
+      }
+    ],
+    "description": "The vat-splitting service",
+    "displayName": "vatsplitting",
+    "environments": [
+      "dev-poc",
+      "stage-poc"
+    ],
+    "name": "vatsplitting",
+    "proxies": [
+      "vatsplitting"
+    ],
+    "scopes": [
+      "vatsplitting.vatsplitting_calculate"
+    ]
+  },
+  {
+    "apiResources": [],
+    "approvalType": "auto",
+    "attributes": [
+      {
+        "name": "access",
+        "value": "private"
+      }
+    ],
+    "description": "",
+    "displayName": "supplier",
+    "environments": [
+      "dev-poc",
+      "stage-poc"
+    ],
+    "name": "supplier",
+    "proxies": [
+      "supplier"
+    ],
+    "scopes": [
+      "supplier.supplier_delete",
+      "supplier.supplier_manage"
+    ]
+  },
+  {
+    "apiResources": [],
+    "approvalType": "auto",
+    "attributes": [
+      {
+        "name": "access",
+        "value": "private"
+      }
+    ],
+    "description": "The shopping list",
+    "displayName": "shoppinglist",
+    "environments": [
+      "dev-poc",
+      "stage-poc"
+    ],
+    "name": "shoppinglist",
+    "proxies": [
+      "shoppinglist"
+    ],
+    "scopes": [
+      "shoppinglist.shoppinglist_delete",
+      "shoppinglist.shoppinglist_read"
+    ]
+  },
+  {
+    "apiResources": [],
+    "approvalType": "auto",
+    "attributes": [
+      {
+        "name": "access",
+        "value": "private"
+      }
+    ],
+    "description": "SequentialId-Service",
+    "displayName": "sequentialid",
+    "environments": [
+      "dev-poc",
+      "stage-poc"
+    ],
+    "name": "sequentialid",
+    "proxies": [
+      "sequentialid"
+    ],
+    "scopes": [
+      "sequentialid.schema_admin",
+      "sequentialid.schema_manage",
+      "sequentialid.schema_view",
+      "sequentialid.sequentialid_manage"
+    ]
+  },
+  {
+    "apiResources": [],
+    "approvalType": "auto",
+    "attributes": [
+      {
+        "name": "access",
+        "value": "private"
+      }
+    ],
+    "description": "Reward Points Service",
+    "displayName": "rewardpoints",
+    "environments": [
+      "dev-poc",
+      "stage-poc"
+    ],
+    "name": "rewardpoints",
+    "proxies": [
+      "rewardpoints"
+    ],
+    "scopes": [
+      "rewardspoints.rewardpoints_manage",
+      "rewardspoints.rewardpoints_view"
+    ]
+  },
+  {
+    "apiResources": [],
+    "approvalType": "auto",
+    "attributes": [
+      {
+        "name": "access",
+        "value": "private"
+      }
+    ],
+    "description": "",
+    "displayName": "report",
+    "environments": [
+      "dev-poc",
+      "stage-poc"
+    ],
+    "name": "report",
+    "proxies": [
+      "report"
+    ],
+    "scopes": [
+      "configuration.configuration_view",
+      "hybris.configuration_view",
+      "saasag.configuration_view"
+    ]
+  },
+  {
+    "apiResources": [],
+    "approvalType": "auto",
+    "attributes": [
+      {
+        "name": "access",
+        "value": "private"
+      }
+    ],
+    "description": "",
+    "displayName": "productimport",
+    "environments": [
+      "dev-poc",
+      "stage-poc"
+    ],
+    "name": "productimport",
+    "proxies": [
+      "productimport"
+    ],
+    "scopes": [
+      "productimport.popularityimp_manage",
+      "productimport.pricelistimp_manage"
+    ]
+  },
+  {
+    "apiResources": [],
+    "approvalType": "auto",
+    "attributes": [
+      {
+        "name": "access",
+        "value": "private"
+      }
+    ],
+    "description": "Deprecated price service",
+    "displayName": "price-deprecated",
+    "environments": [
+      "dev-poc",
+      "stage-poc"
+    ],
+    "name": "price",
+    "proxies": [
+      "price"
+    ],
+    "scopes": [
+      "price.prod_price_calculate"
+    ]
+  },
+  {
+    "apiResources": [],
+    "approvalType": "auto",
+    "attributes": [
+      {
+        "name": "access",
+        "value": "private"
+      }
+    ],
+    "description": "",
+    "displayName": "pdfmashup",
+    "environments": [
+      "dev-poc",
+      "stage-poc"
+    ],
+    "name": "pdfmashup",
+    "proxies": [
+      "pdfmashup"
+    ],
+    "scopes": [
+      "invoice.invoice_create",
+      "pdfmashup.packlist_create",
+      "pdfmashup.picklist_create",
+      "pdfmashup.scheduler_manage",
+      "pdfmashup.scheduler_read",
+      "pdfmashup.shippingnote_create"
+    ]
+  },
+  {
+    "apiResources": [],
+    "approvalType": "auto",
+    "attributes": [
+      {
+        "name": "access",
+        "value": "private"
+      }
+    ],
+    "description": "The dummy productcategorymshup service version 4.",
+    "displayName": "pcm",
+    "environments": [
+      "dev-poc",
+      "stage-poc"
+    ],
+    "name": "pcm",
+    "proxies": [
+      "pcm"
+    ],
+    "scopes": [
+      "category.category_read_unpublishedpcm.assignment_delete",
+      "pcm.assignment_manage",
+      "pcm.image_delete",
+      "pcm.image_manage",
+      "pcm.pcm_delete",
+      "pcm.prod_delete",
+      "pcm.prod_manage",
+      "pcm.prod_read",
+      "pcm.unpublished_read"
+    ]
+  },
+  {
+    "apiResources": [],
+    "approvalType": "auto",
+    "attributes": [
+      {
+        "name": "access",
+        "value": "private"
+      }
+    ],
+    "description": "The payment service",
+    "displayName": "payment",
+    "environments": [
+      "dev-poc",
+      "stage-poc"
+    ],
+    "name": "payment",
+    "proxies": [
+      "payment"
+    ],
+    "scopes": []
+  },
+  {
+    "apiResources": [],
+    "approvalType": "auto",
+    "attributes": [
+      {
+        "name": "access",
+        "value": "private"
+      }
+    ],
+    "description": "Saas Order Service to manage orders from the frontend",
+    "displayName": "order-payment",
+    "environments": [
+      "dev-poc",
+      "stage-poc"
+    ],
+    "name": "order",
+    "proxies": [
+      "order"
+    ],
+    "scopes": []
+  },
+  {
+    "apiResources": [],
+    "approvalType": "auto",
+    "attributes": [
+      {
+        "name": "access",
+        "value": "private"
+      }
+    ],
+    "description": "",
+    "displayName": "onlinestock",
+    "environments": [
+      "dev-poc",
+      "stage-poc"
+    ],
+    "name": "onlinestock",
+    "proxies": [],
+    "scopes": []
+  },
+  {
+    "apiResources": [],
+    "approvalType": "auto",
+    "attributes": [
+      {
+        "name": "access",
+        "value": "private"
+      }
+    ],
+    "description": "",
+    "displayName": "newsletter",
+    "environments": [
+      "dev-poc",
+      "stage-poc"
+    ],
+    "name": "newsletter",
+    "proxies": [
+      "newsletter"
+    ],
+    "scopes": [
+      "newsletter.newsletter_export",
+      "newsletter.newsletter_read"
+    ]
+  },
+  {
+    "apiResources": [],
+    "approvalType": "auto",
+    "attributes": [
+      {
+        "name": "access",
+        "value": "private"
+      }
+    ],
+    "description": "The label service",
+    "displayName": "label",
+    "environments": [
+      "dev-poc",
+      "stage-poc"
+    ],
+    "name": "label",
+    "proxies": [
+      "label"
+    ],
+    "scopes": [
+      "label.label_delete",
+      "label.label_manage"
+    ]
+  },
+  {
+    "apiResources": [],
+    "approvalType": "auto",
+    "attributes": [
+      {
+        "name": "access",
+        "value": "private"
+      }
+    ],
+    "description": "The saasag image-Service",
+    "displayName": "image",
+    "environments": [
+      "dev-poc",
+      "stage-poc"
+    ],
+    "name": "image",
+    "proxies": [],
+    "scopes": []
+  },
+  {
+    "apiResources": [],
+    "approvalType": "auto",
+    "attributes": [
+      {
+        "name": "access",
+        "value": "private"
+      }
+    ],
+    "description": "The html2pdf service",
+    "displayName": "html2pdf",
+    "environments": [
+      "dev-poc",
+      "stage-poc"
+    ],
+    "name": "html2pdf",
+    "proxies": [
+      "html2pdf"
+    ],
+    "scopes": [
+      "html2pdf.html2pdf_delete",
+      "html2pdf.html2pdf_link",
+      "html2pdf.html2pdf_read",
+      "html2pdf.html2pdf_search",
+      "html2pdf.html2pdf_stream",
+      "html2pdf.metadata_update"
+    ]
+  },
+  {
+    "apiResources": [],
+    "approvalType": "auto",
+    "attributes": [
+      {
+        "name": "access",
+        "value": "private"
+      }
+    ],
+    "description": "Charges and Fees Service",
+    "displayName": "fee",
+    "environments": [
+      "dev-poc",
+      "stage-poc"
+    ],
+    "name": "fee",
+    "proxies": [
+      "fee"
+    ],
+    "scopes": [
+      "fee.fee_create",
+      "fee.fee_delete",
+      "fee.fee_update",
+      "fee.item_create",
+      "fee.item_delete",
+      "fee.item_update"
+    ]
+  },
+  {
+    "apiResources": [],
+    "approvalType": "auto",
+    "attributes": [
+      {
+        "name": "access",
+        "value": "private"
+      }
+    ],
+    "description": "Email Service",
+    "displayName": "email",
+    "environments": [
+      "dev-poc",
+      "stage-poc"
+    ],
+    "name": "email",
+    "proxies": [
+      "email"
+    ],
+    "scopes": [
+      "email.coupons_send",
+      "email.email_manage",
+      "email.email_send",
+      "email.invoice_send",
+      "email.newsletterdoi_send",
+      "email.picklist_send",
+      "email.shippingconfirmation_send"
+    ]
+  },
+  {
+    "apiResources": [],
+    "approvalType": "auto",
+    "attributes": [
+      {
+        "name": "access",
+        "value": "private"
+      }
+    ],
+    "description": "Dummy service for holding scopes required for restoring",
+    "displayName": "dummyrestore",
+    "environments": [
+      "dev-poc",
+      "stage-poc"
+    ],
+    "name": "dummyrestore",
+    "proxies": [],
+    "scopes": []
+  },
+  {
+    "apiResources": [],
+    "approvalType": "auto",
+    "attributes": [
+      {
+        "name": "access",
+        "value": "private"
+      }
+    ],
+    "description": "",
+    "displayName": "delivery",
+    "environments": [
+      "dev-poc",
+      "stage-poc"
+    ],
+    "name": "delivery",
+    "proxies": [
+      "delivery"
+    ],
+    "scopes": [
+      "delivery.area_delete",
+      "delivery.area_manage",
+      "delivery.time_delete",
+      "delivery.time_manage"
+    ]
+  },
+  {
+    "apiResources": [],
+    "approvalType": "auto",
+    "attributes": [
+      {
+        "name": "access",
+        "value": "private"
+      }
+    ],
+    "description": "The creditCheck service",
+    "displayName": "creditcheck",
+    "environments": [
+      "dev-poc",
+      "stage-poc"
+    ],
+    "name": "creditcheck",
+    "proxies": [
+      "creditcheck"
+    ],
+    "scopes": []
+  },
+  {
+    "apiResources": [],
+    "approvalType": "auto",
+    "attributes": [
+      {
+        "name": "access",
+        "value": "private"
+      }
+    ],
+    "description": "Saas Coupon Service. To manage referral-coupons.",
+    "displayName": "coupon",
+    "environments": [
+      "dev-poc",
+      "stage-poc"
+    ],
+    "name": "coupon",
+    "proxies": [
+      "coupon"
+    ],
+    "scopes": [
+      "coupon.coupon_manage"
+    ]
+  },
+  {
+    "apiResources": [],
+    "approvalType": "auto",
+    "attributes": [
+      {
+        "name": "access",
+        "value": "private"
+      }
+    ],
+    "description": "The country service",
+    "displayName": "country",
+    "environments": [
+      "dev-poc",
+      "stage-poc"
+    ],
+    "name": "country",
+    "proxies": [
+      "country"
+    ],
+    "scopes": [
+      "country.country_delete",
+      "country.country_manage"
+    ]
+  },
+  {
+    "apiResources": [],
+    "approvalType": "auto",
+    "attributes": [
+      {
+        "name": "access",
+        "value": "private"
+      }
+    ],
+    "description": "The content service",
+    "displayName": "content",
+    "environments": [
+      "dev-poc",
+      "stage-poc"
+    ],
+    "name": "content",
+    "proxies": [
+      "content"
+    ],
+    "scopes": [
+      "content.component_delete",
+      "content.component_delete_all",
+      "content.component_manage",
+      "content.type_delete",
+      "content.type_delete_all",
+      "content.type_manage",
+      "content.type_view",
+      "content.type_view_all"
+    ]
+  },
+  {
+    "apiResources": [],
+    "approvalType": "auto",
+    "attributes": [
+      {
+        "name": "access",
+        "value": "private"
+      }
+    ],
+    "description": "",
+    "displayName": "tax-avalara",
+    "environments": [
+      "dev-poc",
+      "stage-poc"
+    ],
+    "name": "caas-tax-avalara",
+    "proxies": [],
+    "scopes": []
+  },
+  {
+    "apiResources": [],
+    "approvalType": "auto",
+    "attributes": [
+      {
+        "name": "access",
+        "value": "private"
+      }
+    ],
+    "description": "",
+    "displayName": "tax",
+    "environments": [
+      "dev-poc",
+      "stage-poc"
+    ],
+    "name": "caas-tax",
+    "proxies": [],
+    "scopes": [
+      "tax.tax_manage",
+      "tax.tax_read"
+    ]
+  },
+  {
+    "apiResources": [],
+    "approvalType": "auto",
+    "attributes": [
+      {
+        "name": "access",
+        "value": "private"
+      }
+    ],
+    "description": "",
+    "displayName": "site",
+    "environments": [
+      "dev-poc",
+      "stage-poc"
+    ],
+    "name": "caas-site",
+    "proxies": [
+      "caas-site"
+    ],
+    "scopes": [
+      "site.site_manage",
+      "site.site_read"
+    ]
+  },
+  {
+    "apiResources": [],
+    "approvalType": "auto",
+    "attributes": [
+      {
+        "name": "access",
+        "value": "private"
+      }
+    ],
+    "description": "",
+    "displayName": "shipping",
+    "environments": [
+      "dev-poc",
+      "stage-poc"
+    ],
+    "name": "caas-shipping",
+    "proxies": [
+      "caas-shipping"
+    ],
+    "scopes": [
+      "shipping.shipping_manage"
+    ]
+  },
+  {
+    "apiResources": [],
+    "approvalType": "auto",
+    "attributes": [
+      {
+        "name": "access",
+        "value": "private"
+      }
+    ],
+    "description": "",
+    "displayName": "indexing-service",
+    "environments": [
+      "dev-poc",
+      "stage-poc"
+    ],
+    "name": "caas-indexing-service",
+    "proxies": [
+      "caas-indexing-service"
+    ],
+    "scopes": [
+      "indexing.algolia_index",
+      "indexing.algolia_manage",
+      "indexing.algolia_read",
+      "indexing.search_manage",
+      "indexing.search_view indexing.indexing_manage"
+    ]
+  },
+  {
+    "apiResources": [],
+    "approvalType": "auto",
+    "attributes": [
+      {
+        "name": "access",
+        "value": "private"
+      }
+    ],
+    "description": "",
+    "displayName": "productdetails",
+    "environments": [
+      "dev-poc",
+      "stage-poc"
+    ],
+    "name": "caas-productdetails",
+    "proxies": [],
+    "scopes": []
+  },
+  {
+    "apiResources": [],
+    "approvalType": "auto",
+    "attributes": [
+      {
+        "name": "access",
+        "value": "private"
+      }
+    ],
+    "description": "",
+    "displayName": "product",
+    "environments": [
+      "dev-poc",
+      "stage-poc"
+    ],
+    "name": "caas-product",
+    "proxies": [
+      "caas-product",
+      "product-v2"
+    ],
+    "scopes": [
+      "product.product_create",
+      "product.product_delete",
+      "product.product_delete_all",
+      "product.product_publish",
+      "product.product_read_unpublished",
+      "product.product_template_manage",
+      "product.product_template_read",
+      "product.product_unpublish",
+      "product.product_update"
+    ]
+  },
+  {
+    "apiResources": [],
+    "approvalType": "auto",
+    "attributes": [
+      {
+        "name": "access",
+        "value": "private"
+      }
+    ],
+    "description": "Current price service",
+    "displayName": "price",
+    "environments": [
+      "dev-poc",
+      "stage-poc"
+    ],
+    "name": "caas-price",
+    "proxies": [
+      "price"
+    ],
+    "scopes": [
+      "price.price_delete_all",
+      "price.price_manage",
+      "price.price_read",
+      "price.pricelist_manage",
+      "price.pricelist_read",
+      "price.pricemodel_manage",
+      "price.pricemodel_manage_admin",
+      "price.pricemodel_read"
+    ]
+  },
+  {
+    "apiResources": [],
+    "approvalType": "auto",
+    "attributes": [
+      {
+        "name": "access",
+        "value": "private"
+      }
+    ],
+    "description": "",
+    "displayName": "payment-stripe",
+    "environments": [
+      "dev-poc",
+      "stage-poc"
+    ],
+    "name": "caas-payment-stripe",
+    "proxies": [],
+    "scopes": []
+  },
+  {
+    "apiResources": [],
+    "approvalType": "auto",
+    "attributes": [
+      {
+        "name": "access",
+        "value": "private"
+      }
+    ],
+    "description": "",
+    "displayName": "order",
+    "environments": [
+      "dev-poc",
+      "stage-poc"
+    ],
+    "name": "caas-order",
+    "proxies": [
+      "caas-order"
+    ],
+    "scopes": [
+      "order.history_view",
+      "order.order_create",
+      "order.order_delete",
+      "order.order_post",
+      "order.order_read",
+      "order.order_update",
+      "order.order_update_completed",
+      "order.order_updateascustomer"
+    ]
+  },
+  {
+    "apiResources": [],
+    "approvalType": "auto",
+    "attributes": [
+      {
+        "name": "access",
+        "value": "private"
+      }
+    ],
+    "description": "",
+    "displayName": "customer",
+    "environments": [
+      "dev-poc",
+      "stage-poc"
+    ],
+    "name": "caas-customer",
+    "proxies": [
+      "caas-customer"
+    ],
+    "scopes": [
+      "customer.customer_create",
+      "customer.customer_delete",
+      "customer.customer_manage",
+      "customer.customer_read",
+      "customer.customer_update",
+      "customer.customerprofile_edit",
+      "customer.customerprofile_view"
+    ]
+  },
+  {
+    "apiResources": [],
+    "approvalType": "auto",
+    "attributes": [
+      {
+        "name": "access",
+        "value": "private"
+      }
+    ],
+    "description": "",
+    "displayName": "coupon-v2",
+    "environments": [
+      "dev-poc",
+      "stage-poc"
+    ],
+    "name": "caas-coupon",
+    "proxies": [
+      "caas-coupon"
+    ],
+    "scopes": [
+      "coupon.coupon_manage",
+      "coupon.coupon_redeem",
+      "coupon.coupon_redeem_on_behalf"
+    ]
+  },
+  {
+    "apiResources": [],
+    "approvalType": "auto",
+    "attributes": [
+      {
+        "name": "access",
+        "value": "private"
+      }
+    ],
+    "description": "",
+    "displayName": "checkout",
+    "environments": [
+      "dev-poc",
+      "stage-poc"
+    ],
+    "name": "caas-checkout",
+    "proxies": [
+      "caas-checkout"
+    ],
+    "scopes": [
+      "checkout.checkout_delete_all",
+      "checkout.checkout_manage"
+    ]
+  },
+  {
+    "apiResources": [],
+    "approvalType": "auto",
+    "attributes": [
+      {
+        "name": "access",
+        "value": "private"
+      }
+    ],
+    "description": "",
+    "displayName": "category",
+    "environments": [],
+    "name": "caas-category",
+    "proxies": [
+      "caas-category"
+    ],
+    "scopes": [
+      "category.category_create",
+      "category.category_delete",
+      "category.category_delete_all",
+      "category.category_publish",
+      "category.category_read_unpublished",
+      "category.category_unpublish",
+      "category.category_update"
+    ]
+  },
+  {
+    "apiResources": [],
+    "approvalType": "auto",
+    "attributes": [
+      {
+        "name": "access",
+        "value": "private"
+      }
+    ],
+    "description": "",
+    "displayName": "cart-calculation",
+    "environments": [
+      "dev-poc",
+      "stage-poc"
+    ],
+    "name": "caas-cartcalculation",
+    "proxies": [],
+    "scopes": []
+  },
+  {
+    "apiResources": [],
+    "approvalType": "auto",
+    "attributes": [
+      {
+        "name": "access",
+        "value": "private"
+      }
+    ],
+    "description": "",
+    "displayName": "cart",
+    "environments": [
+      "dev-poc",
+      "stage-poc"
+    ],
+    "name": "caas-cart",
+    "proxies": [
+      "caas-cart"
+    ],
+    "scopes": [
+      "cart.cart_manage"
+    ]
+  },
+  {
+    "apiResources": [],
+    "approvalType": "auto",
+    "attributes": [
+      {
+        "name": "access",
+        "value": "private"
+      }
+    ],
+    "description": "",
+    "displayName": "algolia-reindexer",
+    "environments": [
+      "dev-poc",
+      "stage-poc"
+    ],
+    "name": "caas-algolia-reindexer",
+    "proxies": [],
+    "scopes": []
+  },
+  {
+    "apiResources": [],
+    "approvalType": "auto",
+    "attributes": [
+      {
+        "name": "access",
+        "value": "private"
+      }
+    ],
+    "description": "",
+    "displayName": "brand",
+    "environments": [
+      "dev-poc",
+      "stage-poc"
+    ],
+    "name": "brand",
+    "proxies": [
+      "brand"
+    ],
+    "scopes": [
+      "brand.brand_delete",
+      "brand.brand_manage"
+    ]
+  }
 ]
