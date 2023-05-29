@@ -30,9 +30,32 @@
       }
     ],
     "description": "",
+    "displayName": "super-admin-customer",
+    "environments": [
+      "dev-poc",
+      "stage-poc"
+    ],
+    "name": "super-admin-customer",
+    "proxies": [],
+    "scopes": [
+      "admin.statistics_health_read",
+      "admin.statistics_tenant_read"
+    ]
+  },
+  {
+    "apiResources": [],
+    "approvalType": "auto",
+    "attributes": [
+      {
+        "name": "access",
+        "value": "private"
+      }
+    ],
+    "description": "",
     "displayName": "common",
     "environments": [
-      "dev-poc"
+      "dev-poc",
+      "stage-poc"
     ],
     "name": "common",
     "proxies": [],
@@ -61,6 +84,32 @@
     ],
     "scopes": [
       "search-service.search_manage"
+    ]
+  },
+  {
+    "apiResources": [],
+    "approvalType": "auto",
+    "attributes": [
+      {
+        "name": "access",
+        "value": "private"
+      }
+    ],
+    "description": "cxp",
+    "displayName": "cxp",
+    "environments": [
+      "dev-poc",
+      "stage",
+      "stage-poc"
+    ],
+    "name": "cxp",
+    "proxies": [],
+    "scopes": [
+      "cxp.executiontemplate_edit",
+      "cxp.executiontemplate_read",
+      "cxp.tenant_edit",
+      "integromat.app_developer",
+      "integromat.scenario_edit"
     ]
   },
   {
@@ -208,7 +257,8 @@
     "description": "",
     "displayName": "iam",
     "environments": [
-      "dev-poc"
+      "dev-poc",
+      "stage-poc"
     ],
     "name": "iam",
     "proxies": [
@@ -379,7 +429,8 @@
     "description": "",
     "displayName": "replenishment",
     "environments": [
-      "dev-poc"
+      "dev-poc",
+      "stage-poc"
     ],
     "name": "replenishment",
     "proxies": [
@@ -585,7 +636,8 @@
     "description": "The invoice service",
     "displayName": "invoice service",
     "environments": [
-      "dev-poc"
+      "dev-poc",
+      "stage-poc"
     ],
     "name": "invoice",
     "proxies": [],
@@ -632,7 +684,8 @@
     "description": "",
     "displayName": "cart-v2",
     "environments": [
-      "dev-poc"
+      "dev-poc",
+      "stage-poc"
     ],
     "name": "cart-v2",
     "proxies": [
@@ -673,7 +726,8 @@
     "description": "this is a test and not yet in production",
     "displayName": "Storefront",
     "environments": [
-      "dev-poc"
+      "dev-poc",
+      "stage-poc"
     ],
     "name": "storefront",
     "proxies": [],
@@ -1737,7 +1791,9 @@
     ],
     "description": "",
     "displayName": "category",
-    "environments": [],
+    "environments": [
+      "stage-poc"
+    ],
     "name": "caas-category",
     "proxies": [
       "caas-category"
