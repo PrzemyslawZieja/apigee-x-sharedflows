@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<SharedFlowBundle name="sharedAuthWithOkta">
+<SharedFlowBundle name="sharedQuotaPolicy">
     <Policies>
-        <Policy>Tenants-Statistics</Policy>
-        <Policy>bearerSharedAuth</Policy>
-        <Policy>checkIsJwt</Policy>
-        <Policy>validateOktaToken</Policy>
+        <Policy>QuotaPolicy</Policy>
     </Policies>
     <Resources>
-        <Resource>jsc://check-is-jwt.js</Resource>
     </Resources>
     <Spec></Spec>
     <subType>SharedFlow</subType>
