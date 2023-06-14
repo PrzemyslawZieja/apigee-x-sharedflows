@@ -2,6 +2,7 @@
 <SharedFlowBundle name="sharedQuotaPolicy">
     <Policies>
         <Policy>QuotaPolicy</Policy>
+        <Policy>QuotaLogging</Policy>
     </Policies>
     <Resources>
     </Resources>

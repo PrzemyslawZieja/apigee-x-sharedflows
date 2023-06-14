@@ -3,4 +3,7 @@
     <Step>
         <Name>QuotaPolicy</Name>
     </Step>
+    <Step>
+        <Name>QuotaLogging</Name>
+    </Step>
 </SharedFlow>
