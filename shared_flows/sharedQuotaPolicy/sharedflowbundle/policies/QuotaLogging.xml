@@ -3,7 +3,6 @@
     <CloudLogging>
         <LogName>projects/{organization.name}/logs/{log.id}</LogName>
         <Message contentType="application/json">{"tenant": "{apiproduct.name}", "quotaLeft": "{ratelimit.QuotaPolicy.available.count}"}</Message>
-        </Labels>
         <ResourceType>apigee_quota</ResourceType>
     </CloudLogging>
 </MessageLogging>
