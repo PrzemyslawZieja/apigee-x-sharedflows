@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <MessageLogging continueOnError="false" enabled="true" name="QuotaLogging">
     <CloudLogging>
-        <LogName>projects/{organization.name}/logs/{log.id}</LogName>
+        <LogName>projects/{organization.name}/logs/apigee</LogName>
         <Message contentType="application/json">{"tenant": "{apiproduct.name}", "quotaLeft": "{ratelimit.QuotaPolicy.available.count}"}</Message>
-        <ResourceType>apigee_quota</ResourceType>
+        <Labels>
+          <Label>
+            <Key>ApigeeQuotaAlert</Key>
+            <Value>True</Value>
+          </Label>
+        </Labels>
+        <ResourceType>gce_instance</ResourceType>
     </CloudLogging>
 </MessageLogging>
