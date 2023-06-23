@@ -6,4 +6,7 @@
     <Step>
         <Name>QuotaLogging</Name>
     </Step>
+    <Step>
+        <Name>QuotaInformation</Name>
+    </Step>
 </SharedFlow>

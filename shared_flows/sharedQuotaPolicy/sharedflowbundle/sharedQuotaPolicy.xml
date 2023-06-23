@@ -3,6 +3,7 @@
     <Policies>
         <Policy>QuotaPolicy</Policy>
         <Policy>QuotaLogging</Policy>
+        <Policy>QuotaInformation</Policy>
     </Policies>
     <Resources>
     </Resources>
