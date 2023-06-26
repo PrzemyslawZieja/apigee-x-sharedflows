@@ -18,6 +18,7 @@
      var tenant = beforeAfterTenant[1].split(" ")[0];
      context.setVariable("request.header.hybris-tenant", tenant);
      context.setVariable("request.header.tenant", tenant);
+     context.setVariable("tenant", tenant);
  } else {
      //throw Error?
      context.setVariable("request.header.hybris-tenant", "noTenant");
