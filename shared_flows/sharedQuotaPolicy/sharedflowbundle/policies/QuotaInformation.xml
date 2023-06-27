@@ -1,7 +1,0 @@
-<AssignMessage name="QuotaInformation">
-    <Set>
-        <Headers>
-            <Header name="quota-available">{ratelimit.QuotaPolicy.available.count}</Header>
-        </Headers>
-    </Set>
-</AssignMessage>

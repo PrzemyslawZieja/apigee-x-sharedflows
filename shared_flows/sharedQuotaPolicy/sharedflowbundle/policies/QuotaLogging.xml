@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<MessageLogging continueOnError="true" enabled="true" name="QuotaLogging">
+<MessageLogging continueOnError="true" enabled="false" name="QuotaLogging">
     <CloudLogging>
         <LogName>projects/{organization.name}/logs/apigee</LogName>
         <Message contentType="application/json">{"tenant": "{apiproduct.name}", "quotaLeft": "{ratelimit.QuotaPolicy.available.count}"}</Message>
