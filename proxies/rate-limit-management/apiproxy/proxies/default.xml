@@ -10,7 +10,7 @@
       </Step>
       <Step>
         <Name>AddOneRequestForStats</Name>
-        <Condition>NOT client.local</Condition>
+        <Condition>client.local == false</Condition>
       </Step>
       <Step>
         <Name>QuotaPolicy</Name>

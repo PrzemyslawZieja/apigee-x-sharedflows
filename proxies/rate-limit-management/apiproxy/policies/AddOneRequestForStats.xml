@@ -1,7 +1,10 @@
-<ResetQuota name="resetQuota">
-   <Quota name="QuotaPolicy">
-      <Identifier ref="tenant">
-         <Allow>1</Allow>
-      </Identifier>
-   </Quota>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ResetQuota continueOnError="false" enabled="true" name="AddOneRequestForStats">
+    <DisplayName>AddOneRequestForStats</DisplayName>
+    <Properties/>
+    <Quota name="QuotaPolicy">
+        <Identifier name="_default" ref="tenant">
+            <Allow>1</Allow>
+        </Identifier>
+    </Quota>
 </ResetQuota>
