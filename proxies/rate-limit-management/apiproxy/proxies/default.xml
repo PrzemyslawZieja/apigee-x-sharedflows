@@ -7,7 +7,7 @@
       </Step>
       <Step>
         <Name>setQuotaVariables</Name>
-        <Condition>client.local == true</Condition>
+        <Condition>client.local == true AND request.header.quota_interval isNot null AND request.header.quota_time_unit isNot null AND request.header.quota_count isNot null</Condition>
       </Step>
       <Step>
         <Name>GetQuotaFromApiProduct</Name>
