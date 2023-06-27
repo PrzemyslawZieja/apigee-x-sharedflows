@@ -8,6 +8,7 @@
     <Policy>QuotaInformation</Policy>
     <Policy>GetQuotaFromApiProduct</Policy>
     <Policy>setTenantVariable</Policy>
+    <Policy>AddOneRequestForStats</Policy>
   </Policies>
   <ProxyEndpoints>
     <ProxyEndpoint>default</ProxyEndpoint>

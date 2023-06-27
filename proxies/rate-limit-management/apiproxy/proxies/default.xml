@@ -9,6 +9,10 @@
         <Name>GetQuotaFromApiProduct</Name>
       </Step>
       <Step>
+        <Name>AddOneRequestForStats</Name>
+        <Condition>NOT client.local</Condition>
+      </Step>
+      <Step>
         <Name>QuotaPolicy</Name>
       </Step>
     </Request>
