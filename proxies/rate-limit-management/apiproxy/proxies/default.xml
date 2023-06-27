@@ -9,6 +9,10 @@
         <Name>GetQuotaFromApiProduct</Name>
       </Step>
       <Step>
+        <Name>AddQuota</Name>
+        <Condition>client.local == false AND request.queryparam.quota_to_add isNot null</Condition>
+      </Step>
+      <Step>
         <Name>AddOneRequestForStats</Name>
         <Condition>client.local == false</Condition>
       </Step>
