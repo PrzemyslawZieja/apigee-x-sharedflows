@@ -1,0 +1,9 @@
+<RaiseFault name="RaiseFault_429">
+ <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+ <FaultResponse>
+   <Set>
+     <StatusCode>429</StatusCode>
+     <ReasonPhrase>Requests quota reached for tenant.</ReasonPhrase>
+   </Set>
+ </FaultResponse>
+</RaiseFault>

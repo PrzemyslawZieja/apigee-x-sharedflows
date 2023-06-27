@@ -3,6 +3,7 @@
     <Policies>
         <Policy>QuotaProxyCallout</Policy>
         <Policy>QuotaLogging</Policy>
+        <Policy>RaiseFault_429</Policy>
     </Policies>
     <Resources>
     </Resources>
