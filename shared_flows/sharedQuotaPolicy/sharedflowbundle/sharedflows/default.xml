@@ -4,14 +4,10 @@
         <Name>QuotaProxyCallout</Name>
     </Step>
     <Step>
+        <Name>RaiseFault_429</Name>
+        <Condition>(response.status.code == "429") </Condition>
+    </Step>
+    <Step>
         <Name>QuotaLogging</Name>
     </Step>
-    <FaultRules>
-        <FaultRule name="429-Error">
-            <Step>
-                <Name>RaiseFault_429</Name>
-                <Condition>(response.status.code == "429") </Condition>
-            </Step>
-        </FaultRule>
-    </FaultRules>
 </SharedFlow>
