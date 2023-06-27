@@ -10,7 +10,7 @@
       </Step>
       <Step>
         <Name>AddQuota</Name>
-        <Condition>client.local == false AND request.queryparam.quota_to_add isNot null</Condition>
+        <Condition>request.verb == "PUT" AND client.local == false AND request.queryparam.quota_to_add isNot null</Condition>
       </Step>
       <Step>
         <Name>AddOneRequestForStats</Name>
