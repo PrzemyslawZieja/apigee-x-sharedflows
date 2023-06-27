@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage name="setQuotaVariables">
+  <AssignVariable>
+    <Name>AccessEntity.GetQuotaFromApiProduct.ApiProduct.QuotaInterval</Name>
+    <Ref>request.header.quota_interval</Ref>
+  </AssignVariable>
+  <AssignVariable>
+    <Name>AccessEntity.GetQuotaFromApiProduct.ApiProduct.QuotaTimeUnit</Name>
+    <Ref>request.header.quota_time_unit</Ref>
+  </AssignVariable>
+  <AssignVariable>
+    <Name>AccessEntity.GetQuotaFromApiProduct.ApiProduct.Quota</Name>
+    <Ref>request.header.quota_count</Ref>
+  </AssignVariable>
+  <DisplayName>setQuotaVariables</DisplayName>
+</AssignMessage>

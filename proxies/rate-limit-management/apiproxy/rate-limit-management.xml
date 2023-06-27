@@ -8,6 +8,7 @@
     <Policy>QuotaInformation</Policy>
     <Policy>GetQuotaFromApiProduct</Policy>
     <Policy>setTenantVariable</Policy>
+    <Policy>setQuotaVariables</Policy>
     <Policy>AddOneRequestForStats</Policy>
     <Policy>AddQuota</Policy>
   </Policies>

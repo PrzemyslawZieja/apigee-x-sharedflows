@@ -3,7 +3,7 @@
     <DisplayName>QuotaProxyCallout</DisplayName>
     <Properties/>
     <Request clearPayload="true" variable="request">
-        <IgnoreUnresolvedVariables>false</IgnoreUnresolvedVariables>
+        <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
         <Set>
             <QueryParams>
                 <QueryParam name="tenant">{tenant}</QueryParam>

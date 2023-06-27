@@ -6,7 +6,12 @@
         <Name>setTenantVariable</Name>
       </Step>
       <Step>
+        <Name>setQuotaVariables</Name>
+        <Condition>client.local == true</Condition>
+      </Step>
+      <Step>
         <Name>GetQuotaFromApiProduct</Name>
+        <Condition>AccessEntity.GetQuotaFromApiProduct.ApiProduct.QuotaInterval is null OR AccessEntity.GetQuotaFromApiProduct.ApiProduct.QuotaTimeUnit is null OR AccessEntity.GetQuotaFromApiProduct.ApiProduct.Quota is null</Condition>
       </Step>
       <Step>
         <Name>AddQuota</Name>
