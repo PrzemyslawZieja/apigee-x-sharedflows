@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AccessEntity continueOnError="false" enabled="true" name="GetQuotaFromApiProduct">
+  <DisplayName>GetQuotaFromApiProduct</DisplayName>
+  <Properties/>
+  <EntityIdentifier type="apiproductname" ref="tenant"/>
+  <EntityType value="apiproduct"/>
+</AccessEntity>

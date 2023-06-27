@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ProxyEndpoint name="default">
+  <PreFlow name="PreFlow">
+    <Request>
+      <Step>
+        <Name>setTenantVariable</Name>
+      </Step>
+      <Step>
+        <Name>GetQuotaFromApiProduct</Name>
+      </Step>
+      <Step>
+        <Name>QuotaPolicy</Name>
+      </Step>
+    </Request>
+    <Response>
+      <Step>
+        <Name>QuotaInformation</Name>
+      </Step>
+    </Response>
+  </PreFlow>
+  <Flows/>
+  <PostFlow name="PostFlow">
+    <Request/>
+    <Response/>
+  </PostFlow>
+  <HTTPProxyConnection>
+    <BasePath>/rate-limit-management</BasePath>
+  </HTTPProxyConnection>
+  <RouteRule name="noroute"/>
+</ProxyEndpoint>

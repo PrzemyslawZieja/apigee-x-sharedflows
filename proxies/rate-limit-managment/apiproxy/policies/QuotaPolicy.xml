@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Quota name="QuotaPolicy" type="flexi">
+  <Identifier ref="tenant"/>
+  <Interval ref="AccessEntity.GetQuotaFromApiProduct.ApiProduct.QuotaInterval">1</Interval>
+  <TimeUnit ref="AccessEntity.GetQuotaFromApiProduct.ApiProduct.QuotaTimeUnit">hour</TimeUnit>
+  <Allow count="180000" countRef="AccessEntity.GetQuotaFromApiProduct.ApiProduct.Quota"/>
+  <Distributed>true</Distributed>
+  <Synchronous>true</Synchronous>
+</Quota>

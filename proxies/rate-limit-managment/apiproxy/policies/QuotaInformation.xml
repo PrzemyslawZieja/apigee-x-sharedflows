@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage name="QuotaInformation">
+  <Set>
+    <Headers>
+      <Header name="quota-available">{ratelimit.QuotaPolicy.available.count}</Header>
+      <Header name="quota-reset-time">{ratelimit.QuotaPolicy.expiry.time}</Header>
+    </Headers>
+  </Set>
+</AssignMessage>
