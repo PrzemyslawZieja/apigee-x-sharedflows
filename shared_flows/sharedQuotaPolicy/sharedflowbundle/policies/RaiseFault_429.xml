@@ -6,7 +6,7 @@
      <ReasonPhrase>Requests quota reached for tenant.</ReasonPhrase>
      <Payload contentType="application/json">
         {"fault":"Requests quota reached for tenant.", "tenant":"{tenant}"}
-    </Payload>
+     </Payload>
    </Set>
  </FaultResponse>
 </RaiseFault>
