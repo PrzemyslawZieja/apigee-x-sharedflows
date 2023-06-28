@@ -2,7 +2,7 @@
 <ServiceCallout async="false" continueOnError="true" enabled="true" name="QuotaProxyCallout">
     <DisplayName>QuotaProxyCallout</DisplayName>
     <Properties/>
-    <Request clearPayload="true" variable="request">
+    <Request>
         <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
         <Set>
             <QueryParams>
@@ -15,7 +15,7 @@
             </Headers>
         </Set>
     </Request>
-    <Response>response</Response>
+    <Response>calloutResponse</Response>
     <LocalTargetConnection>
         <APIProxy>rate-limit-management</APIProxy>
         <ProxyEndpoint>default</ProxyEndpoint>

@@ -5,7 +5,7 @@
     </Step>
     <Step>
         <Name>RaiseFault_429</Name>
-        <Condition>(response.status.code == "429") </Condition>
+        <Condition>(calloutResponse.status.code == "429") </Condition>
     </Step>
     <Step>
         <Name>QuotaLogging</Name>
