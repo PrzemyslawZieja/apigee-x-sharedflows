@@ -7,19 +7,19 @@
       </Step>
       <Step>
         <Name>setQuotaVariables</Name>
-        <Condition>client.local == true AND request.header.quota_interval isNot null AND request.header.quota_time_unit isNot null AND request.header.quota_count isNot null</Condition>
+        <Condition>client.local == true AND request.header.quota_interval != "" AND request.header.quota_time_unit != "" AND request.header.quota_count != "" </Condition>
       </Step>
       <Step>
         <Name>GetQuotaFromApiProduct</Name>
-        <Condition>AccessEntity.GetQuotaFromApiProduct.ApiProduct.QuotaInterval is null OR AccessEntity.GetQuotaFromApiProduct.ApiProduct.QuotaTimeUnit is null OR AccessEntity.GetQuotaFromApiProduct.ApiProduct.Quota is null</Condition>
+        <Condition>AccessEntity.GetQuotaFromApiProduct.ApiProduct.QuotaInterval is null OR AccessEntity.GetQuotaFromApiProduct.ApiProduct.QuotaTimeUnit is null OR AccessEntity.GetQuotaFromApiProduct.ApiProduct.Quota is null </Condition>
       </Step>
       <Step>
         <Name>AddQuota</Name>
-        <Condition>request.verb == "PUT" AND client.local == false AND request.queryparam.quota_to_add isNot null</Condition>
+        <Condition>request.verb == "PUT" AND client.local == false AND request.queryparam.quota_to_add isNot null </Condition>
       </Step>
       <Step>
         <Name>AddOneRequestForStats</Name>
-        <Condition>client.local == false</Condition>
+        <Condition>client.local == false </Condition>
       </Step>
       <Step>
         <Name>QuotaPolicy</Name>
@@ -28,6 +28,7 @@
     <Response>
       <Step>
         <Name>QuotaInformation</Name>
+        <Condition>client.local == false </Condition>
       </Step>
     </Response>
   </PreFlow>
