@@ -11,6 +11,7 @@
     <Policy>setQuotaVariables</Policy>
     <Policy>AddOneRequestForStats</Policy>
     <Policy>AddQuota</Policy>
+    <Policy>RaiseFault_404</Policy>
   </Policies>
   <ProxyEndpoints>
     <ProxyEndpoint>default</ProxyEndpoint>

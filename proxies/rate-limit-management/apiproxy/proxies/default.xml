@@ -14,6 +14,10 @@
         <Condition>AccessEntity.GetQuotaFromApiProduct.ApiProduct.QuotaInterval is null OR AccessEntity.GetQuotaFromApiProduct.ApiProduct.QuotaTimeUnit is null OR AccessEntity.GetQuotaFromApiProduct.ApiProduct.Quota is null </Condition>
       </Step>
       <Step>
+        <Name>RaiseFault_404</Name>
+        <Condition>AccessEntity.GetQuotaFromApiProduct.ApiProduct.QuotaInterval is null OR AccessEntity.GetQuotaFromApiProduct.ApiProduct.QuotaTimeUnit is null OR AccessEntity.GetQuotaFromApiProduct.ApiProduct.Quota is null </Condition>
+      </Step>
+      <Step>
         <Name>AddQuota</Name>
         <Condition>request.verb == "PUT" AND client.local == false AND request.queryparam.quota_to_add isNot null </Condition>
       </Step>
