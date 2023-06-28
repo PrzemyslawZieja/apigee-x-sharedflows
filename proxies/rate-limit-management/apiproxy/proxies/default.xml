@@ -1,3 +1,9 @@
+<!--
+Flow is called:
+1. internally (client.local == true) from sharedQuotaPolicy - rate limiting for proxies
+2. externally (client.local == false) to manage tenants quotas (check current consumption and add quota for current cycle)
+-->
+
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <ProxyEndpoint name="default">
   <PreFlow name="PreFlow">
@@ -9,10 +15,18 @@
         <Name>setQuotaVariables</Name>
         <Condition>client.local == true AND request.header.quota_interval != "" AND request.header.quota_time_unit != "" AND request.header.quota_count != "" </Condition>
       </Step>
+      <!--
+        For performance, if quota vars given in input (you can get this vars after token validation - OAuthV2 policy):
+        no additional api_product calls required
+      -->
       <Step>
         <Name>GetQuotaFromApiProduct</Name>
         <Condition>AccessEntity.GetQuotaFromApiProduct.ApiProduct.QuotaInterval is null OR AccessEntity.GetQuotaFromApiProduct.ApiProduct.QuotaTimeUnit is null OR AccessEntity.GetQuotaFromApiProduct.ApiProduct.Quota is null </Condition>
       </Step>
+      <!--
+        If no required vars for quota management found (in input or in tenant api_product configuration):
+        throw 404 and exit the flow
+      -->
       <Step>
         <Name>RaiseFault_404</Name>
         <Condition>AccessEntity.GetQuotaFromApiProduct.ApiProduct.QuotaInterval is null OR AccessEntity.GetQuotaFromApiProduct.ApiProduct.QuotaTimeUnit is null OR AccessEntity.GetQuotaFromApiProduct.ApiProduct.Quota is null </Condition>
