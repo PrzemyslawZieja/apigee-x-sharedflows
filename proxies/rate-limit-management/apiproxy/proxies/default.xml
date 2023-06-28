@@ -1,10 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <!--
 Flow is called:
 1. internally (client.local == true) from sharedQuotaPolicy - rate limiting for proxies
 2. externally (client.local == false) to manage tenants quotas (check current consumption and add quota for current cycle)
 -->
-
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <ProxyEndpoint name="default">
   <PreFlow name="PreFlow">
     <Request>
