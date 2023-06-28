@@ -7,6 +7,14 @@ Flow is called:
 <ProxyEndpoint name="default">
   <PreFlow name="PreFlow">
     <Request>
+      <!--
+        Token needed only during external calls.
+        "rate-limit-management.manage" scope required (configured in api_product connected with App we get token from).
+      -->
+      <Step>
+        <Name>VerifyOAuthToken</Name>
+        <Condition>client.local == false</Condition>
+      </Step>
       <Step>
         <Name>setTenantVariable</Name>
       </Step>
