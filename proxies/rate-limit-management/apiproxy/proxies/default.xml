@@ -43,11 +43,11 @@ Flow is called:
         <Condition>request.verb == "PUT" AND client.local == false AND request.queryparam.quota_to_add isNot null </Condition>
       </Step>
       <Step>
-        <Name>AddOneRequestForStats</Name>
-        <Condition>client.local == false </Condition>
+        <Name>QuotaPolicy</Name>
       </Step>
       <Step>
-        <Name>QuotaPolicy</Name>
+        <Name>AddOneRequestForStats</Name>
+        <Condition>client.local == false </Condition>
       </Step>
     </Request>
     <Response>

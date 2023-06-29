@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<Quota name="QuotaPolicy" type="flexi">
+<Quota name="QuotaPolicy" type="calendar">
+  <StartTime>2023-06-01 00:00:00</StartTime>
   <Identifier ref="tenant"/>
   <Interval ref="AccessEntity.GetQuotaFromApiProduct.ApiProduct.QuotaInterval">1</Interval>
   <TimeUnit ref="AccessEntity.GetQuotaFromApiProduct.ApiProduct.QuotaTimeUnit">hour</TimeUnit>
@@ -7,6 +8,6 @@
   <Distributed>true</Distributed>
   <Synchronous>false</Synchronous>
   <AsynchronousConfiguration>
-    <SyncMessageCount>5</SyncMessageCount>
+    <SyncIntervalInSeconds>10</SyncIntervalInSeconds>
   </AsynchronousConfiguration>
 </Quota>
