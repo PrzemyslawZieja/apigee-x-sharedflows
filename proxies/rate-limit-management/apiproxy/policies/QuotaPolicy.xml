@@ -6,4 +6,7 @@
   <Allow count="180000" countRef="AccessEntity.GetQuotaFromApiProduct.ApiProduct.Quota"/>
   <Distributed>true</Distributed>
   <Synchronous>false</Synchronous>
+  <AsynchronousConfiguration>
+    <SyncMessageCount>5</SyncMessageCount>
+  </AsynchronousConfiguration>
 </Quota>
