@@ -15,6 +15,9 @@
                     <Name>ExtractSessionId</Name>
                 </Step>
                 <Step>
+                    <Name>sharedQuotaPolicy</Name>
+                </Step>
+                <Step>
                     <Name>OldTenantWhitelist</Name>
                 </Step>
                 <Step>
@@ -70,6 +73,9 @@
             <Request>
                 <Step>
                     <Name>ExtractSessionId</Name>
+                </Step>
+                <Step>
+                    <Name>sharedQuotaPolicy</Name>
                 </Step>
                 <Step>
                     <Name>ExtractAnonymousTokenInfo</Name>
