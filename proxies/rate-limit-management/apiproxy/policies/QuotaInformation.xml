@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <AssignMessage name="QuotaInformation">
   <Set>
+    <StatusCode>200</StatusCode>
     <Payload contentType="application/json">
       {
         "tenant":"{tenant}",
