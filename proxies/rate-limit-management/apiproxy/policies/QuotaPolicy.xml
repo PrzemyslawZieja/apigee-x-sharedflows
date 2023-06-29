@@ -5,5 +5,5 @@
   <TimeUnit ref="AccessEntity.GetQuotaFromApiProduct.ApiProduct.QuotaTimeUnit">hour</TimeUnit>
   <Allow count="180000" countRef="AccessEntity.GetQuotaFromApiProduct.ApiProduct.Quota"/>
   <Distributed>true</Distributed>
-  <Synchronous>true</Synchronous>
+  <Synchronous>false</Synchronous>
 </Quota>
