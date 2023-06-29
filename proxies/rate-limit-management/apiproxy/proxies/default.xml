@@ -45,15 +45,16 @@ Flow is called:
       <Step>
         <Name>QuotaPolicy</Name>
       </Step>
+      <!--
       <Step>
         <Name>AddOneRequestForStats</Name>
         <Condition>client.local == false </Condition>
       </Step>
+      -->
     </Request>
     <Response>
       <Step>
         <Name>QuotaInformation</Name>
-        <Condition>client.local == false </Condition>
       </Step>
     </Response>
   </PreFlow>
