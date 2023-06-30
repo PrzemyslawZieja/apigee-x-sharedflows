@@ -4,14 +4,14 @@
         <Name>QuotaProxyCallout</Name>
     </Step>
     <Step>
+        <Name>RaiseFault_429</Name>
+        <Condition>(quotaCalloutResponse.status.code == "429") </Condition>
+    </Step>
+    <Step>
         <Name>SetQuotaWarningLevel</Name>
     </Step>
     <Step>
         <Name>QuotaLogging</Name>
         <Condition>quota_percent_reached isNot null </Condition>
-    </Step>
-    <Step>
-        <Name>RaiseFault_429</Name>
-        <Condition>(quotaCalloutResponse.status.code == "429") </Condition>
     </Step>
 </SharedFlow>
