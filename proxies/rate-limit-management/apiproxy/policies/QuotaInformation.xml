@@ -5,11 +5,11 @@
     <Payload contentType="application/json">
       {
         "tenant":"{tenant}",
-        "quota-available-count":"{ratelimit.QuotaPolicy.available.count}",
-        "quota-reset-time":"{ratelimit.QuotaPolicy.expiry.time}",
-        "quota-interval":"{AccessEntity.GetQuotaFromApiProduct.ApiProduct.QuotaInterval}",
-        "quota-time-unit":"{AccessEntity.GetQuotaFromApiProduct.ApiProduct.QuotaTimeUnit}",
-        "quota-allowed-count":"{ratelimit.QuotaPolicy.allowed.count}"
+        "quota_available_count":"{ratelimit.QuotaPolicy.available.count}",
+        "quota_reset_time":"{ratelimit.QuotaPolicy.expiry.time}",
+        "quota_interval":"{AccessEntity.GetQuotaFromApiProduct.ApiProduct.QuotaInterval}",
+        "quota_time_unit":"{AccessEntity.GetQuotaFromApiProduct.ApiProduct.QuotaTimeUnit}",
+        "quota_allowed_count":"{ratelimit.QuotaPolicy.allowed.count}"
       }
     </Payload>
   </Set>
