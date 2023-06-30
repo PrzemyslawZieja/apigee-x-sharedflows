@@ -9,7 +9,7 @@
     <Policy>GetQuotaFromApiProduct</Policy>
     <Policy>setTenantVariable</Policy>
     <Policy>setQuotaVariables</Policy>
-    <Policy>AddOneRequestExternalCall</Policy>
+    <Policy>setQuotaMessageWeight</Policy>
     <Policy>AddQuota</Policy>
     <Policy>RaiseFault_404</Policy>
   </Policies>

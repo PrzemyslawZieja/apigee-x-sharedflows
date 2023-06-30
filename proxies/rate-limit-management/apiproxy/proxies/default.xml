@@ -19,6 +19,9 @@ Flow is called:
         <Name>setTenantVariable</Name>
       </Step>
       <Step>
+        <Name>setQuotaMessageWeight</Name>
+      <Step>
+      <Step>
         <Name>setQuotaVariables</Name>
         <Condition>client.local == true AND request.header.quota_interval != "" AND request.header.quota_time_unit != "" AND request.header.quota_count != "" </Condition>
       </Step>
@@ -42,14 +45,6 @@ Flow is called:
         <Name>AddQuota</Name>
         <Condition>request.verb == "PUT" AND client.local == false AND request.queryparam.quota_to_add isNot null </Condition>
       </Step>
-      <!--
-        During external call we consume 1 request from quota.
-        AddOneRequestExternalCall gives back this 1 request.
-      -->
-      <Step>
-        <Name>AddOneRequestExternalCall</Name>
-        <Condition>client.local == false </Condition>
-      </Step>
       <Step>
         <Name>QuotaPolicy</Name>
       </Step>
@@ -65,19 +60,6 @@ Flow is called:
     <Request/>
     <Response/>
   </PostFlow>
-  <FaultRules>
-    <!--
-      with "Synchronous" disabled in quota policy even with +1 quota request
-      it is possible we will get 429 in external call - this is handled by below:
-      we still get quota info for tenant
-    -->
-    <FaultRule name="statsCallQuotaExceeded">
-      <Step>
-        <Name>QuotaInformation</Name>
-      </Step>
-      <Condition>client.local == false AND ratelimit.developer-quota-policy.exceed.count GreaterThan "0" </Condition>
-    </FaultRule>
-  </FaultRules>
   <HTTPProxyConnection>
     <BasePath>/rate-limit-management</BasePath>
   </HTTPProxyConnection>
