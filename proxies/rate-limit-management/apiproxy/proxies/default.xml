@@ -20,7 +20,7 @@ Flow is called:
       </Step>
       <Step>
         <Name>setQuotaMessageWeight</Name>
-      <Step>
+      </Step>
       <Step>
         <Name>setQuotaVariables</Name>
         <Condition>client.local == true AND request.header.quota_interval != "" AND request.header.quota_time_unit != "" AND request.header.quota_count != "" </Condition>
