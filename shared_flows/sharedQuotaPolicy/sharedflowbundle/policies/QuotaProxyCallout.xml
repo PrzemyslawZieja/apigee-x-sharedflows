@@ -15,7 +15,7 @@
             </Headers>
         </Set>
     </Request>
-    <Response>calloutResponse</Response>
+    <Response>quotaCalloutResponse</Response>
     <LocalTargetConnection>
         <APIProxy>rate-limit-management</APIProxy>
         <ProxyEndpoint>default</ProxyEndpoint>

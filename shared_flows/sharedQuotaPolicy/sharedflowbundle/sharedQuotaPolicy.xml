@@ -2,6 +2,7 @@
 <SharedFlowBundle name="sharedQuotaPolicy">
     <Policies>
         <Policy>QuotaProxyCallout</Policy>
+        <Policy>setQuotaWarningLevel</Policy>
         <Policy>QuotaLogging</Policy>
         <Policy>RaiseFault_429</Policy>
     </Policies>
