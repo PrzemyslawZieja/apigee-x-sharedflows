@@ -9,6 +9,6 @@
   <Distributed>true</Distributed>
   <Synchronous>false</Synchronous>
   <AsynchronousConfiguration>
-    <SyncMessageCount>5</SyncMessageCount>
+    <SyncMessageCount>10</SyncMessageCount>
   </AsynchronousConfiguration>
 </Quota>

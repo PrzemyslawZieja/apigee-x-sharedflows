@@ -47,11 +47,13 @@ Flow is called:
       </Step>
       <Step>
         <Name>QuotaPolicy</Name>
+        <Condition>request.verb == "GET" </Condition>
       </Step>
     </Request>
     <Response>
       <Step>
         <Name>QuotaInformation</Name>
+        <Condition>request.verb == "GET" </Condition>
       </Step>
     </Response>
   </PreFlow>
