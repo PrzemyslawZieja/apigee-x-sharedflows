@@ -12,6 +12,9 @@
     <Policy>setQuotaMessageWeight</Policy>
     <Policy>AddQuota</Policy>
     <Policy>RaiseFault_404</Policy>
+    <Policy>lookupCacheForQuotaIntervalConf</Policy>
+    <Policy>lookupCacheForQuotaTimeUnitConf</Policy>
+    <Policy>lookupCacheForQuotaCountConf</Policy>
   </Policies>
   <ProxyEndpoints>
     <ProxyEndpoint>default</ProxyEndpoint>

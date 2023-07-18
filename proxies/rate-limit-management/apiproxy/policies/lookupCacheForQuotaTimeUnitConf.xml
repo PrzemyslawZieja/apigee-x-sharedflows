@@ -1,0 +1,13 @@
+<LookupCache async="false" continueOnError="false" enabled="true" name="lookupCacheForQuotaTimeUnitConf">
+    <DisplayName>lookupCacheForQuotaTimeUnitConf</DisplayName>
+    <Properties/>
+    <CacheKey>
+        <Prefix>QuotaTimeUnit</Prefix>
+        <KeyFragment ref="tenant"/>
+    </CacheKey>
+    <!-- Omit this element if you're using the included shared cache. -->
+    <CacheResource/>
+    <CacheLookupTimeoutInSeconds>1</CacheLookupTimeoutInSeconds>
+    <Scope>Exclusive</Scope>
+    <AssignTo>AccessEntity.GetQuotaFromApiProduct.ApiProduct.QuotaTimeUnit</AssignTo>
+</LookupCache>
