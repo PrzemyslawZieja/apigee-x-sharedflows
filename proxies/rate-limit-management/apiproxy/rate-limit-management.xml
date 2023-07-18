@@ -15,6 +15,7 @@
     <Policy>lookupCacheForQuotaIntervalConf</Policy>
     <Policy>lookupCacheForQuotaTimeUnitConf</Policy>
     <Policy>lookupCacheForQuotaCountConf</Policy>
+    <Policy>populateCacheForQuotaIntervalConf</Policy>
   </Policies>
   <ProxyEndpoints>
     <ProxyEndpoint>default</ProxyEndpoint>
