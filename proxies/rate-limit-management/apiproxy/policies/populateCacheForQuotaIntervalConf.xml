@@ -6,7 +6,7 @@
         <KeyFragment>QuotaInterval</KeyFragment>
         <KeyFragment ref="tenant"/>
     </CacheKey>
-    <Scope>Global</Scope>
+    <Scope>Exclusive</Scope>
     <ExpirySettings>
         <TimeoutInSeconds>10</TimeoutInSeconds>
     </ExpirySettings>

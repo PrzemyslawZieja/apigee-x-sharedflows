@@ -6,7 +6,6 @@
         <KeyFragment>QuotaInterval</KeyFragment>
         <KeyFragment ref="tenant"/>
     </CacheKey>
-    <CacheLookupTimeoutInSeconds>1</CacheLookupTimeoutInSeconds>
-    <Scope>Global</Scope>
+    <Scope>Exclusive</Scope>
     <AssignTo>AccessEntity.GetQuotaFromApiProduct.ApiProduct.QuotaInterval</AssignTo>
 </LookupCache>
