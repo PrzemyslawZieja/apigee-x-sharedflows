@@ -58,6 +58,14 @@ Flow is called:
         <Condition>lookupcache.lookupCacheForQuotaIntervalConf.cachehit == false </Condition>
       </Step>
       <Step>
+        <Name>populateCacheForQuotaTimeUnitConf</Name>
+        <Condition>lookupcache.lookupCacheForQuotaTimeUnitConf.cachehit == false </Condition>
+      </Step>
+      <Step>
+        <Name>populateCacheForQuotaCountConf</Name>
+        <Condition>lookupcache.lookupCacheForQuotaCountConf.cachehit == false </Condition>
+      </Step>
+      <Step>
         <Name>AddQuota</Name>
         <Condition>request.verb == "PUT" AND client.local == false AND request.queryparam.quota_to_add isNot null </Condition>
       </Step>
