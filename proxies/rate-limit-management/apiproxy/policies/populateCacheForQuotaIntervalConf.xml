@@ -7,7 +7,7 @@
     </CacheKey>
     <!-- Omit this element if you're using the included shared cache. -->
     <CacheResource/>
-    <Scope>Exclusive</Scope>
+    <Scope>Global</Scope>
     <ExpirySettings>
         <TimeoutInSeconds>10</TimeoutInSeconds>
     </ExpirySettings>

@@ -8,6 +8,6 @@
     <!-- Omit this element if you're using the included shared cache. -->
     <CacheResource/>
     <CacheLookupTimeoutInSeconds>1</CacheLookupTimeoutInSeconds>
-    <Scope>Exclusive</Scope>
+    <Scope>Global</Scope>
     <AssignTo>AccessEntity.GetQuotaFromApiProduct.ApiProduct.QuotaInterval</AssignTo>
 </LookupCache>
