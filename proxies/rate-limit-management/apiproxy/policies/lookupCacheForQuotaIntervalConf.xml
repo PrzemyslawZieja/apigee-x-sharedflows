@@ -1,12 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <LookupCache async="false" continueOnError="false" enabled="true" name="lookupCacheForQuotaIntervalConf">
     <DisplayName>lookupCacheForQuotaIntervalConf</DisplayName>
     <Properties/>
     <CacheKey>
-        <Prefix>QuotaInterval</Prefix>
+        <KeyFragment>QuotaInterval</KeyFragment>
         <KeyFragment ref="tenant"/>
     </CacheKey>
-    <!-- Omit this element if you're using the included shared cache. -->
-    <CacheResource/>
     <CacheLookupTimeoutInSeconds>1</CacheLookupTimeoutInSeconds>
     <Scope>Global</Scope>
     <AssignTo>AccessEntity.GetQuotaFromApiProduct.ApiProduct.QuotaInterval</AssignTo>

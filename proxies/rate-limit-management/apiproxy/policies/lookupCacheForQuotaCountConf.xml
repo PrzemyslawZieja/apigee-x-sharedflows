@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <LookupCache async="false" continueOnError="false" enabled="true" name="lookupCacheForQuotaCountConf">
     <DisplayName>lookupCacheForQuotaCountConf</DisplayName>
     <Properties/>
@@ -5,8 +6,6 @@
         <Prefix>QuotaCount</Prefix>
         <KeyFragment ref="tenant"/>
     </CacheKey>
-    <!-- Omit this element if you're using the included shared cache. -->
-    <CacheResource/>
     <CacheLookupTimeoutInSeconds>1</CacheLookupTimeoutInSeconds>
     <Scope>Exclusive</Scope>
     <AssignTo>AccessEntity.GetQuotaFromApiProduct.ApiProduct.Quota</AssignTo>

@@ -1,12 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <PopulateCache async="false" continueOnError="false" enabled="true" name="populateCacheForQuotaIntervalConf">
     <DisplayName>populateCacheForQuotaIntervalConf</DisplayName>
     <Properties/>
     <CacheKey>
-        <Prefix>QuotaInterval</Prefix>
+        <KeyFragment>QuotaInterval</KeyFragment>
         <KeyFragment ref="tenant"/>
     </CacheKey>
-    <!-- Omit this element if you're using the included shared cache. -->
-    <CacheResource/>
     <Scope>Global</Scope>
     <ExpirySettings>
         <TimeoutInSeconds>10</TimeoutInSeconds>
