@@ -3,10 +3,9 @@
     <DisplayName>lookupCacheForQuotaTimeUnitConf</DisplayName>
     <Properties/>
     <CacheKey>
-        <Prefix>QuotaTimeUnit</Prefix>
+        <KeyFragment>QuotaTimeUnit</KeyFragment>
         <KeyFragment ref="tenant"/>
     </CacheKey>
-    <CacheLookupTimeoutInSeconds>1</CacheLookupTimeoutInSeconds>
     <Scope>Exclusive</Scope>
     <AssignTo>AccessEntity.GetQuotaFromApiProduct.ApiProduct.QuotaTimeUnit</AssignTo>
 </LookupCache>
