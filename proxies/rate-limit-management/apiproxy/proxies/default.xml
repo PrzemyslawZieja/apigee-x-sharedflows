@@ -25,22 +25,6 @@ Flow is called:
         <Name>setQuotaVariables</Name>
         <Condition>client.local == true AND request.header.quota_interval != "" AND request.header.quota_time_unit != "" AND request.header.quota_count != "" </Condition>
       </Step>
-      <!--
-        For performance, if quota conf is not given in input lookup for it in cache
-        if there is none in cache populate it with conf from ApiProduct
-      -->
-      <Step>
-        <Name>lookupCacheForQuotaIntervalConf</Name>
-        <Condition>AccessEntity.GetQuotaFromApiProduct.ApiProduct.QuotaInterval is null </Condition>
-      </Step>
-      <Step>
-        <Name>lookupCacheForQuotaTimeUnitConf</Name>
-        <Condition>AccessEntity.GetQuotaFromApiProduct.ApiProduct.QuotaTimeUnit is null </Condition>
-      </Step>
-      <Step>
-        <Name>lookupCacheForQuotaCountConf</Name>
-        <Condition>AccessEntity.GetQuotaFromApiProduct.ApiProduct.Quota is null </Condition>
-      </Step>
       <Step>
         <Name>GetQuotaFromApiProduct</Name>
         <Condition>AccessEntity.GetQuotaFromApiProduct.ApiProduct.QuotaInterval is null OR AccessEntity.GetQuotaFromApiProduct.ApiProduct.QuotaTimeUnit is null OR AccessEntity.GetQuotaFromApiProduct.ApiProduct.Quota is null </Condition>
@@ -52,18 +36,6 @@ Flow is called:
       <Step>
         <Name>RaiseFault_404</Name>
         <Condition>AccessEntity.GetQuotaFromApiProduct.ApiProduct.QuotaInterval is null OR AccessEntity.GetQuotaFromApiProduct.ApiProduct.QuotaTimeUnit is null OR AccessEntity.GetQuotaFromApiProduct.ApiProduct.Quota is null </Condition>
-      </Step>
-      <Step>
-        <Name>populateCacheForQuotaIntervalConf</Name>
-        <Condition>lookupcache.lookupCacheForQuotaIntervalConf.cachehit == false </Condition>
-      </Step>
-      <Step>
-        <Name>populateCacheForQuotaTimeUnitConf</Name>
-        <Condition>lookupcache.lookupCacheForQuotaTimeUnitConf.cachehit == false </Condition>
-      </Step>
-      <Step>
-        <Name>populateCacheForQuotaCountConf</Name>
-        <Condition>lookupcache.lookupCacheForQuotaCountConf.cachehit == false </Condition>
       </Step>
       <Step>
         <Name>AddQuota</Name>
