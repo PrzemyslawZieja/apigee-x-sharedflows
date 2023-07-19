@@ -35,7 +35,11 @@ Flow is called:
           <Name>QuotaPolicy</Name>
         </Step>
       </Request>
-      <Response/>
+      <Response>
+        <Step>
+          <Name>QuotaInformation</Name>
+        </Step>
+      </Response>
     </Flow>
     <Flow name="external-call">
       <Condition>client.local == false</Condition>
