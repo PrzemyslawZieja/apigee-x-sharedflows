@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <SharedFlow name="default">
     <Step>
-        <Name>QuotaPolicy</Name>
+        <Name>QuotaProxyCallout</Name>
+    </Step>
+    <Step>
+        <Name>RaiseFault_429</Name>
+        <Condition>(quotaCalloutResponse.status.code == "429") </Condition>
+    </Step>
+    <Step>
+        <Name>SetQuotaWarningLevel</Name>
     </Step>
     <Step>
         <Name>QuotaLogging</Name>
+        <Condition>quota_percent_reached isNot null </Condition>
     </Step>
 </SharedFlow>

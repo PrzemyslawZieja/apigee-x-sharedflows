@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ServiceCallout async="false" continueOnError="true" enabled="true" name="QuotaProxyCallout">
+    <DisplayName>QuotaProxyCallout</DisplayName>
+    <Properties/>
+    <Request>
+        <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+        <Set>
+            <QueryParams>
+                <QueryParam name="tenant">{tenant}</QueryParam>
+            </QueryParams>
+            <Headers>
+                <Header name="quota_interval">{apiproduct.developer.quota.interval}</Header>
+                <Header name="quota_time_unit">{apiproduct.developer.quota.timeunit}</Header>
+                <Header name="quota_count">{apiproduct.developer.quota.limit}</Header>
+            </Headers>
+        </Set>
+    </Request>
+    <Response>quotaCalloutResponse</Response>
+    <LocalTargetConnection>
+        <APIProxy>rate-limit-management</APIProxy>
+        <ProxyEndpoint>default</ProxyEndpoint>
+    </LocalTargetConnection>
+</ServiceCallout>

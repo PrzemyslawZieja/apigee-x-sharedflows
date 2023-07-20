@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <SharedFlowBundle name="sharedQuotaPolicy">
     <Policies>
-        <Policy>QuotaPolicy</Policy>
+        <Policy>QuotaProxyCallout</Policy>
+        <Policy>SetQuotaWarningLevel</Policy>
         <Policy>QuotaLogging</Policy>
+        <Policy>RaiseFault_429</Policy>
     </Policies>
     <Resources>
     </Resources>

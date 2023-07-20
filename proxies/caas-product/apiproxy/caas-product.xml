@@ -2,6 +2,7 @@
 <APIProxy name="caas-product">
     <Policies>
         <Policy>sharedAuthWithOkta</Policy>
+        <Policy>sharedQuotaPolicy</Policy>
     </Policies>
     <ProxyEndpoints>
         <ProxyEndpoint>default</ProxyEndpoint>

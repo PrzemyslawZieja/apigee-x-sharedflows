@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage name="QuotaInformation">
+  <Set>
+    <StatusCode>200</StatusCode>
+    <Payload contentType="application/json">
+      {
+        "tenant":"{tenant}",
+        "quota_available_count":"{ratelimit.QuotaPolicy.available.count}",
+        "quota_reset_time":"{ratelimit.QuotaPolicy.expiry.time}",
+        "quota_interval":"{AccessEntity.GetQuotaFromApiProduct.ApiProduct.QuotaInterval}",
+        "quota_time_unit":"{AccessEntity.GetQuotaFromApiProduct.ApiProduct.QuotaTimeUnit}",
+        "quota_allowed_count":"{ratelimit.QuotaPolicy.allowed.count}"
+      }
+    </Payload>
+  </Set>
+</AssignMessage>

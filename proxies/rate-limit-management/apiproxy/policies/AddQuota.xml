@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ResetQuota continueOnError="false" enabled="true" name="AddQuota">
+    <DisplayName>AddQuota</DisplayName>
+    <Properties/>
+    <Quota name="QuotaPolicy">
+        <Identifier name="_default" ref="tenant">
+            <Allow ref="request.queryparam.quota_to_add" />
+        </Identifier>
+    </Quota>
+</ResetQuota>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--
+Flow is called:
+1. internally (client.local == true) from sharedQuotaPolicy - rate limiting for proxies
+2. externally (client.local == false) to manage tenants quotas (check current consumption and add quota for current cycle)
+-->
+<ProxyEndpoint name="default">
+  <Flows>
+    <Flow name="internal-call">
+      <Condition>request.verb == "GET" AND client.local == true </Condition>
+      <Request>
+        <Step>
+          <Name>setTenantVariable</Name>
+        </Step>
+        <Step>
+          <Name>setQuotaMessageWeight</Name>
+        </Step>
+        <Step>
+          <Name>setQuotaVariables</Name>
+          <Condition>request.header.quota_interval != "" AND request.header.quota_time_unit != "" AND request.header.quota_count != "" </Condition>
+        </Step>
+        <Step>
+          <Name>GetQuotaFromApiProduct</Name>
+          <Condition>AccessEntity.GetQuotaFromApiProduct.ApiProduct.QuotaInterval is null OR AccessEntity.GetQuotaFromApiProduct.ApiProduct.QuotaTimeUnit is null OR AccessEntity.GetQuotaFromApiProduct.ApiProduct.Quota is null </Condition>
+        </Step>
+        <!--
+          If no required vars for quota management found (in input or in tenant api_product configuration):
+          throw 404 and exit the flow
+        -->
+        <Step>
+          <Name>RaiseFault_404</Name>
+          <Condition>AccessEntity.GetQuotaFromApiProduct.ApiProduct.QuotaInterval is null OR AccessEntity.GetQuotaFromApiProduct.ApiProduct.QuotaTimeUnit is null OR AccessEntity.GetQuotaFromApiProduct.ApiProduct.Quota is null </Condition>
+        </Step>
+        <Step>
+          <Name>QuotaPolicy</Name>
+        </Step>
+      </Request>
+      <Response>
+        <Step>
+          <Name>QuotaInformation</Name>
+        </Step>
+      </Response>
+    </Flow>
+    <Flow name="external-call">
+      <Condition>client.local == false</Condition>
+      <Request>
+        <!--
+          Token needed only during external calls.
+          "rate-limit-management.manage" scope required (configured in api_product connected with App we get token from).
+        -->
+        <Step>
+          <Name>VerifyOAuthToken</Name>
+        </Step>
+        <Step>
+          <Name>setTenantVariable</Name>
+        </Step>
+        <Step>
+          <Name>setQuotaMessageWeight</Name>
+        </Step>
+        <Step>
+          <Name>GetQuotaFromApiProduct</Name>
+        </Step>
+        <!--
+          If no required vars for quota management found (in input or in tenant api_product configuration):
+          throw 404 and exit the flow
+        -->
+        <Step>
+          <Name>RaiseFault_404</Name>
+          <Condition>AccessEntity.GetQuotaFromApiProduct.ApiProduct.QuotaInterval is null OR AccessEntity.GetQuotaFromApiProduct.ApiProduct.QuotaTimeUnit is null OR AccessEntity.GetQuotaFromApiProduct.ApiProduct.Quota is null </Condition>
+        </Step>
+        <Step>
+          <Name>AddQuota</Name>
+          <Condition>request.verb == "PUT" AND request.queryparam.quota_to_add isNot null </Condition>
+        </Step>
+        <Step>
+          <Name>QuotaPolicy</Name>
+          <Condition>request.verb == "GET" </Condition>
+        </Step>
+      </Request>
+      <Response>
+        <Step>
+          <Name>QuotaInformation</Name>
+          <Condition>request.verb == "GET" </Condition>
+        </Step>
+      </Response>
+    </Flow>
+  </Flows>
+  <HTTPProxyConnection>
+    <BasePath>/rate-limit-management</BasePath>
+  </HTTPProxyConnection>
+  <RouteRule name="noroute"/>
+</ProxyEndpoint>

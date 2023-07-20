@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Quota name="QuotaPolicy" type="calendar">
+  <MessageWeight ref="message_quota_weight"/>
+  <StartTime>2023-06-01 00:00:00</StartTime>
+  <Identifier ref="tenant"/>
+  <Interval ref="AccessEntity.GetQuotaFromApiProduct.ApiProduct.QuotaInterval">1</Interval>
+  <TimeUnit ref="AccessEntity.GetQuotaFromApiProduct.ApiProduct.QuotaTimeUnit">hour</TimeUnit>
+  <Allow count="180000" countRef="AccessEntity.GetQuotaFromApiProduct.ApiProduct.Quota"/>
+  <Distributed>true</Distributed>
+  <Synchronous>false</Synchronous>
+  <AsynchronousConfiguration>
+    <SyncMessageCount>10</SyncMessageCount>
+  </AsynchronousConfiguration>
+</Quota>

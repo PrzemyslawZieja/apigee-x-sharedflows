@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<APIProxy name="rate-limit-management">
+  <DisplayName/>
+  <Description>Proxy for managing rate limit (requests quota) for tenants</Description>
+  <BasePaths>/rate-limit-management</BasePaths>
+  <Policies>
+    <Policy>QuotaPolicy</Policy>
+    <Policy>QuotaInformation</Policy>
+    <Policy>GetQuotaFromApiProduct</Policy>
+    <Policy>setTenantVariable</Policy>
+    <Policy>setQuotaVariables</Policy>
+    <Policy>setQuotaMessageWeight</Policy>
+    <Policy>AddQuota</Policy>
+    <Policy>RaiseFault_404</Policy>
+  </Policies>
+  <ProxyEndpoints>
+    <ProxyEndpoint>default</ProxyEndpoint>
+  </ProxyEndpoints>
+</APIProxy>

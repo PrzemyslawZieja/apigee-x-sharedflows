@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<Quota name="QuotaPolicy" type="flexi">
-    <Identifier ref="apiproduct.name"/>
-    <Interval ref="apiproduct.developer.quota.interval">1</Interval>
-    <TimeUnit ref="apiproduct.developer.quota.timeunit">hour</TimeUnit>
-    <Allow count="180000" countRef="apiproduct.developer.quota.limit"/>
-    <Distributed>true</Distributed>
-    <Synchronous>true</Synchronous>
-</Quota>

@@ -15,9 +15,10 @@
  if(scope.includes("tenant=")){
      var beforeAfterTenant = scope.split("tenant=");
      //split the secondPart and make sure we throw away if there is anything behind 
-     var tenant = beforeAfterTenant[1].split(" ")[0];
+     const tenant = beforeAfterTenant[1].split(" ")[0];
      context.setVariable("request.header.hybris-tenant", tenant);
      context.setVariable("request.header.tenant", tenant);
+     context.setVariable("tenant", tenant);
  } else {
      //throw Error?
      context.setVariable("request.header.hybris-tenant", "noTenant");
