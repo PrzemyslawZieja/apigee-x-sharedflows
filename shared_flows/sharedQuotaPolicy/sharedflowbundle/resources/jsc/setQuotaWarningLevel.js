@@ -1,10 +1,10 @@
-var quotaCalloutResponse = context.getVariable("quotaCalloutResponse.content");
-var quotaCalloutResponseObject = JSON.parse(quotaCalloutResponse);
+const quotaCalloutResponse = context.getVariable("quotaCalloutResponse.content");
+const quotaCalloutResponseObject = JSON.parse(quotaCalloutResponse);
 
-var quotaAllowed = quotaCalloutResponseObject.quota_allowed_count;
-var quotaAvailable = quotaCalloutResponseObject.quota_available_count;
+const quotaAllowed = quotaCalloutResponseObject.quota_allowed_count;
+const quotaAvailable = quotaCalloutResponseObject.quota_available_count;
 
-var quotaPercentageUsed = quotaAvailable/quotaAllowed * 100;
+const quotaPercentageUsed = quotaAvailable/quotaAllowed * 100;
 
 print("Quota percentage used: " + quotaPercentageUsed)
 
