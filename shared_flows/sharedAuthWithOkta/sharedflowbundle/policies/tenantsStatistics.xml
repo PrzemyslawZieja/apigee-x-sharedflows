@@ -3,6 +3,6 @@
     <DisplayName>tenantsStatistics</DisplayName>
     <Capture>
         <DataCollector>dc_tenant</DataCollector>
-        <Collect ref="request.header.tenant" default="noTenant" />
+        <Collect ref="tenant" default="noTenant" />
     </Capture>
 </DataCapture>
