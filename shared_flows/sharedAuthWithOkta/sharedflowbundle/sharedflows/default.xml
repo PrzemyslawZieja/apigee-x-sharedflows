@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <SharedFlow name="default">
     <Step>
+        <Name>tenantsStatistics</Name>
+    </Step>
+    <Step>
         <Name>checkIsJwt</Name>
     </Step>
     <Step>
@@ -10,5 +13,8 @@
     <Step>
         <Name>validateOktaToken</Name>
         <Condition>is_jwt == true</Condition>
+    </Step>
+    <Step>
+        <Name>Tenants-Statistics</Name>
     </Step>
 </SharedFlow>
