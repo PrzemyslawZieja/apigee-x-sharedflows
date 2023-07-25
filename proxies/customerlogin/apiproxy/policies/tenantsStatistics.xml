@@ -4,6 +4,6 @@
     <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
     <Capture>
         <DataCollector>dc_tenant</DataCollector>
-        <Collect ref="tenant" default="noTenant" />
+        <Collect ref="tenant" default="noTenant_customerlogin" />
     </Capture>
 </DataCapture>
