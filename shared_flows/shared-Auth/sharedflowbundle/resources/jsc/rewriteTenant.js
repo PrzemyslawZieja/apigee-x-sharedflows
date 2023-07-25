@@ -22,5 +22,5 @@
  } else {
      //throw Error?
      context.setVariable("request.header.hybris-tenant", "noTenant");
-     context.setVariable("tenant", "noTenant");
+     context.setVariable("tenant", "noTenant_shared-Auth");
  }
