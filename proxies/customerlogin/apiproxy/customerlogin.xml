@@ -22,6 +22,7 @@
         <Policy>prepareSessionContextRequest</Policy>
         <Policy>setSessionIdFromHeader-delete-AuthorizationHeader</Policy>
         <Policy>sharedQuotaPolicy</Policy>
+        <Policy>tenantsStatistics</Policy>
     </Policies>
     <ProxyEndpoints>
         <ProxyEndpoint>default</ProxyEndpoint>
