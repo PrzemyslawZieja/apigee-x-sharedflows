@@ -44,6 +44,9 @@
                     <Name>Add-default-tenant-scope</Name>
                 </Step>
                 <Step>
+                    <Name>tenantsStatistics</Name>
+                </Step>
+                <Step>
                     <Name>GenerateAccessTokenClient</Name>
                 </Step>
             </Request>

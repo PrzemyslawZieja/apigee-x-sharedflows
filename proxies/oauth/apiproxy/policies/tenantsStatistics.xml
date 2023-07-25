@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<DataCapture name="tenantsStatistics" continueOnError="false" enabled="true">
+    <DisplayName>tenantsStatistics</DisplayName>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <Capture>
+        <DataCollector>dc_tenant</DataCollector>
+        <Collect ref="tenant" default="noTenant_oauth" />
+    </Capture>
+</DataCapture>
