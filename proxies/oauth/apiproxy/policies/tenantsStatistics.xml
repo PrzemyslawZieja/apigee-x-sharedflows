@@ -4,6 +4,6 @@
     <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
     <Capture>
         <DataCollector>dc_tenant</DataCollector>
-        <Collect ref="tenant" default="noTenant_oauth" />
+        <Collect ref="request.header.tenant-statistic" default="noTenant_oauth" />
     </Capture>
 </DataCapture>
