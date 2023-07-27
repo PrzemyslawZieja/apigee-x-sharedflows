@@ -15,6 +15,9 @@
                     <Name>ExtractSessionId</Name>
                 </Step>
                 <Step>
+                    <Name>tenantsStatistics</Name>
+                </Step>
+                <Step>
                     <Name>sharedQuotaPolicy</Name>
                 </Step>
                 <Step>
@@ -73,6 +76,9 @@
             <Request>
                 <Step>
                     <Name>ExtractSessionId</Name>
+                </Step>
+                <Step>
+                    <Name>tenantsStatistics</Name>
                 </Step>
                 <Step>
                     <Name>sharedQuotaPolicy</Name>

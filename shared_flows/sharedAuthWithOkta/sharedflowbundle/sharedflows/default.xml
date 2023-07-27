@@ -11,4 +11,7 @@
         <Name>validateOktaToken</Name>
         <Condition>is_jwt == true</Condition>
     </Step>
+    <Step>
+        <Name>tenantsStatistics</Name>
+    </Step>
 </SharedFlow>

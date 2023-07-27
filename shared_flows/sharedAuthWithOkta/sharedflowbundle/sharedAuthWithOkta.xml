@@ -5,6 +5,7 @@
         <Policy>bearerSharedAuth</Policy>
         <Policy>checkIsJwt</Policy>
         <Policy>validateOktaToken</Policy>
+        <Policy>tenantsStatistics</Policy>
     </Policies>
     <Resources>
         <Resource>jsc://check-is-jwt.js</Resource>

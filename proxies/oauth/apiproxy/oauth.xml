@@ -32,6 +32,7 @@
         <Policy>Wrong-Grant-Type</Policy>
         <Policy>debug</Policy>
         <Policy>testregenerate</Policy>
+        <Policy>tenantsStatistics</Policy>
     </Policies>
     <ProxyEndpoints>
         <ProxyEndpoint>customerlogin</ProxyEndpoint>
