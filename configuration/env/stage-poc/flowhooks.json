@@ -5,7 +5,7 @@
     },
     {
         "flowHookPoint":"PreTargetFlowHook",
-        "sharedFlow":"basicAuth"
+        "sharedFlow":"shared-BasicAuth"
     },
     {
         "flowHookPoint":"PostProxyFlowHook",

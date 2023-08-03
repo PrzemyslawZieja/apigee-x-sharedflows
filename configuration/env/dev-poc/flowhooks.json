@@ -1,6 +1,14 @@
 [
     {
+        "flowHookPoint":"PreProxyFlowHook",
+        "sharedFlow":"GET-CORS"
+    },
+    {
         "flowHookPoint":"PreTargetFlowHook",
-        "sharedFlow":"basicAuth"
+        "sharedFlow":"shared-BasicAuth"
+    },
+    {
+        "flowHookPoint":"PostProxyFlowHook",
+        "sharedFlow":"Add-Cors"
     }
 ]
