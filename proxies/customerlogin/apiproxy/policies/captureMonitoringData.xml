@@ -2,27 +2,27 @@
 <MessageLogging continueOnError="true" enabled="true" name="captureMonitoringData">
     <CloudLogging>
         <LogName>projects/{organization.name}/logs/apigee</LogName>
-        <Message contentType="application/json">{"request":"{ proxy.url }"}</Message>
+        <Message contentType="application/json">{"request":"{proxy.url}"}</Message>
         <Labels>
           <Label>
             <Key>tenant</Key>
-            <Value>{ tenant }</Value>
+            <Value>{tenant}</Value>
           </Label>
           <Label>
             <Key>env</Key>
-            <Value>{ environment.name }</Value>
+            <Value>{environment.name}</Value>
           </Label>
           <Label>
             <Key>http_response_code</Key>
-            <Value>{ message.status.code }</Value>
+            <Value>{message.status.code}</Value>
           </Label>
           <Label>
             <Key>proxy</Key>
-            <Value>{ apiproxy.name }</Value>
+            <Value>{apiproxy.name}</Value>
           </Label>
           <Label>
             <Key>caller_ip</Key>
-            <Value>{ proxy.client.ip }</Value>
+            <Value>{proxy.client.ip}</Value>
           </Label>
         </Labels>
         <ResourceType>gce_instance</ResourceType>
