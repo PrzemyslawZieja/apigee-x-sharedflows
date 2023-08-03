@@ -129,6 +129,14 @@
             <Condition>(proxy.pathsuffix MatchesPath "/refresh")</Condition>
         </Flow>
     </Flows>
+    <PostFlow name="PostFlow">
+        <Request/>
+        <Response>
+            <Step>
+                <Name>captureMonitoringData</Name>
+            </Step>
+        </Response>
+    </PostFlow>
     <HTTPProxyConnection>
         <BasePath>/customerlogin/auth/anonymous</BasePath>
         <Properties/>
