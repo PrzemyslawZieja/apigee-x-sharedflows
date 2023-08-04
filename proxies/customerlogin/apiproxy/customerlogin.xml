@@ -23,7 +23,6 @@
         <Policy>setSessionIdFromHeader-delete-AuthorizationHeader</Policy>
         <Policy>sharedQuotaPolicy</Policy>
         <Policy>tenantsStatistics</Policy>
-        <Policy>captureMonitoringData</Policy>
     </Policies>
     <ProxyEndpoints>
         <ProxyEndpoint>default</ProxyEndpoint>
