@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<SharedFlowBundle name="Add-Cors-And-Capture-Monitoring">
+<SharedFlowBundle name="Add-Cors-And-Capture-Logs">
     <Policies>
         <Policy>add-cors</Policy>
         <Policy>captureMonitoringData</Policy>
