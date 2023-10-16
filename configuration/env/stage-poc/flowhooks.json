@@ -9,6 +9,6 @@
     },
     {
         "flowHookPoint":"PostProxyFlowHook",
-        "sharedFlow":"Add-Cors"
+        "sharedFlow":"Add-Cors-And-Capture-Logs"
     }
 ]

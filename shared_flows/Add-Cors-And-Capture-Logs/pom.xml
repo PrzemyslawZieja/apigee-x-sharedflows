@@ -26,8 +26,8 @@
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>apigee</groupId>
-    <artifactId>Add-Cors</artifactId>
+    <artifactId>Add-Cors-And-Capture-Logs</artifactId>
     <version>1.0</version>
-    <name>Add-Cors</name>
+    <name>Add-Cors-And-Capture-Logs</name>
     <packaging>pom</packaging>
 </project>

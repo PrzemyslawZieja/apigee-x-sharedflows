@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<SharedFlowBundle name="Add-Cors">
+<SharedFlowBundle name="sharedCaptureMonitoringData">
     <Policies>
-        <Policy>add-cors</Policy>
+        <Policy>captureMonitoringData</Policy>
     </Policies>
-    <Resources/>
+    <Resources>
+    </Resources>
     <Spec></Spec>
     <subType>SharedFlow</subType>
     <SharedFlows>
