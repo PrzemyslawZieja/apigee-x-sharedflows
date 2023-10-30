@@ -8,6 +8,135 @@
         "value": "private"
       }
     ],
+    "description": "",
+    "displayName": "Schema Service",
+    "environments": [
+      "dev",
+      "stage",
+      "prod"
+    ],
+    "name": "Schema-Service",
+    "proxies": [
+      "schema"
+    ],
+    "scopes": [
+      "schema.schema_manage",
+      "schema.schema_read"
+    ]
+  },
+  {
+    "apiResources": [],
+    "approvalType": "auto",
+    "attributes": [
+      {
+        "name": "access",
+        "value": "private"
+      }
+    ],
+    "description": "",
+    "displayName": "AI Service",
+    "environments": [
+      "dev",
+      "stage",
+      "prod"
+    ],
+    "name": "ai",
+    "proxies": [
+      "ai-service"
+    ],
+    "scopes": [
+      "ai.text_manage"
+    ]
+  },
+  {
+    "apiResources": [],
+    "approvalType": "auto",
+    "attributes": [
+      {
+        "name": "access",
+        "value": "private"
+      }
+    ],
+    "description": "",
+    "displayName": "approval",
+    "environments": [
+      "dev",
+      "stage",
+      "prod"
+    ],
+    "name": "approval",
+    "proxies": [
+      "approval"
+    ],
+    "scopes": [
+      "approval.approval_manage_own",
+      "approval.approval_read_own"
+    ]
+  },
+  {
+    "apiResources": [],
+    "approvalType": "auto",
+    "attributes": [
+      {
+        "name": "access",
+        "value": "private"
+      }
+    ],
+    "description": "",
+    "displayName": "The pickpack service Read only scopes",
+    "environments": [
+      "dev",
+      "stage",
+      "prod"
+    ],
+    "name": "Pick Pack Read Only",
+    "proxies": [
+      "pick-pack"
+    ],
+    "scopes": [
+      "availability.availability_view",
+      "pickpack.pickpack_view"
+    ]
+  },
+  {
+    "apiResources": [],
+    "approvalType": "auto",
+    "attributes": [
+      {
+        "name": "access",
+        "value": "private"
+      }
+    ],
+    "description": "",
+    "displayName": "payment-gateway",
+    "environments": [
+      "dev",
+      "stage",
+      "prod"
+    ],
+    "name": "payment-gateway",
+    "proxies": [
+      "payment-gateway"
+    ],
+    "scopes": [
+      "payment-gateway.authorize_manage",
+      "payment-gateway.cancel_manage",
+      "payment-gateway.capture_manage",
+      "payment-gateway.paymentmodes_manage",
+      "payment-gateway.paymentmodes_read",
+      "payment-gateway.paymenttransactions_read",
+      "payment-gateway.refund_manage"
+    ]
+  },
+  {
+    "apiResources": [],
+    "approvalType": "auto",
+    "attributes": [
+      {
+        "name": "access",
+        "value": "private"
+      }
+    ],
     "description": "The API product should be attached only into Emporix and EmporixStage tenants",
     "displayName": "super-admin-emporix",
     "environments": [
@@ -103,8 +232,8 @@
     "displayName": "cxp",
     "environments": [
       "dev",
-      "stage",
-      "prod"
+      "prod",
+      "stage"
     ],
     "name": "cxp",
     "proxies": [],
@@ -1796,7 +1925,9 @@
       "customer.customer_create",
       "customer.customer_delete",
       "customer.customer_manage",
+      "customer.customer_manage_own",
       "customer.customer_read",
+      "customer.customer_read_own",
       "customer.customer_update",
       "customer.customerprofile_edit",
       "customer.customerprofile_view"
