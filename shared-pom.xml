@@ -7,13 +7,13 @@
     <version>1.0</version>
     <profiles>
         <profile>
-            <id>dev-poc</id>
+            <id>dev</id>
             <properties>
-                <apigee.profile>dev-poc</apigee.profile>
+                <apigee.profile>dev</apigee.profile>
                 <apigee.hosturl>https://apigee.googleapis.com</apigee.hosturl>
                 <apigee.apiversion>v1</apigee.apiversion>
-                <apigee.org>apigee-x-poc-374912</apigee.org>
-                <apigee.env>dev-poc</apigee.env>
+                <apigee.org>apigee-x-384708</apigee.org>
+                <apigee.env>dev</apigee.env>
                 <apigee.apitype>${apitype}</apigee.apitype> <!-- This is only for Shared Flows. Not required for deploying proxy -->
                 <apigee.authtype>oauth</apigee.authtype> <!-- only option -->
                 <apigee.bearer>${bearer}</apigee.bearer> <!-- this takes precedence over service account file -->
@@ -23,13 +23,29 @@
             </properties>
         </profile>
         <profile>
-            <id>stage-poc</id>
+            <id>stage</id>
             <properties>
-                <apigee.profile>stage-poc</apigee.profile>
+                <apigee.profile>stage</apigee.profile>
                 <apigee.hosturl>https://apigee.googleapis.com</apigee.hosturl>
                 <apigee.apiversion>v1</apigee.apiversion>
-                <apigee.org>apigee-x-poc-374912</apigee.org>
-                <apigee.env>stage-poc</apigee.env>
+                <apigee.org>apigee-x-384708</apigee.org>
+                <apigee.env>stage</apigee.env>
+                <apigee.apitype>${apitype}</apigee.apitype> <!-- This is only for Shared Flows. Not required for deploying proxy -->
+                <apigee.authtype>oauth</apigee.authtype> <!-- only option -->
+                <apigee.bearer>${bearer}</apigee.bearer> <!-- this takes precedence over service account file -->
+                <apigee.serviceaccount.file>${file}</apigee.serviceaccount.file>
+                <apigee.options>override</apigee.options> <!-- override is default. Other options are async|clean-->
+                <apigee.googletoken.email>${googleTokenEmail}</apigee.googletoken.email> <!-- Available in Apigee X and Apigee hybrid 1.6 + -->
+            </properties>
+        </profile>
+        <profile>
+            <id>prod</id>
+            <properties>
+                <apigee.profile>prod</apigee.profile>
+                <apigee.hosturl>https://apigee.googleapis.com</apigee.hosturl>
+                <apigee.apiversion>v1</apigee.apiversion>
+                <apigee.org>apigee-x-384708</apigee.org>
+                <apigee.env>prod</apigee.env>
                 <apigee.apitype>${apitype}</apigee.apitype> <!-- This is only for Shared Flows. Not required for deploying proxy -->
                 <apigee.authtype>oauth</apigee.authtype> <!-- only option -->
                 <apigee.bearer>${bearer}</apigee.bearer> <!-- this takes precedence over service account file -->
