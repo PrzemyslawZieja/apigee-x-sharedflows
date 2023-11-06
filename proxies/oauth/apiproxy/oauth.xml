@@ -2,6 +2,7 @@
 <APIProxy name="oauth">
     <Basepaths>/oauth/client_credential</Basepaths>
     <Description>An API proxy that enforces OAuth 2.0 Client Credential Grant flow</Description>
+    <DisplayName>oauth</DisplayName>
     <Policies>
         <Policy>Add-Tenant-Scope</Policy>
         <Policy>Add-default-tenant-scope</Policy>
