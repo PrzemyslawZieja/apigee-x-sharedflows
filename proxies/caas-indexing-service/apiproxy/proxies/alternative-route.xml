@@ -29,16 +29,16 @@
     <RouteRule name="NoRoute">
         <Condition>request.verb == "OPTIONS" AND request.header.origin != null AND request.header.Access-Control-Request-Method != null</Condition>
     </RouteRule>
-    <RouteRule name="ProductionRoute">
-        <Condition>environment.name ~ "*prod*"</Condition>
-        <TargetEndpoint>k8s-prod</TargetEndpoint>
-    </RouteRule>
     <RouteRule name="k8s-develop">
         <Condition>environment.name ~ "*dev*"</Condition>
         <TargetEndpoint>k8s-develop</TargetEndpoint>
     </RouteRule>
-    <RouteRule name="default">
+    <RouteRule name="k8s-stage">
         <Condition>environment.name ~ "*stage*"</Condition>
         <TargetEndpoint>k8s-stage</TargetEndpoint>
+    </RouteRule>
+    <RouteRule name="k8s-prod">
+        <Condition>environment.name ~ "*prod*"</Condition>
+        <TargetEndpoint>k8s-prod</TargetEndpoint>
     </RouteRule>
 </ProxyEndpoint>
