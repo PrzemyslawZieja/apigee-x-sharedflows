@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<RaiseFault async="false" continueOnError="false" enabled="true" name="verifyScopes">
-    <DisplayName>verifyScopes</DisplayName>
+<RaiseFault async="false" continueOnError="false" enabled="true" name="verifyIsPOST">
+    <DisplayName>verifyIsPOST</DisplayName>
     <Properties/>
     <FaultResponse>
         <Set>
             <Headers/>
             <Payload contentType="text/plain"/>
             <StatusCode>401</StatusCode>
-            <ReasonPhrase>Missing CXP Access</ReasonPhrase>
+            <ReasonPhrase>Only POST verb accepted</ReasonPhrase>
         </Set>
     </FaultResponse>
     <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>

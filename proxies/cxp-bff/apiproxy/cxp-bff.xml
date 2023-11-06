@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <APIProxy name="cxp-bff">
+    <Basepaths>/cxp-bff</Basepaths>
+    <Description>CXP BFF layer</Description>
+    <DisplayName>cxp-bff</DisplayName>
     <Policies>
+        <Policy>PassAccessTokenToBFF</Policy>
         <Policy>sharedAuthWithOkta</Policy>
-        <Policy>verifyScopes</Policy>
+        <Policy>verifyIsPOST</Policy>
     </Policies>
     <ProxyEndpoints>
         <ProxyEndpoint>default</ProxyEndpoint>

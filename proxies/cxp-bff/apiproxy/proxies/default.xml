@@ -6,8 +6,11 @@
                 <Name>sharedAuthWithOkta</Name>
             </Step>
             <Step>
-                <Name>verifyScopes</Name>
-                <Condition>!(IAMResponse.scopes Matches "**cxp**")</Condition>
+                <Name>verifyIsPOST</Name>
+                <Condition>(request.verb NotEquals "POST") and (request.verb NotEquals "OPTIONS")</Condition>
+            </Step>
+            <Step>
+                <Name>PassAccessTokenToBFF</Name>
             </Step>
         </Request>
         <Response/>
@@ -21,14 +24,15 @@
         <BasePath>/cxp-bff</BasePath>
     </HTTPProxyConnection>
     <RouteRule name="k8s-prod">
-        <Condition>environment.name ~ "prod*"</Condition>
+        <Condition>environment.name ~ "*prod*"</Condition>
         <TargetEndpoint>k8s-prod</TargetEndpoint>
     </RouteRule>
-    <RouteRule name="k8s-stage">
-        <Condition>environment.name ~ "stage*"</Condition>
-        <TargetEndpoint>k8s-stage</TargetEndpoint>
+    <RouteRule name="k8s-develop">
+        <Condition>environment.name ~ "*dev*"</Condition>
+        <TargetEndpoint>k8s-develop</TargetEndpoint>
     </RouteRule>
     <RouteRule name="default">
-        <TargetEndpoint>k8s-develop</TargetEndpoint>
+        <Condition>environment.name ~ "*stage*"</Condition>
+        <TargetEndpoint>k8s-stage</TargetEndpoint>
     </RouteRule>
 </ProxyEndpoint>
