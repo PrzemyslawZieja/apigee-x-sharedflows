@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<APIProxy name="supplier">
+    <Basepaths>/supplier</Basepaths>
+    <Description></Description>
+    <DisplayName>supplier</DisplayName>
+    <Policies>
+        <Policy>saasag.supplier_delete</Policy>
+        <Policy>saasag.supplier_manage</Policy>
+        <Policy>sharedAuthWithOkta</Policy>
+    </Policies>
+    <ProxyEndpoints>
+        <ProxyEndpoint>default</ProxyEndpoint>
+    </ProxyEndpoints>
+    <Resources/>
+    <Spec></Spec>
+    <TargetServers/>
+    <TargetEndpoints>
+        <TargetEndpoint>k8s-develop</TargetEndpoint>
+        <TargetEndpoint>k8s-prod</TargetEndpoint>
+        <TargetEndpoint>k8s-stage</TargetEndpoint>
+    </TargetEndpoints>
+</APIProxy>
