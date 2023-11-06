@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<APIProxy name="vatsplitting">
+    <Basepaths>/vatsplitting</Basepaths>
+    <Description>The vat-splitting service</Description>
+    <DisplayName>vatsplitting</DisplayName>
+    <Policies>
+        <Policy>add-cors</Policy>
+        <Policy>saasag.vatsplitting_calculate</Policy>
+        <Policy>sharedAuthWithOkta</Policy>
+    </Policies>
+    <ProxyEndpoints>
+        <ProxyEndpoint>default</ProxyEndpoint>
+        <ProxyEndpoint>emporix</ProxyEndpoint>
+    </ProxyEndpoints>
+    <Resources/>
+    <Spec></Spec>
+    <TargetServers/>
+    <TargetEndpoints>
+        <TargetEndpoint>k8s-develop</TargetEndpoint>
+        <TargetEndpoint>k8s-prod</TargetEndpoint>
+        <TargetEndpoint>k8s-stage</TargetEndpoint>
+    </TargetEndpoints>
+</APIProxy>
