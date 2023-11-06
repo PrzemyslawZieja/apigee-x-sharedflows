@@ -1,20 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<ProxyEndpoint name="default">
+<ProxyEndpoint name="public">
     <PreFlow name="PreFlow">
-        <Request>
-            <Step>
-                <Name>sharedAuthWithOkta</Name>
-            </Step>
-            <Step>
-                <Name>Assign-Message-4</Name>
-            </Step>
-            <Step>
-                <Name>Assign-Message-3</Name>
-            </Step>
-            <Step>
-                <Name>Assign-Message-5</Name>
-            </Step>
-        </Request>
+        <Request/>
         <Response/>
     </PreFlow>
     <Flows/>
@@ -23,20 +10,20 @@
         <Response/>
     </PostFlow>
     <HTTPProxyConnection>
-        <BasePath>/cxpb-api</BasePath>
+        <BasePath>/cxpb-api-public</BasePath>
         <Properties>
             <Property name="response.streaming.enabled">true</Property>
         </Properties>
     </HTTPProxyConnection>
     <RouteRule name="k8s-prod">
         <Condition>environment.name = "prod"</Condition>
-        <TargetEndpoint>k8s-prod</TargetEndpoint>
+        <TargetEndpoint>k8s-prod-public</TargetEndpoint>
     </RouteRule>
     <RouteRule name="k8s-stage">
         <Condition>environment.name = "stage"</Condition>
-        <TargetEndpoint>k8s-stage</TargetEndpoint>
+        <TargetEndpoint>k8s-stage-public</TargetEndpoint>
     </RouteRule>
     <RouteRule name="default">
-        <TargetEndpoint>k8s-develop</TargetEndpoint>
+        <TargetEndpoint>k8s-develop-public</TargetEndpoint>
     </RouteRule>
 </ProxyEndpoint>

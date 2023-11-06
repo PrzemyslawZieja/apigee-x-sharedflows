@@ -2,6 +2,7 @@
 <APIProxy name="cxpb-api">
     <Basepaths>/cxpb-api</Basepaths>
     <Description></Description>
+    <DisplayName>cxpb-api</DisplayName>
     <Policies>
         <Policy>Assign-Message-3</Policy>
         <Policy>Assign-Message-4</Policy>
@@ -10,13 +11,17 @@
     </Policies>
     <ProxyEndpoints>
         <ProxyEndpoint>default</ProxyEndpoint>
+        <ProxyEndpoint>public</ProxyEndpoint>
     </ProxyEndpoints>
     <Resources/>
     <Spec></Spec>
     <TargetServers/>
     <TargetEndpoints>
+        <TargetEndpoint>k8s-develop-public</TargetEndpoint>
         <TargetEndpoint>k8s-develop</TargetEndpoint>
+        <TargetEndpoint>k8s-prod-public</TargetEndpoint>
         <TargetEndpoint>k8s-prod</TargetEndpoint>
+        <TargetEndpoint>k8s-stage-public</TargetEndpoint>
         <TargetEndpoint>k8s-stage</TargetEndpoint>
     </TargetEndpoints>
 </APIProxy>
