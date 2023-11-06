@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<APIProxy name="shoppinglist">
+    <Basepaths>/shoppinglist</Basepaths>
+    <Description>The shopping list</Description>
+    <DisplayName>shoppinglist</DisplayName>
+    <Policies>
+        <Policy>add-cors</Policy>
+        <Policy>saasag.shoppinglist_delete</Policy>
+        <Policy>saasag.shoppinglist_read</Policy>
+        <Policy>sharedAuthWithOkta</Policy>
+    </Policies>
+    <ProxyEndpoints>
+        <ProxyEndpoint>default</ProxyEndpoint>
+    </ProxyEndpoints>
+    <Resources/>
+    <Spec></Spec>
+    <TargetServers/>
+    <TargetEndpoints>
+        <TargetEndpoint>k8s-develop</TargetEndpoint>
+        <TargetEndpoint>k8s-prod</TargetEndpoint>
+        <TargetEndpoint>k8s-stage</TargetEndpoint>
+    </TargetEndpoints>
+</APIProxy>
