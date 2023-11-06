@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<KeyValueMapOperations mapIdentifier="oktaBasicAuth" async="false" continueOnError="false" enabled="true" name="GetKVM">
+    <DisplayName>Get OKTA Basic Auth Credentials</DisplayName>
+    <ExpiryTimeInSecs>1</ExpiryTimeInSecs>
+    <Scope>environment</Scope>
+    <Get assignTo="private.kvm_basic_auth">
+        <Key>
+            <Parameter>basicAuth</Parameter>
+        </Key>
+    </Get>
+</KeyValueMapOperations>

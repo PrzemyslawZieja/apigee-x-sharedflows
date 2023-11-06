@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<KeyValueMapOperations async="false" continueOnError="false" enabled="true" name="GetHubSpotKVM" mapIdentifier="hubSpot">
+    <DisplayName>Get HubSpot Signature</DisplayName>
+    <ExpiryTimeInSecs>1</ExpiryTimeInSecs>
+    <Scope>environment</Scope>
+    <Get assignTo="private.kvm_hubspot_signature">
+        <Key>
+            <Parameter>hubSpotSignature</Parameter>
+        </Key>
+    </Get>
+</KeyValueMapOperations>

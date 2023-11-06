@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<APIProxy name="auth-adapter">
+    <Basepaths>/auth-adapter</Basepaths>
+    <Description></Description>
+    <DisplayName>auth-adapter</DisplayName>
+    <Policies>
+        <Policy>Add-X-Proxy-Authorization</Policy>
+        <Policy>GetHubSpotKVM</Policy>
+        <Policy>GetKVM</Policy>
+        <Policy>Return 400 to Hubspot</Policy>
+        <Policy>Return-401</Policy>
+        <Policy>Validate-HubSpot-Signature</Policy>
+        <Policy>Validate-Okta-Basic-Authentication</Policy>
+        <Policy>sharedAuthWithOkta</Policy>
+    </Policies>
+    <ProxyEndpoints>
+        <ProxyEndpoint>default</ProxyEndpoint>
+    </ProxyEndpoints>
+    <Resources>
+        <Resource>py://hubspot.py</Resource>
+        <Resource>py://okta.py</Resource>
+    </Resources>
+    <Spec></Spec>
+    <TargetServers/>
+    <TargetEndpoints>
+        <TargetEndpoint>develop</TargetEndpoint>
+        <TargetEndpoint>prod</TargetEndpoint>
+        <TargetEndpoint>stage</TargetEndpoint>
+    </TargetEndpoints>
+</APIProxy>

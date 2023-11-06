@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Script async="false" continueOnError="false" enabled="true" name="Validate-HubSpot-Signature">
+    <DisplayName>Validate HubSpot Signature</DisplayName>
+    <Properties/>
+    <ResourceURL>py://hubspot.py</ResourceURL>
+</Script>

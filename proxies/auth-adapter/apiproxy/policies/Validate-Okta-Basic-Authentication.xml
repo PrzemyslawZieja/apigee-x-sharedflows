@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Script async="false" continueOnError="true" enabled="true" name="Validate-Okta-Basic-Authentication">
+    <DisplayName>Validate Okta Basic Authentication</DisplayName>
+    <Properties/>
+    <ResourceURL>py://okta.py</ResourceURL>
+</Script>

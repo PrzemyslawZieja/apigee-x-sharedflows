@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ProxyEndpoint name="default">
+    <PreFlow name="PreFlow">
+        <Request>
+            <Step>
+                <Name>sharedAuthWithOkta</Name>
+                <Condition>NOT(proxy.pathsuffix MatchesPath "/devportal/users/*/lifecycle/activate") AND NOT(proxy.pathsuffix MatchesPath "/devportal/integrations/hubspot") AND NOT(proxy.pathsuffix MatchesPath "/devportal/domains/whitelist")</Condition>
+            </Step>
+            <Step>
+                <Name>Add-X-Proxy-Authorization</Name>
+                <Condition>NOT(proxy.pathsuffix MatchesPath "/devportal/users/*/lifecycle/activate") AND NOT(proxy.pathsuffix MatchesPath "/devportal/integrations/hubspot") AND NOT(proxy.pathsuffix MatchesPath "/devportal/domains/whitelist")</Condition>
+            </Step>
+        </Request>
+        <Response/>
+    </PreFlow>
+    <Flows>
+        <Flow name="Domain Whitelist">
+            <Description>Flow used for whitelisting domains of potential customers</Description>
+            <Request>
+                <Step>
+                    <Name>GetKVM</Name>
+                </Step>
+                <Step>
+                    <Name>Validate-Okta-Basic-Authentication</Name>
+                </Step>
+                <Step>
+                    <Name>Return-401</Name>
+                    <Condition>(basic_auth_passed == false)</Condition>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/devportal/domains/whitelist") and (request.verb = "POST")</Condition>
+        </Flow>
+        <Flow name="HubSpot notification">
+            <Description>Flow used for receiving HubSpot notification</Description>
+            <Request>
+                <Step>
+                    <Name>GetHubSpotKVM</Name>
+                </Step>
+                <Step>
+                    <Name>Validate-HubSpot-Signature</Name>
+                </Step>
+                <Step>
+                    <Name>Return 400 to Hubspot</Name>
+                    <Condition>(hubspot_signature_passed == false)</Condition>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/devportal/integrations/hubspot") and (request.verb = "POST")</Condition>
+        </Flow>
+    </Flows>
+    <PostFlow name="PostFlow">
+        <Request/>
+        <Response/>
+    </PostFlow>
+    <HTTPProxyConnection>
+        <BasePath>/auth-adapter</BasePath>
+        <VirtualHost>emporix-vhost</VirtualHost>
+    </HTTPProxyConnection>
+    <RouteRule name="NoRoute">
+        <Condition>request.verb == "OPTIONS" AND request.header.origin != null AND request.header.Access-Control-Request-Method != null</Condition>
+    </RouteRule>
+    <RouteRule name="k8s-prod">
+        <Condition>environment.name ~ "*prod*"</Condition>
+        <TargetEndpoint>prod</TargetEndpoint>
+    </RouteRule>
+    <RouteRule name="k8s-develop">
+        <Condition>environment.name ~ "*dev*"</Condition>
+        <TargetEndpoint>develop</TargetEndpoint>
+    </RouteRule>
+    <RouteRule name="default">
+        <Condition>environment.name ~ "*stage*"</Condition>
+        <TargetEndpoint>stage</TargetEndpoint>
+    </RouteRule>
+</ProxyEndpoint>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage async="false" continueOnError="false" enabled="true" name="Add-X-Proxy-Authorization">
+    <DisplayName>Add X Proxy Authorization</DisplayName>
+    <Properties/>
+    <Add>
+        <Headers>
+            <Header name="X-Proxy-Authorization">{request.header.Authorization}</Header>
+        </Headers>
+    </Add>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <AssignTo createNew="false" transport="http" type="request"/>
+</AssignMessage>
