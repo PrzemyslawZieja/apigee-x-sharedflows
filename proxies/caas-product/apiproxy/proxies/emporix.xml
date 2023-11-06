@@ -8,10 +8,6 @@
                 <Name>sharedAuthWithOkta</Name>
                 <Condition>(NOT(proxy.pathsuffix MatchesPath "/api-console/**") AND NOT(proxy.pathsuffix MatchesPath "/meta-data/**"))</Condition>
             </Step>
-            <Step>
-                <Name>sharedQuotaPolicy</Name>
-                <Condition>tenant isNot null AND apiproduct.developer.quota.limit isNot null AND apiproduct.developer.quota.timeunit isNot null AND apiproduct.developer.quota.interval isNot null</Condition>
-            </Step>
         </Request>
         <Response/>
     </PreFlow>
