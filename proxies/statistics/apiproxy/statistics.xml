@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <APIProxy name="statistics">
     <Basepaths>/statistics</Basepaths>
-    <ConfigurationVersion majorVersion="4" minorVersion="0"/>
     <Description></Description>
     <DisplayName>statistics</DisplayName>
     <Policies>
@@ -14,8 +13,8 @@
     <Spec></Spec>
     <TargetServers/>
     <TargetEndpoints>
-        <TargetEndpoint>k8s-devevelop</TargetEndpoint>
-        <TargetEndpoint>k8s-stage</TargetEndpoint>
+        <TargetEndpoint>k8s-develop</TargetEndpoint>
         <TargetEndpoint>k8s-prod</TargetEndpoint>
+        <TargetEndpoint>k8s-stage</TargetEndpoint>
     </TargetEndpoints>
 </APIProxy>
