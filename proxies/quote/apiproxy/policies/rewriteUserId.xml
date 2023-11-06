@@ -5,6 +5,7 @@
     <Set>
         <Headers>
             <Header name="userId">{request.header.hybris-user-id}</Header>
+            <!--<Header name="user-id">871444222</Header>-->
         </Headers>
     </Set>
     <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
