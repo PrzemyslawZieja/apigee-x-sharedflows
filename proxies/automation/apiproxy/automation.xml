@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<APIProxy name="automation">
+    <Basepaths>/automation</Basepaths>
+    <Description>Proxy for accessing Rundeck Automation service on tech cluster</Description>
+    <DisplayName>automation</DisplayName>
+    <Policies>
+        <Policy>LimitNumberOfRequests</Policy>
+        <Policy>Missing-Authorization-Header</Policy>
+    </Policies>
+    <ProxyEndpoints>
+        <ProxyEndpoint>default</ProxyEndpoint>
+    </ProxyEndpoints>
+    <Resources/>
+    <Spec></Spec>
+    <TargetServers/>
+    <TargetEndpoints>
+        <TargetEndpoint>dev</TargetEndpoint>
+        <TargetEndpoint>prod</TargetEndpoint>
+        <TargetEndpoint>stage</TargetEndpoint>
+    </TargetEndpoints>
+</APIProxy>

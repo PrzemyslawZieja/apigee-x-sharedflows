@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ProxyEndpoint name="default">
+    <PreFlow name="PreFlow">
+        <Request>
+            <Step>
+                <Name>Missing-Authorization-Header</Name>
+                <Condition>request.verb != "OPTIONS" AND request.header.x-proxy-authorization == null</Condition>
+            </Step>
+            <Step>
+                <Name>LimitNumberOfRequests</Name>
+            </Step>
+        </Request>
+        <Response/>
+    </PreFlow>
+    <Flows/>
+    <PostFlow name="PostFlow">
+        <Request/>
+        <Response/>
+    </PostFlow>
+    <HTTPProxyConnection>
+        <BasePath>/automation</BasePath>
+    </HTTPProxyConnection>
+    <RouteRule name="NoRoute">
+        <Condition>request.verb == "OPTIONS" AND request.header.origin != null AND request.header.Access-Control-Request-Method != null</Condition>
+    </RouteRule>
+    <RouteRule name="dev">
+        <Condition>environment.name ~ "*dev*"</Condition>
+        <TargetEndpoint>dev</TargetEndpoint>
+    </RouteRule>
+    <RouteRule env="stage">
+        <Condition>environment.name ~ "*stage*"</Condition>
+        <TargetEndpoint>stage</TargetEndpoint>
+    </RouteRule>
+    <RouteRule name="prod">
+        <Condition>environment.name ~ "*prod*"</Condition>
+        <TargetEndpoint>prod</TargetEndpoint>
+    </RouteRule>
+</ProxyEndpoint>
