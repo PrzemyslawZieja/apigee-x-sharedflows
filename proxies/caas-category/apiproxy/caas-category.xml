@@ -4,18 +4,13 @@
     <Description></Description>
     <DisplayName>caas-category</DisplayName>
     <Policies>
-        <Policy>Rewrite-Path-Suffix</Policy>
-        <Policy>Rewrite-Revursive-param</Policy>
         <Policy>sharedAuthWithOkta</Policy>
     </Policies>
     <ProxyEndpoints>
         <ProxyEndpoint>default</ProxyEndpoint>
         <ProxyEndpoint>emporix</ProxyEndpoint>
     </ProxyEndpoints>
-    <Resources>
-        <Resource>jsc://Rewrite-Revursive-param.js</Resource>
-        <Resource>jsc://rewritePathSuffix.js</Resource>
-    </Resources>
+    <Resources/>
     <Spec></Spec>
     <TargetServers/>
     <TargetEndpoints>

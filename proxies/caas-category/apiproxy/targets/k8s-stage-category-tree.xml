@@ -3,15 +3,7 @@
     <Description/>
     <FaultRules/>
     <PreFlow name="PreFlow">
-        <Request>
-            <Step>
-                <Name>Rewrite-Path-Suffix</Name>
-                <Condition>(((proxy.pathsuffix MatchesPath "/mpreistest/categories/categoryTree") or (proxy.pathsuffix MatchesPath "/saastest2/categories/categoryTree") or (proxy.pathsuffix MatchesPath "/oddity/categories/categoryTree")) and (request.verb = "GET"))</Condition>
-            </Step>
-            <Step>
-                <Name>Rewrite-Revursive-param</Name>
-            </Step>
-        </Request>
+        <Request/>
         <Response/>
     </PreFlow>
     <PostFlow name="PostFlow">
