@@ -34,23 +34,23 @@
         <TargetEndpoint>k8s-v2-prod</TargetEndpoint>
     </RouteRule>
     <RouteRule name="k8s-prod">
-        <Condition>environment.name ~ "*prod*"</Condition>
+        <Condition>environment.name = "prod"</Condition>
         <TargetEndpoint>k8s-prod</TargetEndpoint>
     </RouteRule>
     <RouteRule name="k8s-v2-develop">
-        <Condition>request.header.k8s-develop-redirect == true AND request.header.x-version == "v2"</Condition>
+        <Condition>environment.name = "dev" AND request.header.x-version == "v2"</Condition>
         <TargetEndpoint>k8s-v2-develop</TargetEndpoint>
     </RouteRule>
-    <RouteRule name="k8s-v2-stage">
-        <Condition>request.header.x-version == "v2"</Condition>
-        <TargetEndpoint>k8s-v2-stage</TargetEndpoint>
-    </RouteRule>
     <RouteRule name="k8s-develop">
-        <Condition>environment.name ~ "*dev*"</Condition>
+        <Condition>environment.name = "dev"</Condition>
         <TargetEndpoint>k8s-develop</TargetEndpoint>
     </RouteRule>
-    <RouteRule name="k8s-stage">
-        <Condition>environment.name ~ "*stage*"</Condition>
+    <RouteRule name="k8s-v2-stage">
+        <Condition>environment.name = "stage" AND request.header.x-version == "v2"</Condition>
+        <TargetEndpoint>k8s-v2-stage</TargetEndpoint>
+    </RouteRule>
+    <RouteRule name="default">
+        <Condition>environment.name = "stage"</Condition>
         <TargetEndpoint>k8s-stage</TargetEndpoint>
     </RouteRule>
 </ProxyEndpoint>

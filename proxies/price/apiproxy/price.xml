@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <APIProxy name="price">
     <Basepaths>/price</Basepaths>
-    <ConfigurationVersion majorVersion="4" minorVersion="0"/>
     <Description>The price calculation service v3.</Description>
     <DisplayName>price</DisplayName>
     <Policies>
