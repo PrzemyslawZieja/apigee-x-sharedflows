@@ -10,6 +10,6 @@
         <Response/>
     </PostFlow>
     <HTTPTargetConnection>
-        <URL>https://product-v2.k8s-develop.emporix.io</URL>
+        <URL>http://7.0.8.2/product-v2</URL>
     </HTTPTargetConnection>
 </TargetEndpoint>
