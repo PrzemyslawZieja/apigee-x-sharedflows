@@ -13,6 +13,6 @@
     <Flows/>
     <HTTPTargetConnection>
         <Properties/>
-        <URL>http://k8s-develop-pri.emporix.io/product-v2</URL>
+        <URL>http://k8s-develop.pri.emporix.io/product-v2</URL>
     </HTTPTargetConnection>
 </TargetEndpoint>
