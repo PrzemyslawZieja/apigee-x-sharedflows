@@ -10,11 +10,6 @@
     ],
     "description": "",
     "displayName": "Schema Service",
-    "environments": [
-      "dev",
-      "stage",
-      "prod"
-    ],
     "name": "Schema-Service",
     "proxies": [
       "schema"
@@ -22,6 +17,11 @@
     "scopes": [
       "schema.schema_manage",
       "schema.schema_read"
+    ],
+    "environments": [
+      "dev",
+      "stage",
+      "prod"
     ]
   },
   {
@@ -35,17 +35,17 @@
     ],
     "description": "",
     "displayName": "AI Service",
-    "environments": [
-      "dev",
-      "stage",
-      "prod"
-    ],
     "name": "ai",
     "proxies": [
       "ai-service"
     ],
     "scopes": [
       "ai.text_manage"
+    ],
+    "environments": [
+      "dev",
+      "stage",
+      "prod"
     ]
   },
   {
@@ -59,11 +59,6 @@
     ],
     "description": "",
     "displayName": "approval",
-    "environments": [
-      "dev",
-      "stage",
-      "prod"
-    ],
     "name": "approval",
     "proxies": [
       "approval"
@@ -71,6 +66,11 @@
     "scopes": [
       "approval.approval_manage_own",
       "approval.approval_read_own"
+    ],
+    "environments": [
+      "dev",
+      "stage",
+      "prod"
     ]
   },
   {
@@ -84,11 +84,6 @@
     ],
     "description": "",
     "displayName": "The pickpack service Read only scopes",
-    "environments": [
-      "dev",
-      "stage",
-      "prod"
-    ],
     "name": "Pick Pack Read Only",
     "proxies": [
       "pick-pack"
@@ -96,6 +91,11 @@
     "scopes": [
       "availability.availability_view",
       "pickpack.pickpack_view"
+    ],
+    "environments": [
+      "dev",
+      "stage",
+      "prod"
     ]
   },
   {
@@ -109,11 +109,6 @@
     ],
     "description": "",
     "displayName": "payment-gateway",
-    "environments": [
-      "dev",
-      "stage",
-      "prod"
-    ],
     "name": "payment-gateway",
     "proxies": [
       "payment-gateway"
@@ -126,6 +121,11 @@
       "payment-gateway.paymentmodes_read",
       "payment-gateway.paymenttransactions_read",
       "payment-gateway.refund_manage"
+    ],
+    "environments": [
+      "dev",
+      "stage",
+      "prod"
     ]
   },
   {
@@ -139,15 +139,15 @@
     ],
     "description": "The API product should be attached only into Emporix and EmporixStage tenants",
     "displayName": "super-admin-emporix",
-    "environments": [
-      "dev",
-      "stage",
-      "prod"
-    ],
     "name": "super-admin-emporix",
     "proxies": [],
     "scopes": [
       "admin.statistics_all_read"
+    ],
+    "environments": [
+      "dev",
+      "stage",
+      "prod"
     ]
   },
   {
@@ -161,16 +161,16 @@
     ],
     "description": "",
     "displayName": "super-admin-customer",
-    "environments": [
-      "dev",
-      "stage",
-      "prod"
-    ],
     "name": "super-admin-customer",
     "proxies": [],
     "scopes": [
       "admin.statistics_health_read",
       "admin.statistics_tenant_read"
+    ],
+    "environments": [
+      "dev",
+      "stage",
+      "prod"
     ]
   },
   {
@@ -184,15 +184,15 @@
     ],
     "description": "",
     "displayName": "common",
-    "environments": [
-      "dev",
-      "stage",
-      "prod"
-    ],
     "name": "common",
     "proxies": [],
     "scopes": [
       "common.unversioned_upsert"
+    ],
+    "environments": [
+      "dev",
+      "stage",
+      "prod"
     ]
   },
   {
@@ -206,17 +206,17 @@
     ],
     "description": "",
     "displayName": "search-service",
-    "environments": [
-      "dev",
-      "stage",
-      "prod"
-    ],
     "name": "search-service",
     "proxies": [
       "search-service"
     ],
     "scopes": [
       "search-service.search_manage"
+    ],
+    "environments": [
+      "dev",
+      "stage",
+      "prod"
     ]
   },
   {
@@ -230,19 +230,33 @@
     ],
     "description": "cxp",
     "displayName": "cxp",
-    "environments": [
-      "dev",
-      "prod",
-      "stage"
-    ],
     "name": "cxp",
     "proxies": [],
     "scopes": [
+      "cxp.audit_admin",
+      "cxp.audit_manage",
+      "cxp.audit_view",
+      "cxp.businessrule_admin",
+      "cxp.businessrule_edit",
+      "cxp.businessrule_manage",
+      "cxp.businessrule_view",
+      "cxp.executiontemplate_admin",
       "cxp.executiontemplate_edit",
-      "cxp.executiontemplate_read",
-      "cxp.tenant_edit",
-      "integromat.app_developer",
-      "integromat.scenario_edit"
+      "cxp.executiontemplate_manage",
+      "cxp.executiontemplate_view",
+      "cxp.form_admin",
+      "cxp.form_edit",
+      "cxp.form_manage",
+      "cxp.form_view",
+      "cxp.schedule_admin",
+      "cxp.schedule_edit",
+      "cxp.schedule_manage",
+      "cxp.schedule_view"
+    ],
+    "environments": [
+      "dev",
+      "stage",
+      "prod"
     ]
   },
   {
@@ -256,11 +270,6 @@
     ],
     "description": "",
     "displayName": "quote",
-    "environments": [
-      "dev",
-      "stage",
-      "prod"
-    ],
     "name": "quote",
     "proxies": [
       "quote"
@@ -270,6 +279,11 @@
       "quote.quote_manage_own",
       "quote.quote_read",
       "quote.quote_read_own"
+    ],
+    "environments": [
+      "dev",
+      "stage",
+      "prod"
     ]
   },
   {
@@ -283,11 +297,6 @@
     ],
     "description": "incoming media service",
     "displayName": "media",
-    "environments": [
-      "dev",
-      "stage",
-      "prod"
-    ],
     "name": "media",
     "proxies": [
       "media"
@@ -295,6 +304,11 @@
     "scopes": [
       "media.asset_manage",
       "media.asset_read"
+    ],
+    "environments": [
+      "dev",
+      "stage",
+      "prod"
     ]
   },
   {
@@ -308,11 +322,6 @@
     ],
     "description": "",
     "displayName": "returns",
-    "environments": [
-      "dev",
-      "stage",
-      "prod"
-    ],
     "name": "returns",
     "proxies": [
       "returns"
@@ -322,6 +331,11 @@
       "returns.returns_manage_own",
       "returns.returns_read",
       "returns.returns_read_own"
+    ],
+    "environments": [
+      "dev",
+      "stage",
+      "prod"
     ]
   },
   {
@@ -335,11 +349,6 @@
     ],
     "description": "",
     "displayName": "webhook",
-    "environments": [
-      "dev",
-      "stage",
-      "prod"
-    ],
     "name": "webhook",
     "proxies": [
       "webhook"
@@ -347,6 +356,11 @@
     "scopes": [
       "webhook.subscription_manage",
       "webhook.subscription_read"
+    ],
+    "environments": [
+      "dev",
+      "stage",
+      "prod"
     ]
   },
   {
@@ -360,11 +374,6 @@
     ],
     "description": "",
     "displayName": "client-management",
-    "environments": [
-      "dev",
-      "stage",
-      "prod"
-    ],
     "name": "client-management",
     "proxies": [
       "client-management"
@@ -381,6 +390,11 @@
       "customermanagement.legalentity_read_own",
       "customermanagement.location_manage",
       "customermanagement.location_read"
+    ],
+    "environments": [
+      "dev",
+      "stage",
+      "prod"
     ]
   },
   {
@@ -394,11 +408,6 @@
     ],
     "description": "",
     "displayName": "iam",
-    "environments": [
-      "dev",
-      "stage",
-      "prod"
-    ],
     "name": "iam",
     "proxies": [
       "iam"
@@ -431,6 +440,11 @@
       "iam.scope_read",
       "iam.template_read",
       "iam.user_read"
+    ],
+    "environments": [
+      "dev",
+      "stage",
+      "prod"
     ]
   },
   {
@@ -444,11 +458,6 @@
     ],
     "description": "",
     "displayName": "tax",
-    "environments": [
-      "dev",
-      "stage",
-      "prod"
-    ],
     "name": "tax",
     "proxies": [
       "tax"
@@ -456,6 +465,11 @@
     "scopes": [
       "tax.tax_manage",
       "tax.tax_read"
+    ],
+    "environments": [
+      "dev",
+      "stage",
+      "prod"
     ]
   },
   {
@@ -469,11 +483,6 @@
     ],
     "description": "",
     "displayName": "currency",
-    "environments": [
-      "dev",
-      "stage",
-      "prod"
-    ],
     "name": "currency",
     "proxies": [
       "currency"
@@ -482,6 +491,11 @@
       "currency.currency_manage",
       "currency.currency_manage_admin",
       "currency.currency_read"
+    ],
+    "environments": [
+      "dev",
+      "stage",
+      "prod"
     ]
   },
   {
@@ -495,11 +509,6 @@
     ],
     "description": "",
     "displayName": "feature-toggle",
-    "environments": [
-      "dev",
-      "stage",
-      "prod"
-    ],
     "name": "feature-toggle",
     "proxies": [
       "feature-toggle"
@@ -507,6 +516,11 @@
     "scopes": [
       "featuretoggle.toggle_get_value",
       "featuretoggle.toggle_manage"
+    ],
+    "environments": [
+      "dev",
+      "stage",
+      "prod"
     ]
   },
   {
@@ -520,11 +534,6 @@
     ],
     "description": "",
     "displayName": "catalogue",
-    "environments": [
-      "dev",
-      "stage",
-      "prod"
-    ],
     "name": "catalogue",
     "proxies": [
       "catalog"
@@ -534,6 +543,11 @@
       "catalog.catalog_delete",
       "catalog.catalog_update",
       "catalog.catalog_view"
+    ],
+    "environments": [
+      "dev",
+      "stage",
+      "prod"
     ]
   },
   {
@@ -547,11 +561,6 @@
     ],
     "description": "New price serivce",
     "displayName": "composable-price",
-    "environments": [
-      "dev",
-      "stage",
-      "prod"
-    ],
     "name": "composable-price",
     "proxies": [
       "composable-price"
@@ -559,6 +568,11 @@
     "scopes": [
       "composableprice.price_manage",
       "composableprice.price_match_own"
+    ],
+    "environments": [
+      "dev",
+      "stage",
+      "prod"
     ]
   },
   {
@@ -572,16 +586,16 @@
     ],
     "description": "",
     "displayName": "replenishment",
-    "environments": [
-      "dev",
-      "stage",
-      "prod"
-    ],
     "name": "replenishment",
     "proxies": [
       "replenishment"
     ],
-    "scopes": []
+    "scopes": [],
+    "environments": [
+      "dev",
+      "stage",
+      "prod"
+    ]
   },
   {
     "apiResources": [],
@@ -594,17 +608,17 @@
     ],
     "description": "incoming unit-handling service",
     "displayName": "unit-handling",
-    "environments": [
-      "dev",
-      "stage",
-      "prod"
-    ],
     "name": "unit-handling",
     "proxies": [
       "unit-handling"
     ],
     "scopes": [
       "unithandling.unit_manage"
+    ],
+    "environments": [
+      "dev",
+      "stage",
+      "prod"
     ]
   },
   {
@@ -618,17 +632,17 @@
     ],
     "description": "Incoming session context service",
     "displayName": "session-context",
-    "environments": [
-      "dev",
-      "stage",
-      "prod"
-    ],
     "name": "session-context",
     "proxies": [
       "session-context"
     ],
     "scopes": [
       "sessioncontext.context_manage"
+    ],
+    "environments": [
+      "dev",
+      "stage",
+      "prod"
     ]
   },
   {
@@ -642,16 +656,16 @@
     ],
     "description": "iban-validator",
     "displayName": "iban-validator",
-    "environments": [
-      "dev",
-      "stage",
-      "prod"
-    ],
     "name": "iban-validator",
     "proxies": [
       "iban-validator"
     ],
-    "scopes": []
+    "scopes": [],
+    "environments": [
+      "dev",
+      "stage",
+      "prod"
+    ]
   },
   {
     "apiResources": [],
@@ -664,11 +678,6 @@
     ],
     "description": "Incoming price serivce",
     "displayName": "composable-price-1",
-    "environments": [
-      "dev",
-      "stage",
-      "prod"
-    ],
     "name": "price-v2",
     "proxies": [
       "composable-price"
@@ -676,6 +685,11 @@
     "scopes": [
       "composableprice.price_manage",
       "composableprice.price_match_own"
+    ],
+    "environments": [
+      "dev",
+      "stage",
+      "prod"
     ]
   },
   {
@@ -689,11 +703,6 @@
     ],
     "description": "",
     "displayName": "sepa-export",
-    "environments": [
-      "dev",
-      "stage",
-      "prod"
-    ],
     "name": "Sepa-export",
     "proxies": [
       "sepa-export"
@@ -702,6 +711,11 @@
       "sepaexport.job_manage",
       "sepaexport.job_view",
       "sepaexport.media_view"
+    ],
+    "environments": [
+      "dev",
+      "stage",
+      "prod"
     ]
   },
   {
@@ -715,11 +729,6 @@
     ],
     "description": "",
     "displayName": "Customer (read only)",
-    "environments": [
-      "dev",
-      "stage",
-      "prod"
-    ],
     "name": "customer-read-only",
     "proxies": [
       "caas-customer"
@@ -729,6 +738,11 @@
       "emporix.customer_read",
       "hybris.customer_read",
       "saasag.customer_read"
+    ],
+    "environments": [
+      "dev",
+      "stage",
+      "prod"
     ]
   },
   {
@@ -742,11 +756,6 @@
     ],
     "description": "",
     "displayName": "order-read",
-    "environments": [
-      "dev",
-      "stage",
-      "prod"
-    ],
     "name": "caas-order-read",
     "proxies": [
       "caas-order"
@@ -754,6 +763,11 @@
     "scopes": [
       "order.history_view",
       "order.order_read"
+    ],
+    "environments": [
+      "dev",
+      "stage",
+      "prod"
     ]
   },
   {
@@ -767,16 +781,16 @@
     ],
     "description": "",
     "displayName": "delivery-v2",
-    "environments": [
-      "dev",
-      "stage",
-      "prod"
-    ],
     "name": "delivery-v2",
     "proxies": [
       "delivery-v2"
     ],
-    "scopes": []
+    "scopes": [],
+    "environments": [
+      "dev",
+      "stage",
+      "prod"
+    ]
   },
   {
     "apiResources": [],
@@ -789,16 +803,16 @@
     ],
     "description": "The invoice service",
     "displayName": "invoice service",
-    "environments": [
-      "dev",
-      "stage",
-      "prod"
-    ],
     "name": "invoice",
     "proxies": [],
     "scopes": [
       "invoice.invoice_manage",
       "invoice.invoice_view"
+    ],
+    "environments": [
+      "dev",
+      "stage",
+      "prod"
     ]
   },
   {
@@ -812,11 +826,6 @@
     ],
     "description": "The pickpack service",
     "displayName": "pickpack",
-    "environments": [
-      "dev",
-      "stage",
-      "prod"
-    ],
     "name": "pick-pack",
     "proxies": [
       "pick-pack"
@@ -826,6 +835,11 @@
       "availability.availability_view",
       "pickpack.pickpack_manage",
       "pickpack.pickpack_view"
+    ],
+    "environments": [
+      "dev",
+      "stage",
+      "prod"
     ]
   },
   {
@@ -839,16 +853,16 @@
     ],
     "description": "",
     "displayName": "cart-v2",
-    "environments": [
-      "dev",
-      "stage",
-      "prod"
-    ],
     "name": "cart-v2",
     "proxies": [
       "cart-v2"
     ],
-    "scopes": []
+    "scopes": [],
+    "environments": [
+      "dev",
+      "stage",
+      "prod"
+    ]
   },
   {
     "apiResources": [],
@@ -861,16 +875,16 @@
     ],
     "description": "The name Backoffice is misleading and is a misconfiguration. ",
     "displayName": "Markant Service",
-    "environments": [
-      "dev",
-      "stage",
-      "prod"
-    ],
     "name": "Backoffice",
     "proxies": [
       "markant-service"
     ],
-    "scopes": []
+    "scopes": [],
+    "environments": [
+      "dev",
+      "stage",
+      "prod"
+    ]
   },
   {
     "apiResources": [],
@@ -883,14 +897,14 @@
     ],
     "description": "this is a test and not yet in production",
     "displayName": "Storefront",
+    "name": "storefront",
+    "proxies": [],
+    "scopes": [],
     "environments": [
       "dev",
       "stage",
       "prod"
-    ],
-    "name": "storefront",
-    "proxies": [],
-    "scopes": []
+    ]
   },
   {
     "apiResources": [],
@@ -903,11 +917,6 @@
     ],
     "description": "The availability and stock level service",
     "displayName": "Availability",
-    "environments": [
-      "dev",
-      "stage",
-      "prod"
-    ],
     "name": "availabillity",
     "proxies": [
       "availability"
@@ -915,6 +924,11 @@
     "scopes": [
       "availability.availability_manage",
       "availability.availability_view"
+    ],
+    "environments": [
+      "dev",
+      "stage",
+      "prod"
     ]
   },
   {
@@ -928,14 +942,14 @@
     ],
     "description": "picklist",
     "displayName": "picklist",
+    "name": "picklist-Product",
+    "proxies": [],
+    "scopes": [],
     "environments": [
       "dev",
       "stage",
       "prod"
-    ],
-    "name": "picklist-Product",
-    "proxies": [],
-    "scopes": []
+    ]
   },
   {
     "apiResources": [],
@@ -948,11 +962,6 @@
     ],
     "description": "",
     "displayName": "Import Service",
-    "environments": [
-      "dev",
-      "stage",
-      "prod"
-    ],
     "name": "import",
     "proxies": [
       "import"
@@ -961,6 +970,11 @@
       "import.import_admin",
       "import.import_manage",
       "import.import_view"
+    ],
+    "environments": [
+      "dev",
+      "stage",
+      "prod"
     ]
   },
   {
@@ -974,17 +988,17 @@
     ],
     "description": "",
     "displayName": "Schema",
-    "environments": [
-      "dev",
-      "stage",
-      "prod"
-    ],
     "name": "schema",
     "proxies": [],
     "scopes": [
       "sequentialid.schema_admin",
       "sequentialid.schema_manage",
       "sequentialid.schema_view"
+    ],
+    "environments": [
+      "dev",
+      "stage",
+      "prod"
     ]
   },
   {
@@ -998,11 +1012,6 @@
     ],
     "description": "The configuration service",
     "displayName": "configuration",
-    "environments": [
-      "dev",
-      "stage",
-      "prod"
-    ],
     "name": "configuration",
     "proxies": [
       "configuration"
@@ -1011,6 +1020,11 @@
       "configuration.configuration_admin",
       "configuration.configuration_manage",
       "configuration.configuration_view"
+    ],
+    "environments": [
+      "dev",
+      "stage",
+      "prod"
     ]
   },
   {
@@ -1024,17 +1038,17 @@
     ],
     "description": "The vat-splitting service",
     "displayName": "vatsplitting",
-    "environments": [
-      "dev",
-      "stage",
-      "prod"
-    ],
     "name": "vatsplitting",
     "proxies": [
       "vatsplitting"
     ],
     "scopes": [
       "vatsplitting.vatsplitting_calculate"
+    ],
+    "environments": [
+      "dev",
+      "stage",
+      "prod"
     ]
   },
   {
@@ -1048,11 +1062,6 @@
     ],
     "description": "",
     "displayName": "supplier",
-    "environments": [
-      "dev",
-      "stage",
-      "prod"
-    ],
     "name": "supplier",
     "proxies": [
       "supplier"
@@ -1060,6 +1069,11 @@
     "scopes": [
       "supplier.supplier_delete",
       "supplier.supplier_manage"
+    ],
+    "environments": [
+      "dev",
+      "stage",
+      "prod"
     ]
   },
   {
@@ -1073,11 +1087,6 @@
     ],
     "description": "The shopping list",
     "displayName": "shoppinglist",
-    "environments": [
-      "dev",
-      "stage",
-      "prod"
-    ],
     "name": "shoppinglist",
     "proxies": [
       "shoppinglist"
@@ -1085,6 +1094,11 @@
     "scopes": [
       "shoppinglist.shoppinglist_delete",
       "shoppinglist.shoppinglist_read"
+    ],
+    "environments": [
+      "dev",
+      "stage",
+      "prod"
     ]
   },
   {
@@ -1098,11 +1112,6 @@
     ],
     "description": "SequentialId-Service",
     "displayName": "sequentialid",
-    "environments": [
-      "dev",
-      "stage",
-      "prod"
-    ],
     "name": "sequentialid",
     "proxies": [
       "sequentialid"
@@ -1112,6 +1121,11 @@
       "sequentialid.schema_manage",
       "sequentialid.schema_view",
       "sequentialid.sequentialid_manage"
+    ],
+    "environments": [
+      "dev",
+      "stage",
+      "prod"
     ]
   },
   {
@@ -1125,11 +1139,6 @@
     ],
     "description": "Reward Points Service",
     "displayName": "rewardpoints",
-    "environments": [
-      "dev",
-      "stage",
-      "prod"
-    ],
     "name": "rewardpoints",
     "proxies": [
       "rewardpoints"
@@ -1137,6 +1146,11 @@
     "scopes": [
       "rewardspoints.rewardpoints_manage",
       "rewardspoints.rewardpoints_view"
+    ],
+    "environments": [
+      "dev",
+      "stage",
+      "prod"
     ]
   },
   {
@@ -1150,11 +1164,6 @@
     ],
     "description": "",
     "displayName": "report",
-    "environments": [
-      "dev",
-      "stage",
-      "prod"
-    ],
     "name": "report",
     "proxies": [
       "report"
@@ -1163,6 +1172,11 @@
       "configuration.configuration_view",
       "hybris.configuration_view",
       "saasag.configuration_view"
+    ],
+    "environments": [
+      "dev",
+      "stage",
+      "prod"
     ]
   },
   {
@@ -1176,11 +1190,6 @@
     ],
     "description": "",
     "displayName": "productimport",
-    "environments": [
-      "dev",
-      "stage",
-      "prod"
-    ],
     "name": "productimport",
     "proxies": [
       "productimport"
@@ -1188,6 +1197,11 @@
     "scopes": [
       "productimport.popularityimp_manage",
       "productimport.pricelistimp_manage"
+    ],
+    "environments": [
+      "dev",
+      "stage",
+      "prod"
     ]
   },
   {
@@ -1201,17 +1215,17 @@
     ],
     "description": "Deprecated price service",
     "displayName": "price-deprecated",
-    "environments": [
-      "dev",
-      "stage",
-      "prod"
-    ],
     "name": "price",
     "proxies": [
       "price"
     ],
     "scopes": [
       "price.prod_price_calculate"
+    ],
+    "environments": [
+      "dev",
+      "stage",
+      "prod"
     ]
   },
   {
@@ -1225,11 +1239,6 @@
     ],
     "description": "",
     "displayName": "pdfmashup",
-    "environments": [
-      "dev",
-      "stage",
-      "prod"
-    ],
     "name": "pdfmashup",
     "proxies": [
       "pdfmashup"
@@ -1241,6 +1250,11 @@
       "pdfmashup.scheduler_manage",
       "pdfmashup.scheduler_read",
       "pdfmashup.shippingnote_create"
+    ],
+    "environments": [
+      "dev",
+      "stage",
+      "prod"
     ]
   },
   {
@@ -1254,11 +1268,6 @@
     ],
     "description": "The dummy productcategorymshup service version 4.",
     "displayName": "pcm",
-    "environments": [
-      "dev",
-      "stage",
-      "prod"
-    ],
     "name": "pcm",
     "proxies": [
       "pcm"
@@ -1273,6 +1282,11 @@
       "pcm.prod_manage",
       "pcm.prod_read",
       "pcm.unpublished_read"
+    ],
+    "environments": [
+      "dev",
+      "stage",
+      "prod"
     ]
   },
   {
@@ -1286,16 +1300,16 @@
     ],
     "description": "The payment service",
     "displayName": "payment",
-    "environments": [
-      "dev",
-      "stage",
-      "prod"
-    ],
     "name": "payment",
     "proxies": [
       "payment"
     ],
-    "scopes": []
+    "scopes": [],
+    "environments": [
+      "dev",
+      "stage",
+      "prod"
+    ]
   },
   {
     "apiResources": [],
@@ -1308,16 +1322,16 @@
     ],
     "description": "Saas Order Service to manage orders from the frontend",
     "displayName": "order-payment",
-    "environments": [
-      "dev",
-      "stage",
-      "prod"
-    ],
     "name": "order",
     "proxies": [
       "order"
     ],
-    "scopes": []
+    "scopes": [],
+    "environments": [
+      "dev",
+      "stage",
+      "prod"
+    ]
   },
   {
     "apiResources": [],
@@ -1330,14 +1344,14 @@
     ],
     "description": "",
     "displayName": "onlinestock",
+    "name": "onlinestock",
+    "proxies": [],
+    "scopes": [],
     "environments": [
       "dev",
       "stage",
       "prod"
-    ],
-    "name": "onlinestock",
-    "proxies": [],
-    "scopes": []
+    ]
   },
   {
     "apiResources": [],
@@ -1350,11 +1364,6 @@
     ],
     "description": "",
     "displayName": "newsletter",
-    "environments": [
-      "dev",
-      "stage",
-      "prod"
-    ],
     "name": "newsletter",
     "proxies": [
       "newsletter"
@@ -1362,6 +1371,11 @@
     "scopes": [
       "newsletter.newsletter_export",
       "newsletter.newsletter_read"
+    ],
+    "environments": [
+      "dev",
+      "stage",
+      "prod"
     ]
   },
   {
@@ -1375,11 +1389,6 @@
     ],
     "description": "The label service",
     "displayName": "label",
-    "environments": [
-      "dev",
-      "stage",
-      "prod"
-    ],
     "name": "label",
     "proxies": [
       "label"
@@ -1387,6 +1396,11 @@
     "scopes": [
       "label.label_delete",
       "label.label_manage"
+    ],
+    "environments": [
+      "dev",
+      "stage",
+      "prod"
     ]
   },
   {
@@ -1400,14 +1414,14 @@
     ],
     "description": "The saasag image-Service",
     "displayName": "image",
+    "name": "image",
+    "proxies": [],
+    "scopes": [],
     "environments": [
       "dev",
       "stage",
       "prod"
-    ],
-    "name": "image",
-    "proxies": [],
-    "scopes": []
+    ]
   },
   {
     "apiResources": [],
@@ -1420,11 +1434,6 @@
     ],
     "description": "The html2pdf service",
     "displayName": "html2pdf",
-    "environments": [
-      "dev",
-      "stage",
-      "prod"
-    ],
     "name": "html2pdf",
     "proxies": [
       "html2pdf"
@@ -1436,6 +1445,11 @@
       "html2pdf.html2pdf_search",
       "html2pdf.html2pdf_stream",
       "html2pdf.metadata_update"
+    ],
+    "environments": [
+      "dev",
+      "stage",
+      "prod"
     ]
   },
   {
@@ -1449,11 +1463,6 @@
     ],
     "description": "Charges and Fees Service",
     "displayName": "fee",
-    "environments": [
-      "dev",
-      "stage",
-      "prod"
-    ],
     "name": "fee",
     "proxies": [
       "fee"
@@ -1465,6 +1474,11 @@
       "fee.item_create",
       "fee.item_delete",
       "fee.item_update"
+    ],
+    "environments": [
+      "dev",
+      "stage",
+      "prod"
     ]
   },
   {
@@ -1478,11 +1492,6 @@
     ],
     "description": "Email Service",
     "displayName": "email",
-    "environments": [
-      "dev",
-      "stage",
-      "prod"
-    ],
     "name": "email",
     "proxies": [
       "email"
@@ -1495,6 +1504,11 @@
       "email.newsletterdoi_send",
       "email.picklist_send",
       "email.shippingconfirmation_send"
+    ],
+    "environments": [
+      "dev",
+      "stage",
+      "prod"
     ]
   },
   {
@@ -1508,14 +1522,14 @@
     ],
     "description": "Dummy service for holding scopes required for restoring",
     "displayName": "dummyrestore",
+    "name": "dummyrestore",
+    "proxies": [],
+    "scopes": [],
     "environments": [
       "dev",
       "stage",
       "prod"
-    ],
-    "name": "dummyrestore",
-    "proxies": [],
-    "scopes": []
+    ]
   },
   {
     "apiResources": [],
@@ -1528,11 +1542,6 @@
     ],
     "description": "",
     "displayName": "delivery",
-    "environments": [
-      "dev",
-      "stage",
-      "prod"
-    ],
     "name": "delivery",
     "proxies": [
       "delivery"
@@ -1542,6 +1551,11 @@
       "delivery.area_manage",
       "delivery.time_delete",
       "delivery.time_manage"
+    ],
+    "environments": [
+      "dev",
+      "stage",
+      "prod"
     ]
   },
   {
@@ -1555,16 +1569,16 @@
     ],
     "description": "The creditCheck service",
     "displayName": "creditcheck",
-    "environments": [
-      "dev",
-      "stage",
-      "prod"
-    ],
     "name": "creditcheck",
     "proxies": [
       "creditcheck"
     ],
-    "scopes": []
+    "scopes": [],
+    "environments": [
+      "dev",
+      "stage",
+      "prod"
+    ]
   },
   {
     "apiResources": [],
@@ -1577,17 +1591,17 @@
     ],
     "description": "Saas Coupon Service. To manage referral-coupons.",
     "displayName": "coupon",
-    "environments": [
-      "dev",
-      "stage",
-      "prod"
-    ],
     "name": "coupon",
     "proxies": [
       "coupon"
     ],
     "scopes": [
       "coupon.coupon_manage"
+    ],
+    "environments": [
+      "dev",
+      "stage",
+      "prod"
     ]
   },
   {
@@ -1601,11 +1615,6 @@
     ],
     "description": "The country service",
     "displayName": "country",
-    "environments": [
-      "dev",
-      "stage",
-      "prod"
-    ],
     "name": "country",
     "proxies": [
       "country"
@@ -1613,6 +1622,11 @@
     "scopes": [
       "country.country_delete",
       "country.country_manage"
+    ],
+    "environments": [
+      "dev",
+      "stage",
+      "prod"
     ]
   },
   {
@@ -1626,11 +1640,6 @@
     ],
     "description": "The content service",
     "displayName": "content",
-    "environments": [
-      "dev",
-      "stage",
-      "prod"
-    ],
     "name": "content",
     "proxies": [
       "content"
@@ -1644,6 +1653,11 @@
       "content.type_manage",
       "content.type_view",
       "content.type_view_all"
+    ],
+    "environments": [
+      "dev",
+      "stage",
+      "prod"
     ]
   },
   {
@@ -1657,14 +1671,14 @@
     ],
     "description": "",
     "displayName": "tax-avalara",
+    "name": "caas-tax-avalara",
+    "proxies": [],
+    "scopes": [],
     "environments": [
       "dev",
       "stage",
       "prod"
-    ],
-    "name": "caas-tax-avalara",
-    "proxies": [],
-    "scopes": []
+    ]
   },
   {
     "apiResources": [],
@@ -1677,16 +1691,16 @@
     ],
     "description": "",
     "displayName": "tax",
-    "environments": [
-      "dev",
-      "stage",
-      "prod"
-    ],
     "name": "caas-tax",
     "proxies": [],
     "scopes": [
       "tax.tax_manage",
       "tax.tax_read"
+    ],
+    "environments": [
+      "dev",
+      "stage",
+      "prod"
     ]
   },
   {
@@ -1700,11 +1714,6 @@
     ],
     "description": "",
     "displayName": "site",
-    "environments": [
-      "dev",
-      "stage",
-      "prod"
-    ],
     "name": "caas-site",
     "proxies": [
       "caas-site"
@@ -1712,6 +1721,11 @@
     "scopes": [
       "site.site_manage",
       "site.site_read"
+    ],
+    "environments": [
+      "dev",
+      "stage",
+      "prod"
     ]
   },
   {
@@ -1725,17 +1739,17 @@
     ],
     "description": "",
     "displayName": "shipping",
-    "environments": [
-      "dev",
-      "stage",
-      "prod"
-    ],
     "name": "caas-shipping",
     "proxies": [
       "caas-shipping"
     ],
     "scopes": [
       "shipping.shipping_manage"
+    ],
+    "environments": [
+      "dev",
+      "stage",
+      "prod"
     ]
   },
   {
@@ -1749,11 +1763,6 @@
     ],
     "description": "",
     "displayName": "indexing-service",
-    "environments": [
-      "dev",
-      "stage",
-      "prod"
-    ],
     "name": "caas-indexing-service",
     "proxies": [
       "caas-indexing-service"
@@ -1764,6 +1773,11 @@
       "indexing.algolia_read",
       "indexing.search_manage",
       "indexing.search_view indexing.indexing_manage"
+    ],
+    "environments": [
+      "dev",
+      "stage",
+      "prod"
     ]
   },
   {
@@ -1777,14 +1791,14 @@
     ],
     "description": "",
     "displayName": "productdetails",
+    "name": "caas-productdetails",
+    "proxies": [],
+    "scopes": [],
     "environments": [
       "dev",
       "stage",
       "prod"
-    ],
-    "name": "caas-productdetails",
-    "proxies": [],
-    "scopes": []
+    ]
   },
   {
     "apiResources": [],
@@ -1797,11 +1811,6 @@
     ],
     "description": "",
     "displayName": "product",
-    "environments": [
-      "dev",
-      "stage",
-      "prod"
-    ],
     "name": "caas-product",
     "proxies": [
       "caas-product",
@@ -1817,6 +1826,11 @@
       "product.product_template_read",
       "product.product_unpublish",
       "product.product_update"
+    ],
+    "environments": [
+      "dev",
+      "stage",
+      "prod"
     ]
   },
   {
@@ -1830,11 +1844,6 @@
     ],
     "description": "Current price service",
     "displayName": "price",
-    "environments": [
-      "dev",
-      "stage",
-      "prod"
-    ],
     "name": "caas-price",
     "proxies": [
       "price"
@@ -1848,6 +1857,11 @@
       "price.pricemodel_manage",
       "price.pricemodel_manage_admin",
       "price.pricemodel_read"
+    ],
+    "environments": [
+      "dev",
+      "stage",
+      "prod"
     ]
   },
   {
@@ -1861,14 +1875,14 @@
     ],
     "description": "",
     "displayName": "payment-stripe",
+    "name": "caas-payment-stripe",
+    "proxies": [],
+    "scopes": [],
     "environments": [
       "dev",
       "stage",
       "prod"
-    ],
-    "name": "caas-payment-stripe",
-    "proxies": [],
-    "scopes": []
+    ]
   },
   {
     "apiResources": [],
@@ -1881,11 +1895,6 @@
     ],
     "description": "",
     "displayName": "order",
-    "environments": [
-      "dev",
-      "stage",
-      "prod"
-    ],
     "name": "caas-order",
     "proxies": [
       "caas-order"
@@ -1899,6 +1908,11 @@
       "order.order_update",
       "order.order_update_completed",
       "order.order_updateascustomer"
+    ],
+    "environments": [
+      "dev",
+      "stage",
+      "prod"
     ]
   },
   {
@@ -1912,11 +1926,6 @@
     ],
     "description": "",
     "displayName": "customer",
-    "environments": [
-      "dev",
-      "stage",
-      "prod"
-    ],
     "name": "caas-customer",
     "proxies": [
       "caas-customer"
@@ -1931,6 +1940,11 @@
       "customer.customer_update",
       "customer.customerprofile_edit",
       "customer.customerprofile_view"
+    ],
+    "environments": [
+      "dev",
+      "stage",
+      "prod"
     ]
   },
   {
@@ -1944,11 +1958,6 @@
     ],
     "description": "",
     "displayName": "coupon-v2",
-    "environments": [
-      "dev",
-      "stage",
-      "prod"
-    ],
     "name": "caas-coupon",
     "proxies": [
       "caas-coupon"
@@ -1957,6 +1966,11 @@
       "coupon.coupon_manage",
       "coupon.coupon_redeem",
       "coupon.coupon_redeem_on_behalf"
+    ],
+    "environments": [
+      "dev",
+      "stage",
+      "prod"
     ]
   },
   {
@@ -1970,11 +1984,6 @@
     ],
     "description": "",
     "displayName": "checkout",
-    "environments": [
-      "dev",
-      "stage",
-      "prod"
-    ],
     "name": "caas-checkout",
     "proxies": [
       "caas-checkout"
@@ -1982,6 +1991,11 @@
     "scopes": [
       "checkout.checkout_delete_all",
       "checkout.checkout_manage"
+    ],
+    "environments": [
+      "dev",
+      "stage",
+      "prod"
     ]
   },
   {
@@ -1995,11 +2009,6 @@
     ],
     "description": "",
     "displayName": "category",
-    "environments": [
-      "dev",
-      "stage",
-      "prod"
-    ],
     "name": "caas-category",
     "proxies": [
       "caas-category"
@@ -2012,6 +2021,11 @@
       "category.category_read_unpublished",
       "category.category_unpublish",
       "category.category_update"
+    ],
+    "environments": [
+      "dev",
+      "stage",
+      "prod"
     ]
   },
   {
@@ -2025,14 +2039,14 @@
     ],
     "description": "",
     "displayName": "cart-calculation",
+    "name": "caas-cartcalculation",
+    "proxies": [],
+    "scopes": [],
     "environments": [
       "dev",
       "stage",
       "prod"
-    ],
-    "name": "caas-cartcalculation",
-    "proxies": [],
-    "scopes": []
+    ]
   },
   {
     "apiResources": [],
@@ -2045,17 +2059,17 @@
     ],
     "description": "",
     "displayName": "cart",
-    "environments": [
-      "dev",
-      "stage",
-      "prod"
-    ],
     "name": "caas-cart",
     "proxies": [
       "caas-cart"
     ],
     "scopes": [
       "cart.cart_manage"
+    ],
+    "environments": [
+      "dev",
+      "stage",
+      "prod"
     ]
   },
   {
@@ -2069,14 +2083,14 @@
     ],
     "description": "",
     "displayName": "algolia-reindexer",
+    "name": "caas-algolia-reindexer",
+    "proxies": [],
+    "scopes": [],
     "environments": [
       "dev",
       "stage",
       "prod"
-    ],
-    "name": "caas-algolia-reindexer",
-    "proxies": [],
-    "scopes": []
+    ]
   },
   {
     "apiResources": [],
@@ -2089,11 +2103,6 @@
     ],
     "description": "",
     "displayName": "brand",
-    "environments": [
-      "dev",
-      "stage",
-      "prod"
-    ],
     "name": "brand",
     "proxies": [
       "brand"
@@ -2101,6 +2110,11 @@
     "scopes": [
       "brand.brand_delete",
       "brand.brand_manage"
+    ],
+    "environments": [
+      "dev",
+      "stage",
+      "prod"
     ]
   }
 ]
