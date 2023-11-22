@@ -78,6 +78,9 @@
                     <Name>Key-Value-Map-Operations-1</Name>
                 </Step>
                 <Step>
+                    <Name>AesEmporixClientSecretCallout</Name>
+                </Step>
+                <Step>
                     <Name>ExecuteTokenRequest</Name>
                 </Step>
                 <Step>
