@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage async="false" continueOnError="false" enabled="true" name="Assign-Message-2">
+    <DisplayName>Set hybris-headers2</DisplayName>
+    <Properties/>
+    <Remove>
+        <Headers>
+            <Header name="hybris-external-url"/>
+            <Header name="emporix-external-url"/>
+            <Header name="hybris-target-url"/>
+            <Header name="emporix-target-url"/>
+            <Header name="hybris-external-path"/>
+            <Header name="emporix-external-path"/>
+        </Headers>
+    </Remove>
+    <Set>
+        <Headers>
+            <Header name="hybris-external-url">https://{request.header.Host}{proxy.basepath}</Header>
+            <Header name="emporix-external-url">https://{request.header.Host}{proxy.basepath}</Header>
+            <Header name="hybris-target-url">https://{request.header.Host}{proxy.basepath}{proxy.pathsuffix}</Header>
+            <Header name="emporix-target-url">https://{request.header.Host}{proxy.basepath}{proxy.pathsuffix}</Header>
+            <Header name="hybris-external-path">{proxy.basepath}</Header>
+            <Header name="emporix-external-path">{proxy.basepath}</Header>
+        </Headers>
+    </Set>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <AssignTo createNew="false" transport="http" type="request"/>
+</AssignMessage>
