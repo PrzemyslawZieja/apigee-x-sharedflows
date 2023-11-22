@@ -7,8 +7,7 @@
     <CacheResource>jwk_cache</CacheResource>
     <Scope>Global</Scope>
     <ExpirySettings>
-        <!--year-->
-        <TimeoutInSeconds>31556952</TimeoutInSeconds>
+        <TimeoutInSeconds>2592000</TimeoutInSeconds>
     </ExpirySettings>
     <Source>jwks.response</Source>
 </PopulateCache>
