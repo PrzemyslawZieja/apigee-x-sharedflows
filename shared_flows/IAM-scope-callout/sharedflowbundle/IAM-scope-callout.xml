@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <SharedFlowBundle name="IAM-scope-callout">
+    <Description>fetching scopes for user/customer from iam</Description>
+    <DisplayName>IAM-scope-callout</DisplayName>
     <Policies>
         <Policy>BasicAuth</Policy>
         <Policy>BasicAuthKVM</Policy>
