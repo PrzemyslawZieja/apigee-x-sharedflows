@@ -8,7 +8,7 @@
     <Scope>Global</Scope>
     <ExpirySettings>
         <!--year-->
-        <TimeoutInSeconds>2592000</TimeoutInSeconds>
+        <TimeoutInSeconds>31556952</TimeoutInSeconds>
     </ExpirySettings>
     <Source>jwks.response</Source>
 </PopulateCache>

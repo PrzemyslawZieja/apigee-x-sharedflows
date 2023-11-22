@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <SharedFlowBundle name="fetchJWKS">
+    <Description>undefined</Description>
+    <DisplayName>fetchJWKS</DisplayName>
     <Policies>
         <Policy>Check-is-kid-exists</Policy>
         <Policy>Fetch-JWKS-URI</Policy>
