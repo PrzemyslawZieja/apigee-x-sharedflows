@@ -17,7 +17,7 @@
                 </Step>
             </Request>
             <Response/>
-            <Condition>!(request.path ~ "**/webhooks/**")</Condition>
+            <Condition>!(request.path ~ "/cxpb-api/v0/webhooks/**")</Condition>
         </Flow>
     </Flows>
     <PostFlow name="PostFlow">
