@@ -2,7 +2,7 @@
 <MessageLogging continueOnError="true" enabled="true" name="captureMonitoringData">
     <CloudLogging>
         <LogName>projects/{organization.name}/logs/apigee</LogName>
-        <Message contentType="application/json">{"tenant":"{tenant:unknown}","env":"{environment.name}","http_response_code":"{message.status.code}","proxy":"{apiproxy.name}","caller_ip":"{proxy.client.ip}","request":"{proxy.url}","apigee_internal_call":"{client.local}"}</Message>
+        <Message contentType="application/json">{"tenant":"{tenant:unknown}","env":"{environment.name}","verb":"{request.verb}","http_response_code":"{message.status.code}","proxy":"{apiproxy.name}","caller_ip":"{proxy.client.ip}","request":"{proxy.url}","apigee_internal_call":"{client.local}"}</Message>
         <Labels>
           <Label>
             <Key>product</Key>
