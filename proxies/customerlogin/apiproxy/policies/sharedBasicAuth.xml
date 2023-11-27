@@ -3,5 +3,5 @@
     <DisplayName>sharedBasicAuth</DisplayName>
     <FaultRules/>
     <Properties/>
-    <SharedFlowBundle>basicAuth</SharedFlowBundle>
+    <SharedFlowBundle>shared-BasicAuth</SharedFlowBundle>
 </FlowCallout>

@@ -11,7 +11,7 @@
             "session_idle_time" : 120,
             "token_type": "Bearer" ,  
             "access_token" : "$TokenResponse.access_token%",  
-            "sass_token" : "$saasToken%",  
+            "saas_token" : "$saasToken%",
             "expires_in" : $TokenResponse.expires_in%,
             "scope" : "$TokenResponse.scope%"
          }  

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Javascript async="false" continueOnError="false" enabled="true" timeLimit="200" name="DecoreAccessToken">
+    <DisplayName>DecoreAccessToken</DisplayName>
+    <Properties/>
+    <ResourceURL>jsc://decore-access-token.js</ResourceURL>
+</Javascript>

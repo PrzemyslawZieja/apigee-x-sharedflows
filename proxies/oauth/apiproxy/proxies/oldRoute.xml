@@ -24,6 +24,10 @@
             </Request>
             <Response>
                 <Step>
+                    <Name>DecoreAccessToken</Name>
+                    <Condition>oauthV2.failed = false</Condition>
+                </Step>
+                <Step>
                     <Name>RewriteToken</Name>
                     <Condition>oauthV2.failed = false</Condition>
                 </Step>

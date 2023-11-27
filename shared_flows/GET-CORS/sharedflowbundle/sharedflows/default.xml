@@ -13,4 +13,8 @@
         <Condition>(request.header.Content-Type == "application/x-www-form-urlencoded" AND request.header.X-Deprecated-Scopes != null)</Condition>
         <Name>ReassignScopes</Name>
     </Step>
+    <Step>
+        <Condition>(request.header.Content-Type == "application/x-www-form-urlencoded" AND request.header.X-Deprecated-Scopes != null)</Condition>
+        <Name>DeprecatedScopesStatisticsCollector</Name>
+    </Step>
 </SharedFlow>

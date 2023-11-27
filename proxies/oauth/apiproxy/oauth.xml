@@ -15,6 +15,7 @@
         <Policy>Build-Refresh-Token-Response</Policy>
         <Policy>Decode-Basic-Auth</Policy>
         <Policy>DecodeBaseAuthHeaders</Policy>
+        <Policy>DecoreAccessToken</Policy>
         <Policy>Generate-Anonymous-Access-Token</Policy>
         <Policy>Generate1HOURAccessTokenClient</Policy>
         <Policy>Generate1MINUTEAccessTokenClient</Policy>
@@ -29,11 +30,11 @@
         <Policy>RewriteToken</Policy>
         <Policy>RewriteTokenWithIAM</Policy>
         <Policy>Spike-Arrest</Policy>
+        <Policy>tenantsStatistics</Policy>
         <Policy>Verify-API-Key</Policy>
         <Policy>Wrong-Grant-Type</Policy>
         <Policy>debug</Policy>
         <Policy>testregenerate</Policy>
-        <Policy>tenantsStatistics</Policy>
     </Policies>
     <ProxyEndpoints>
         <ProxyEndpoint>customerlogin</ProxyEndpoint>
@@ -45,6 +46,7 @@
     <Resources>
         <Resource>jsc://add-default-tenant-scope.js</Resource>
         <Resource>jsc://debug.js</Resource>
+        <Resource>jsc://decore-access-token.js</Resource>
     </Resources>
     <Spec></Spec>
     <TargetServers/>

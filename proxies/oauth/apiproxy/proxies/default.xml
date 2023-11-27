@@ -10,7 +10,6 @@
                     <Name>Match-Client-With-App</Name>
                 </Step>
                 <Step>
-                    <FaultRules/>
                     <Name>RefreshAccessToken</Name>
                 </Step>
             </Request>
@@ -64,12 +63,10 @@
                     <Condition>request.formparam.session-id != null</Condition>
                 </Step>
                 <Step>
-                    <Name>RewriteToken</Name>
-                    <Condition>request.formparam.hybris-user-id == null</Condition>
+                    <Name>DecoreAccessToken</Name>
                 </Step>
                 <Step>
-                    <Name>RewriteTokenWithIAM</Name>
-                    <Condition>request.formparam.hybris-user-id != null</Condition>
+                    <Name>RewriteToken</Name>
                 </Step>
             </Response>
             <Condition>((proxy.pathsuffix MatchesPath "/token") or (proxy.pathsuffix MatchesPath "/accesstoken")) and (request.verb = "POST")</Condition>
@@ -82,6 +79,10 @@
                 </Step>
             </Request>
             <Response>
+                <Step>
+                    <Name>DecoreAccessToken</Name>
+                    <Condition>oauthV2.failed = false</Condition>
+                </Step>
                 <Step>
                     <Name>RewriteToken</Name>
                     <Condition>oauthV2.failed = false</Condition>

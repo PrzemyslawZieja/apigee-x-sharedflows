@@ -6,8 +6,8 @@
         <IgnoreUnresolvedVariables>false</IgnoreUnresolvedVariables>
         <Add>
             <FormParams>
-                <FormParam name="client_secret">{private.clientSecret}</FormParam>
-                <FormParam name="client_id">{private.clientId}</FormParam>
+                <FormParam name="client_secret">{crypto_output}</FormParam>
+                <FormParam name="client_id">{ConfigurationResponse.storefrontClientId}</FormParam>
                 <FormParam name="username">NOT_SET</FormParam>
                 <FormParam name="password">NOT_SET</FormParam>
                 <FormParam name="hybris-session-id">{SocialLogin.session}</FormParam>

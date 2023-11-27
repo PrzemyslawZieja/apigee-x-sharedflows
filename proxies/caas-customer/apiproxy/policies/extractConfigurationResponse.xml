@@ -19,5 +19,11 @@
         <Variable name="publicKey">
             <JSONPath>$.value.public_key</JSONPath>
         </Variable>
+        <Variable name="storefrontClientId">
+            <JSONPath>$.value.storefront_client_id</JSONPath>
+        </Variable>
+        <Variable name="storefrontClientSecret">
+            <JSONPath>$.value.storefront_client_secret</JSONPath>
+        </Variable>
     </JSONPayload>
 </ExtractVariables>

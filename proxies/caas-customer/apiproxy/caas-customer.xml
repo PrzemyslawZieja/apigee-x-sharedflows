@@ -5,6 +5,7 @@
     <DisplayName>caas-customer</DisplayName>
     <Policies>
         <Policy>AesCallout</Policy>
+        <Policy>AesEmporixClientSecretCallout</Policy>
         <Policy>AesKVM</Policy>
         <Policy>sharedBasicAuth</Policy>
         <Policy>ExecuteAuth0Request</Policy>

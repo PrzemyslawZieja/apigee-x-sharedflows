@@ -1,23 +1,25 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <ProxyEndpoint name="default">
-    <PreFlow name="PreFlow">
-        <Request>
-            <Step>
-                <Name>sharedAuthWithOkta</Name>
-            </Step>
-            <Step>
-                <Name>Assign-Message-4</Name>
-            </Step>
-            <Step>
-                <Name>Assign-Message-3</Name>
-            </Step>
-            <Step>
-                <Name>Assign-Message-5</Name>
-            </Step>
-        </Request>
-        <Response/>
-    </PreFlow>
-    <Flows/>
+    <Flows>
+        <Flow name="default">
+            <Request>
+                <Step>
+                    <Name>sharedAuthWithOkta</Name>
+                </Step>
+                <Step>
+                    <Name>Assign-Message-4</Name>
+                </Step>
+                <Step>
+                    <Name>Assign-Message-3</Name>
+                </Step>
+                <Step>
+                    <Name>Assign-Message-5</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>!(request.path ~ "/cxpb-api/v0/webhooks/**")</Condition>
+        </Flow>
+    </Flows>
     <PostFlow name="PostFlow">
         <Request/>
         <Response/>
