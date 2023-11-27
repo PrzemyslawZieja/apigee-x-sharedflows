@@ -18,18 +18,9 @@
         <FormParams/>
         <!-- <Verb>GET</Verb> -->
         <Path/>
-        <Payload contentType="application/json" variableSuffix="%" variablePrefix="$">  
- {  
- 
-    "refresh_token" : "$oauthv2accesstoken.GenerateAccessTokenClient.refresh_token%",
-    "refresh_token_expires_in" : $oauthv2accesstoken.GenerateAccessTokenClient.refresh_token_expires_in%,
-    "session_idle_time" : 120,
-    "token_type": "Bearer" ,  
-    "access_token" : "$oauthv2accesstoken.GenerateAccessTokenClient.access_token%",  
-    "expires_in" : $oauthv2accesstoken.GenerateAccessTokenClient.expires_in%,
-    "scope" : "$oauthv2accesstoken.GenerateAccessTokenClient.scope%"
- }  
- </Payload>
+        <Payload contentType="application/json">
+            {decoredResponse}
+        </Payload>
     </Set>
     <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
     <AssignTo createNew="true" transport="http" type="request"/>
