@@ -8,5 +8,5 @@ if(scope !== null && !scope.includes("tenant=")) {
     context.setVariable("request.formparam.scope", scopes);
  }
 }
-context.setVariable("request.header.tenant-statistic", context.getVariable("verifyapikey.Match-Client-With-App.tenant"));
+context.setVariable("tenant", context.getVariable("verifyapikey.Match-Client-With-App.tenant"));
 
