@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<DataCapture name="DeprecatedScopesStatisticsCollector" continueOnError="true" enabled="true">
+    <DisplayName>DeprecatedScopesStatisticsCollector</DisplayName>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <Capture>
+        <DataCollector>dc_deprecatedScopes</DataCollector>
+        <Collect ref="request.header.X-Deprecated-Scopes"/>
+    </Capture>
+</DataCapture>

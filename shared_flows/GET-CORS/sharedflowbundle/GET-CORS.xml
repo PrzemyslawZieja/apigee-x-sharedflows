@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <SharedFlowBundle name="GET-CORS">
+    <DisplayName>GET-CORS</DisplayName>
     <Policies>
+        <Policy>DeprecatedScopesStatisticsCollector</Policy>
         <Policy>GetCORS</Policy>
         <Policy>GetScopes</Policy>
         <Policy>ReassignScopes</Policy>
