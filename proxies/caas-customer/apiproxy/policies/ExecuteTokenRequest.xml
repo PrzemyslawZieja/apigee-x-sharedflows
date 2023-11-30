@@ -4,7 +4,6 @@
     <Properties/>
     <Request clearPayload="true" variable="tokenRequest">
         <IgnoreUnresolvedVariables>false</IgnoreUnresolvedVariables>
-        <Verb>POST</Verb>
         <Add>
             <FormParams>
                 <FormParam name="client_secret">{crypto_output}</FormParam>
@@ -20,7 +19,8 @@
         </Add>
     </Request>
     <Response>tokenResponse</Response>
-    <LocalTargetConnection>
-        <Path>/oauth/token</Path>
-    </LocalTargetConnection>
+    <HTTPTargetConnection>
+        <Properties/>
+        <URL>https://{SocialLogin.tokenCalloutUrl}/oauth/token</URL>
+    </HTTPTargetConnection>
 </ServiceCallout>
