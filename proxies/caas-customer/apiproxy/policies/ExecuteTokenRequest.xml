@@ -20,7 +20,6 @@
     </Request>
     <Response>tokenResponse</Response>
     <LocalTargetConnection>
-        <APIProxy>oauth</APIProxy>
         <Path>/oauth/token</Path>
     </LocalTargetConnection>
 </ServiceCallout>
