@@ -44,12 +44,12 @@
                 <Step>
                     <Name>AesKVM</Name>
                 </Step>
-                <!--<Step>-->
-                <!--    <Name>AesCallout</Name>-->
-                <!--</Step>-->
-                <!--<Step>-->
-                <!--    <Name>parseClientSecret</Name>-->
-                <!--</Step>-->
+                <Step>
+                    <Name>AesCallout</Name>
+                </Step>
+                <Step>
+                    <Name>parseClientSecret</Name>
+                </Step>
                 <Step>
                     <Name>prepareAuth0Request</Name>
                 </Step>
