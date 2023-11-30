@@ -19,8 +19,8 @@
         </Add>
     </Request>
     <Response>tokenResponse</Response>
-    <HTTPTargetConnection>
-        <Properties/>
-        <URL>https://saas-ag-{SocialLogin.apigeeEnvironment}.apigee.net/oauth/token</URL>
-    </HTTPTargetConnection>
+    <LocalTargetConnection>
+        <APIProxy>oauth</APIProxy>
+        <Path>/oauth/token</Path>
+    </LocalTargetConnection>
 </ServiceCallout>
