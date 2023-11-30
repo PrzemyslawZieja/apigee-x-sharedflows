@@ -4,6 +4,7 @@
     <DisplayName>PrepareConfigurationRequest</DisplayName>
     <Set>
         <Headers>
+            <Header name="Authorization">{request.header.Authorization}</Header>
             <Header name="hybris-tenant">{SocialLogin.tenant}</Header>
             <Header name="hybris-scopes">configuration.configuration_view</Header>
         </Headers>
