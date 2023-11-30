@@ -4,6 +4,7 @@
     <Properties/>
     <Request clearPayload="true" variable="tokenRequest">
         <IgnoreUnresolvedVariables>false</IgnoreUnresolvedVariables>
+        <Verb>POST</Verb>
         <Add>
             <FormParams>
                 <FormParam name="client_secret">{crypto_output}</FormParam>
